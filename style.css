@@ -1,0 +1,158 @@
+
+#perfil {
+        
+        height: 85% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+}
+
+#newsfeed {
+    float: right !important;
+    width: 79% !important;
+}
+
+#newsfeed2 {
+    float: right !important;
+    width: 100% !important;
+}
+
+#portafolio {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+
+#portafoliod {
+    width: 75% !important;
+}
+
+#publicacion {
+    height: 100px;      
+}
+
+#publicacionbtn {
+    height: 100px;
+}
+
+#chat {
+    width: 100% !important;
+}
+
+#acciones {
+  padding: 11px 11px !important;
+  font-size: 12px !important;
+}
+#eventoform {
+    width: 80% !important;
+    float: right !important;
+}
+
+#cat {
+    width: 80% !important;
+    float: right !important;
+}
+
+
+
+#chattext {
+    width: 80% !importnat;
+}
+
+#logito {
+    width: 100px; !important;
+    height: 50px !important;
+}
+
+#photo {
+    float: left !important;
+}
+
+#fieldsP {
+    margin-top: 5px !important;
+    width: 51%;
+    float: left !important;
+}
+
+#fieldsPD {
+    margin-top: 6px !important;
+    width: 48%;
+    float: right!important;
+}
+.ec-stars-wrapper {
+	/* Espacio entre los inline-block (los hijos, los `a`) 
+	   http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.html */
+	font-size: 0;
+	/* Podríamos quitarlo, 
+		pero de esta manera (siempre que no le demos padding), 
+		sólo aplicará la regla .ec-stars-wrapper:hover a cuando
+		también se esté haciendo hover a alguna estrella */
+	display: inline-block;
+}
+.ec-stars-wrapper a {
+	text-decoration: none;
+	display: inline-block;
+	/* Volver a dar tamaño al texto */
+	font-size: 32px;
+	font-size: 2rem;
+	
+	color: #888;
+}
+
+.ec-stars-wrapper:hover a {
+	color: rgb(241, 196, 15);
+}
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+ */
+.ec-stars-wrapper > a:hover ~ a {
+	color: #888;
+}
+
+#w {
+height: 35% !important;
+}
+
+#btnfoto {
+    width: 60% !important;
+}
+
+#photot {
+    width: 200px !important;
+    margin-left: 100% !important;
+    
+}
+
+#den {
+    height: 41px !important;
+}
+
+#cen {
+    margin-left: 60px !important;
+}
+
+.public {
+    background: #ECF0F1 !important;
+    border-radius: 5px !important;
+}
+
+.fechapub {
+    font-size: 15px !important;
+}
+
+.fondi{
+    background-image: url(vistas/recursos/images/fondo3.jpg) !important;
+    background-attachment: fixed;
+}
+#btn btn-public {
+    width: 35%;
+    display: none;
+    
+}
+
+
+#edad {
+    width: 15% !important;
+}
+
+#ofer {
+    width: 75% !important;
+}
