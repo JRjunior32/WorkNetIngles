@@ -54,6 +54,6 @@ class Curriculum {
         if($result)
             $utilidades->mostrarMensaje("Su curriculum se creo exitosamente");
         else
-            $utilidades->mostrarMensaje("Ocurrio un error, vuela a intentar");
+            $utilidades->mostrarMensaje("Sorry!, Something is wrong, Please try again.");
     }
 }
