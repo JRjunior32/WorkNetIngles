@@ -27,10 +27,10 @@ class Categoria {
             
          if($this->validarCategoriaUnica($cat)){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
-             $utilidades->mostrarMensaje('La categoria se agrego correctamente');
+             $utilidades->mostrarMensaje('The category was added successfuly!');
             $plantilla->verPagina('');
          }else{
-            $utilidades->mostrarMensaje('Lo sentimos la categoria ya existe actualmente');
+            $utilidades->mostrarMensaje('Sorry, the category already exist, try with other name');
             $plantilla->verPagina('');
             return 0;
     }
@@ -57,7 +57,7 @@ class Categoria {
         
         $acciones = '<center><a href="#" class="btn btn-danger"><span class="fui-trash"></span></a>';   
         
-        $encabezado = ['ID' , 'Categoria'];
+        $encabezado = ['ID' , 'Category'];
         
         $variables['listaCategorias'] = $utilidades->convertirTabla($result, $encabezado, $acciones);
         
