@@ -47,7 +47,7 @@ class AdministrarUsuarios {
                 $this->idUsuario = $resultado[$i]['idCuenta'];
             }
         } else {
-            $utilidades->mostrarMensaje('Lo sentimos, el usuario o contraseña son incorrectos');
+            $utilidades->mostrarMensaje('Sorry!, the user or password are incorrect, please try again');
             $utilidades->redireccionar('index.php');
         }
 
