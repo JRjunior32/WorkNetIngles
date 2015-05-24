@@ -100,7 +100,7 @@ class Chat {
                     $idAmigo . '"';        
         $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);        
         if (!$resultado)            
-            $utilidades->mostrarMensaje('El mensaje no se ha podido enviar. \n Intente nuevamente');                            
+            $utilidades->mostrarMensaje('Sorry!, Somnething is wrong. \n please try again.');                            
         $this->mostrarChat($idAmigo);
     }
     public function actualizarChat($idAmigo) {
