@@ -34,9 +34,9 @@ class Ofertas {
         $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
 
         if ($resultado)
-            $utilidades->mostrarMensaje('La oferta de trabajo fue creada correctamente');
+            $utilidades->mostrarMensaje('The offer job was created successfuly!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, la oferta de trabajo no pudo ser creada. Intente de nuevo.');                
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again.');                
         
         $plantilla->verPagina();
     }
@@ -82,15 +82,15 @@ class Ofertas {
         for ($i = 0; $i < count($Ofertas); $i++){
             $oferta .= '<blockquote class="public">
                           <a href="./eliminarOferta.php?id="><small class="text-danger" id="derecha"><i class="fa fa-trash"></i></small></a>
-                          <p>Titulo de la Oferta:</p>
+                          <p>Title:</p>
                           <small>'.$Ofertas[$i]['Titulo'].'</small>
-                          <p>Detalle:</p>
+                          <p>Detail:</p>
                           <small>'.$Ofertas[$i]['Detalle'].'</small>
-                          <p>Cargo:</p>
+                          <p>Position:</p>
                           <small>'.$Ofertas[$i]['Cargo'].'</small>
-                          <p>Edad:</p>
+                          <p>Years:</p>
                           <small>'.$Ofertas[$i]['Edad'].'</small>
-                          <p>Requisitos:</p>
+                          <p>Requirement:</p>
                           <small><i class="fa fa-ellipsis-h"></i> '.$Ofertas[$i]['Requisitos'].'</small>
                         </blockquote>';
         }
@@ -121,15 +121,15 @@ class Ofertas {
         
         for ($i = 0; $i < count($Ofertas); $i++){
             $oferta .= '<blockquote class="public">
-                          <p>Titulo de la Oferta:</p> <small id="derecha">Empresa: <small class="text-success" id="derecha">' .$Ofertas[$i]['idCuenta'].'</small></small>
+                          <p>Title:</p> <small id="derecha">Empresa: <small class="text-success" id="derecha">' .$Ofertas[$i]['idCuenta'].'</small></small>
                           <small>'.$Ofertas[$i]['Titulo'].'</small>
-                          <p>Detalle:</p>
+                          <p>Detail::</p>
                           <small>'.$Ofertas[$i]['Detalle'].'</small>
-                          <p>Cargo:</p>
+                          <p>Position:</p>
                           <small>'.$Ofertas[$i]['Cargo'].'</small>
-                          <p>Edad:</p>
+                          <p>Years:</p>
                           <small>'.$Ofertas[$i]['Edad'].'</small>
-                          <p>Requisitos:</p>
+                          <p>Requirement:</p>
                           <small><i class="fa fa-ellipsis-h"></i> '.$Ofertas[$i]['Requisitos'].'</small>
                         </blockquote>';
         }

@@ -47,18 +47,18 @@ if($dateNow > $birth)
         if($this->validarNombreUnico($user))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('El nombre de usuario que ha ingresado ya se encuentra utilizado, por favor utilice uno diferente');
+            $utilidades->mostrarMensaje('The user already exist, please try again with a diferent nickname');
             $plantilla->verPaginaSinPlantilla('formularioEmpresa');
             return 0;
         }
     
          
         if (isset($resultado)){
-            $utilidades->mostrarMensaje('El usuario ha sido agregado al sistema, espere que el administrador lo active');
+            $utilidades->mostrarMensaje('Congratulations! the user is Working now!');
             $plantilla->verPaginaSinPlantilla('index');
         }
         else{
-            $utilidades->mostrarMensaje('El usuario no se ha podido agregar. \n Intente nuevamente');                    
+            $utilidades->mostrarMensaje('Sorry!, something is wrong please try again');                    
          
         $plantilla->verPaginaSinPlantilla('formularioEmpresa');
         }
@@ -86,10 +86,10 @@ if($dateNow > $birth)
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Empresa from cuenta '
                 . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 2';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Empresa');
+        $encabezado = array('ID', 'User', 'First Name', 'Last Name', 'Enterprise');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Ver Perfil</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
 
 
 

@@ -52,7 +52,7 @@ class Curriculum {
         $result = $db->insertarRegistro($tabla, $columnas, $valores);
         
         if($result)
-            $utilidades->mostrarMensaje("Su curriculum se creo exitosamente");
+            $utilidades->mostrarMensaje("currículum vitae was created successfuly!");
         else
             $utilidades->mostrarMensaje("Sorry!, Something is wrong, Please try again.");
     }
