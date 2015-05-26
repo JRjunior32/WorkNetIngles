@@ -53,10 +53,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('El archivo se cargo exitosamente');
+                $utilidades-> mostrarMensaje('The photo was updated successfully');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Ocurrio un problema al momento de subir el archivo');
+                    $utilidades->mostrarMensaje('Sorry!, something is wrong, please trt again.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -125,10 +125,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('El archivo se cargo exitosamente');
+                $utilidades-> mostrarMensaje('The photo was updated successfully');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Ocurrio un problema al momento de subir el archivo');
+                    $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);

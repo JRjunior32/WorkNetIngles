@@ -32,7 +32,7 @@ class Publicaciones {
         
         $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);        
         if (!$resultado)            
-            $utilidades->mostrarMensaje('La publicacion no se pudo realizar');                            
+            $utilidades->mostrarMensaje('Sorry!, something is wrong please try again.');                            
     }
     
      public function mostrarPub() {
@@ -68,8 +68,8 @@ class Publicaciones {
                         <a href="#"><small>'.$Pub[$i]['Usuario_cuenta'].'</cite></small></a><img src="../fotos/'.$sesion->obtenerVariableSesion('nombreUsuario').'/'.$photo.'" class="img-circle" id="img-pub">
                         <small class="fechapub">'.$Pub[$i]['Fecha'].'</small>
                         <button type="button" class="btn btn-default" id="btn btn"><i class="fa fa-suitcase"></i> Work</button>
-                        <button type="button" class="btn btn-default" id=""><span class="fui-cross"></span></i> Denunciar</button>
-                        <button type="button" class="btn btn-default" id=""><span class="fui-chat"></span></i> Comentar</button>
+                        <button type="button" class="btn btn-default" id=""><span class="fui-cross"></span></i>Complaint </button>
+                        <button type="button" class="btn btn-default" id=""><span class="fui-chat"></span></i> Comment</button>
                     </blockquote>';      
                 }
         return $pub;

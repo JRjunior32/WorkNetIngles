@@ -58,17 +58,17 @@ class Usuario {
         if($this->validarNombreUnico($usuario))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('El nombre de usuario que ha ingresado ya se encuentra utilizado, por favor utilice uno diferente');
+            $utilidades->mostrarMensaje('The nickname already exist, please try again with a diferent nickname!');
             $plantilla->verPaginaSinPlantilla('formularioNuevoUsuario');
             return 0;
         }
          
         if (isset($resultado)){
-            $utilidades->mostrarMensaje('El usuario ha sido agregado al sistema, espere que el administrador lo active');
+            $utilidades->mostrarMensaje('Congratulations!, the user is Working now!');
             $plantilla->verPaginaSinPlantilla('index');
         }
         else{
-            $utilidades->mostrarMensaje('El usuario no se ha podido agregar. \n Intente nuevamente');                    
+            $utilidades->mostrarMensaje('Sorry!,Something is wrong, please try again!');                    
          
         $plantilla->verPaginaSinPlantilla('formularioNuevoUsuario');
         }
@@ -83,7 +83,7 @@ class Usuario {
         $cuenta = $sesion->obtenerVariableSesion('idUsuario');
         $query = "SELECT idCuenta as id, Usuario, Nombre, Apellido FROM cuenta where Tipo = '3' AND cuenta_cuenta=$cuenta";
         $listaUsuarios = $mysql->consulta($query);
-        $encabezado = array('Id', 'Usuario', 'Nombre','Apellido');
+        $encabezado = array('Id', 'User', 'First Name','Last Name');
         $acciones = '<center><a href="./eliminarUsuario.php?idCuenta={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';
         $acciones .= ' <a href="./recuperarClave.php?idCuenta={{id}}" class = "btn btn-info" ><span class="fui-new"></span></a><br><br>';
         
@@ -91,7 +91,7 @@ class Usuario {
             $variables['listaUsuarios'] = $utilidades->convertirTabla($listaUsuarios, $encabezado, $acciones);
             $sesion->agregarVariableSesion('permisoAccionesUsuario','1');
         }else{
-            $variables['listaUsuarios'] ='No hay usuarios';
+            $variables['listaUsuarios'] ='';
         }
         
         $pantilla->verPagina('listaUsuarios', $variables);        
@@ -106,7 +106,7 @@ class Usuario {
 
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,if(Estado = 1,"Activo","Inactivo") as Estado from cuenta where Tipo!=1';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('Id', 'Usuario', 'Nombre', 'Apellido', 'Estado');
+        $encabezado = array('Id', 'User', 'First Name', 'Last Name', 'State');
         
         $acciones = '<center><a href="./activarUsuario.php?idCuenta={{id}}" class="btn btn-success" id="acciones"><span class="fui-check"></span></a>';
         $acciones .= ' <a href="./desactivarUsuario.php?idCuenta={{id}}" class = "btn btn-danger" id="acciones"><span class="fui-cross"></span></a>';
@@ -139,9 +139,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('El usuario ha sido activado');
+            $utilidades->mostrarMensaje('The user is active now!');
         else
-            $utilidades->mostrarMensaje('El usuario no se ha podido activar. \n Intente nuevamente');
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');
         
         $plantilla->verPagina();
     }
@@ -159,9 +159,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('El usuario ha sido desactivado');
+            $utilidades->mostrarMensaje('The user is inactive now!');
         else
-            $utilidades->mostrarMensaje('El usuario no se ha podido desactivar. \n Intente nuevamente');
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');
         
         $plantilla->verPagina();
     }
@@ -173,15 +173,15 @@ class Usuario {
         $utilidades = new Utilidades();        
         
         $tabla = 'cuenta';
-        $cambio = 'Password = "corpnet2015"';
+        $cambio = 'Password = "WorkNet2015"';
         $where = ' idCuenta='.$id;
 
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('La clave ha sido modificada a corpnet2015');
+            $utilidades->mostrarMensaje('The password was recovered to WorkNet2015');
         else
-            $utilidades->mostrarMensaje('La clave no se ha podido modificar. \n Intente nuevamente');
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');
         
         $plantilla->verPagina();
     }
@@ -200,9 +200,9 @@ class Usuario {
         $resultado = $mysql->eliminarRegistro($tabla, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('El usuario ha sido eliminado');
+            $utilidades->mostrarMensaje('The user was deleted successfully!');
         else
-            $utilidades->mostrarMensaje('El usuario no se ha podido eliminar. \n Intente nuevamente');
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');
         
         $plantilla->verPagina();
     }
@@ -226,9 +226,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('La contraseña se modifico correctamente');
+            $utilidades->mostrarMensaje('The password was modified successfully!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un error.  \n Por favor Intente nuevamente');
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');
         
         $plantilla->verPagina();  
     }
@@ -252,9 +252,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('La contraseña se modifico correctamente');
+            $utilidades->mostrarMensaje('The password was modified successfully!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un error.  \n Por favor Intente nuevamente');
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');
         
         $plantilla->verPagina();  
     }
@@ -277,9 +277,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('La contraseña se modifico correctamente');
+            $utilidades->mostrarMensaje('The password was modified successfully!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un error.  \n Por favor Intente nuevamente');
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');
         
         $plantilla->verPagina();  
     }
@@ -314,9 +314,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('La contraseña se modifico correctamente');
+            $utilidades->mostrarMensaje('The password was modified successfully!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un error.  \n Por favor Intente nuevamente');
+            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');
         
         $plantilla->verPagina();  
     }
@@ -331,10 +331,10 @@ class Usuario {
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Correo from cuenta '
                 . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 4';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Correo');
+        $encabezado = array('ID', 'User', 'First Name', 'Last Name', 'Email');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Ver Perfil</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
 
 
 
