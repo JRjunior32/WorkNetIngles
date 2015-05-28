@@ -27,7 +27,7 @@
     </div>
     <div class="panel panel-danger" id="fieldsPD">
           <div class="panel-heading">
-            <h3 class="panel-title">Usuario</h3>
+            <h3 class="panel-title">User</h3>
           </div>
           <div class="panel-body">
           {{Usuario}}
@@ -36,7 +36,7 @@
 
         <div class="panel panel-danger" id="fieldsPD">
           <div class="panel-heading">
-            <h3 class="panel-title">Nombre</h3>
+            <h3 class="panel-title">Name</h3>
           </div>
           <div class="panel-body">
               {{Nombre}}
@@ -44,7 +44,7 @@
     </div>
     <div class="panel panel-danger" id="fieldsPD">
           <div class="panel-heading">
-            <h3 class="panel-title">Apellido</h3>
+            <h3 class="panel-title">Surname</h3>
           </div>
           <div class="panel-body">
             {{Apellido}}
@@ -52,7 +52,7 @@
     </div>
         <div class="panel panel-danger" id="fieldsP">
           <div class="panel-heading">
-            <h3 class="panel-title">Correo Electronico</h3>
+            <h3 class="panel-title">E-mail</h3>
           </div>
           <div class="panel-body">
             {{Correo}}

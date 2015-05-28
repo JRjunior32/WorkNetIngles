@@ -5,6 +5,7 @@
         <!-- Agregamos todos los css del proyecto-->
         <link href="../vistas/recursos/css/bootstrap.css" rel="stylesheet">                
         <link href="../vistas/recursos/css/bootstrap.min.css" rel="stylesheet">                
+
         <link href="../vistas/recursos/css/flat-ui.css" rel="stylesheet">        
         <link href="../vistas/recursos/css/jquery.dataTables.css" rel="stylesheet">         
         <link href="../vistas/recursos/css/chat.css" rel="stylesheet">         

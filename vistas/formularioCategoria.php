@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>Registrar</title>
+        <title>Register</title>
         <meta charset="utf-8">
         <link href="../vistas/recursos/css/bootstrap.css" rel="stylesheet">
         <link href="../vistas/recursos/css/flat-ui.css" rel="stylesheet">    
@@ -11,13 +11,13 @@
         <form action="../controladores/guardarcategoria.php" method="POST">
             <div class="login-form" id="cat">
                 <div class="from-group">
-                    <center><h3>Agregar Categoria</h3></center>
+                    <center><h3>Add Category</h3></center>
                     <div class="form-group">
-                        <label>Categoria:</label>
-                        <input type="text" class="form-control login-field" placeholder="Ingresar Categoria" name="cat" required>
+                        <label>Category:</label>
+                        <input type="text" class="form-control login-field" placeholder="Category" name="cat" required>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="Guardar">
+                        <input type="submit" class="btn btn-success" value="Save">
                     </div>
                    
                 </div>

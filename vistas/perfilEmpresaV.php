@@ -11,9 +11,9 @@
                 </div>
           </div>
           <div class="panel-body">
-           <center><a href="#" class="btn btn-success"><i class="fa fa-user-plus"></i> Agregar Amigo</a></center><hr>
-           <center><a href="#" class="btn btn-warning"><i class="fa fa-suitcase"></i> Ver Portafolio</a></center><hr>
-            <center><a href="#" class="btn btn-info"><span class="fui-chat"></span> Mensajes</a></center>
+           <center><a href="#" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Friend</a></center><hr>
+           <center><a href="#" class="btn btn-warning"><i class="fa fa-suitcase"></i> See Portfolio</a></center><hr>
+            <center><a href="#" class="btn btn-info"><span class="fui-chat"></span> Messages</a></center>
             
             
 
@@ -22,7 +22,7 @@
     </div>
          <div class="panel panel-info" id="fieldsPD">
           <div class="panel-heading">
-            <h3 class="panel-title">Sitio Web</h3>
+            <h3 class="panel-title">Web Site</h3>
           </div>
           <div class="panel-body">
               {{Web}}
@@ -30,7 +30,7 @@
     </div>
     <div class="panel panel-info" id="fieldsPD">
           <div class="panel-heading">
-            <h3 class="panel-title">Usuario</h3>
+            <h3 class="panel-title">User</h3>
           </div>
           <div class="panel-body">
           {{Usuario}}
@@ -39,7 +39,7 @@
 
         <div class="panel panel-info" id="fieldsPD">
           <div class="panel-heading">
-            <h3 class="panel-title">Empresa</h3>
+            <h3 class="panel-title">Company</h3>
           </div>
           <div class="panel-body">
               {{Empresa}}
@@ -47,7 +47,7 @@
     </div>
     <div class="panel panel-info" id="fieldsPD">
           <div class="panel-heading">
-            <h3 class="panel-title">Correo Electronico</h3>
+            <h3 class="panel-title">E-mail</h3>
           </div>
           <div class="panel-body">
             {{Correo}}

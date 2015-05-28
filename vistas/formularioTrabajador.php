@@ -1,35 +1,35 @@
 <div class="panel panel-primary">
     <div class="panel-heading">        
-        <h3 class="panel-title"><p class="text-center">REGISTRO DE TRABAJADORES</p></h3>        
+        <h3 class="panel-title"><p class="text-center">Employees Register</p></h3>        
     </div>
     <div class="panel-body">
         <form action="../controladores/guardartrabajador.php" method="POST">    
             <div class="form-group">
-                <label for="Usuario">Usuario:</label>
-                <input type="text" class="form-control login-field" id="usuario" name="user" placeholder="Usuario" required />
+                <label for="Usuario">User:</label>
+                <input type="text" class="form-control login-field" id="usuario" name="user" placeholder="User" required />
             </div>
             <div class="form-group">
-                <label for="CorreoElectronico">Correo electrónico:</label>
-                <input type="email" class="form-control" name="email" placeholder="Correo Electronico" required />
+                <label for="CorreoElectronico">E-mail:</label>
+                <input type="email" class="form-control" name="email" placeholder="E-mail" required />
             </div>
             <div class="form-group">
-                <label for="Contraseña">Contraseña:</label>
-                <input type="password" minlength="5" class="form-control login-field" id="pass" name="pass" placeholder="Contraseña" required />
-                <label for="RepitaContraseña">Repita Contraseña:</label>
-                <input type="password" class="form-control login-field" id="repass" name="repass" placeholder="Confirmar Contraseña" required />
+                <label for="Contraseña">Password:</label>
+                <input type="password" minlength="5" class="form-control login-field" id="pass" name="pass" placeholder="Password" required />
+                <label for="RepitaContraseña">Confirm Password:</label>
+                <input type="password" class="form-control login-field" id="repass" name="repass" placeholder="Confirm Password" required />
                 <div id="val"></div>
             </div>
             <div class="form-group">
-                <label for="Nombre">Nombre:</label>
-                <input type="text" class="form-control login-field" id="letras" onkeydown="return validarLetras(event)" name="name" placeholder="Nombre" required />
+                <label for="Nombre">Name:</label>
+                <input type="text" class="form-control login-field" id="letras" onkeydown="return validarLetras(event)" name="name" placeholder="Name" required />
             </div>
             <div class="form-group">
-                <label for="Apellido">Apellido:</label>
-                <input type="text" class="form-control login-field" id="letras" onkeydown="return validarLetras(event)" name="ape" placeholder="Apellido" required />
+                <label for="Apellido">Surname:</label>
+                <input type="text" class="form-control login-field" id="letras" onkeydown="return validarLetras(event)" name="ape" placeholder="Surname" required />
             </div>
             <div class="form-group">
-                <label for="FechaNacimiento">Fecha de nacimiento (dd/mm/aaaa):</label>
-                <input type="date" min="31/12/1996" class="form-control login-field" name="birth" placeholder="Fecha de Nacimiento" required />
+                <label for="FechaNacimiento">Birthday (day/month/year):</label>
+                <input type="date" min="31/12/1996" class="form-control login-field" name="birth" placeholder="Birthday" required />
             </div>
             <div class="form-group">
                 <label for="DUI">DUI:</label>
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
                 <p class="text-center">
-                <input type="submit" id="btn" value="Registrar" class="btn btn-primary btn-lg btn-warning">                
+                <input type="submit" id="btn" value="Sing Up" class="btn btn-primary btn-lg btn-warning">                
 
                 </p>  
             </div>

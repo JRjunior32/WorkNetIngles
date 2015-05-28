@@ -11,7 +11,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="#" onclick="actualizaChat({{miamigo}});return false;" ><span class="fui-info-circle">
-                                    </span>Actualizar</a></li>                            
+                                    </span>Refresh</a></li>                            
                         </ul>
                     </div>
                 </div>
