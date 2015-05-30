@@ -81,8 +81,9 @@ class Ofertas {
         
         for ($i = 0; $i < count($Ofertas); $i++){
             $oferta .= '<blockquote class="public">
-                          <a href="./eliminarOferta.php?id="><small class="text-danger" id="derecha"><i class="fa fa-trash"></i></small></a>
+                          <a href="./eliminarOferta.php?idOfertas='.$Ofertas[$i]['id'].'"><small class="text-danger" id="derecha"><i class="fa fa-trash"></i></small></a>
                           <p>Title:</p>
+                          <input type="hidden" value='.$Ofertas[$i]['id'].'>
                           <small>'.$Ofertas[$i]['Titulo'].'</small>
                           <p>Detail:</p>
                           <small>'.$Ofertas[$i]['Detalle'].'</small>
@@ -123,12 +124,12 @@ class Ofertas {
             $oferta .= '<blockquote class="public">
                           <p>Title:</p> <small id="derecha">Empresa: <small class="text-success" id="derecha">' .$Ofertas[$i]['idCuenta'].'</small></small>
                           <small>'.$Ofertas[$i]['Titulo'].'</small>
-                          <p>Detail::</p>
+                          <p>Detail:</p>
                           <small>'.$Ofertas[$i]['Detalle'].'</small>
                           <p>Position:</p>
                           <small>'.$Ofertas[$i]['Cargo'].'</small>
                           <p>Years:</p>
-                          <small>'.$Ofertas[$i]['Edad'].'</small>
+                          <small>'.$Ofertas[$i]['Edad'].'</small><a href="#" class="btn btn-success" id="iz">Apply</a>
                           <p>Requirement:</p>
                           <small><i class="fa fa-ellipsis-h"></i> '.$Ofertas[$i]['Requisitos'].'</small>
                         </blockquote>';
@@ -142,12 +143,20 @@ class Ofertas {
         $db = new MySQL();
         $sesion = new Sesion();
         $plantilla = new Plantilla();
+        $utilidades = new Utilidades();
         
         $tabla = 'ofertas';
         $where = 'idOfertas ='.$id;
         
         $result = $db->eliminarRegistro($tabla, $where);
         
+        if($result){
+            $utilidades->mostrarMensaje('The offer was deleted successfully');
+            $utilidades->Redireccionar('../controladores/ofertas_empre.php');
+        }else{
+            $utilidades->mostrarMensaje('Sorry, something is wrong, please try again.');
+            $utilidades->Redireccionar('../controladores/ofertas_empre.php');
+        }
     }
        
 }

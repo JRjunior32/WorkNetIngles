@@ -1,6 +1,4 @@
 
-<div class="panel panel-info" id="newsfeed2">
-  <div class="panel-heading">
 <div class="panel panel-warning" id="newsfeed2">
   <div class="panel-heading">   
     <h3 class="panel-title">NewsFeed</h3>
@@ -19,7 +17,5 @@
                 </div>        
         </form>
     </div>
-  </div>
-</div>
-            
+   
     

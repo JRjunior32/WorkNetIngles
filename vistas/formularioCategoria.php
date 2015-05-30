@@ -17,7 +17,7 @@
                         <input type="text" class="form-control login-field" placeholder="Category" name="cat" required>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="Save">
+                        <input type="submit" class="btn btn-success" id="derecha" value="Save">
                     </div>
                    
                 </div>

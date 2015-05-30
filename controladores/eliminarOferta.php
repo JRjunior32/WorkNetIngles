@@ -9,6 +9,6 @@ $usuariosPermitidos = array('1','2');
 $administrarUsuario->verificarSesion($usuariosPermitidos);
 
 $ofertas = new Ofertas();
-$id = $_GET['id'];
+$id = $_GET['idOfertas'];
 
 $ofertas->eliminarOferta($id);

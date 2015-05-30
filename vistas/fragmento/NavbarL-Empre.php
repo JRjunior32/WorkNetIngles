@@ -1,7 +1,7 @@
 
 <a href='./perfil_Mostrar.php' class='list-group-item active'>Profile<br>    </a>
 <a href="./mensajes.php" class="list-group-item"><i class="fa fa-users"></i>Friends</a>
-<a href="#" class="list-group-item"><span class="fui-video"></span>Video Calls</a>
+<a href="../clases/pruebas.php" class="list-group-item"><span class="fui-video"></span>Video Calls</a>
 <a href="./creartrabajador.php" class="list-group-item"><span class="fui-plus"></span>Create a new worker</a>
 <a href="./usuarios_empre.php" class="list-group-item"><span class="fui-user"></span>Accounts</a>
 <a href="./formEventos.php" class="list-group-item"><span class="fui-calendar-solid"></span>Create Events</a>
