@@ -13,5 +13,8 @@ $administrarUsuario->verificarSesion($usuariosPermitidos);
     
     
     $portafolio = new Portafolio();
-    $portafolio->verArchivosAmigo();
-    $portafolios=$_GET['idCuenta'];
+    $id=$_GET['cuenta_idCuenta'];
+
+    $portafolio->VerArchivosAmigo($id);
+    
+

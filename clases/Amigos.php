@@ -71,7 +71,7 @@ class Amigos {
 
         $acciones = '<a href="./chatear.php?idCuenta={{id}}"><span class="fui-chat"> </span></a>';
         $acciones .= '<a href="./eliminarAmigo.php?idCuenta={{id}}" id="textRed"><span class="fui-trash"></span></a>';
-        $acciones .= '<a href="./perfil_Mostrar.php">&nbsp Profile</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}">&nbsp Profile</a>';
 
      
         $variables['listaAmigos'] = $utilidades->convertirTabla($listaAmigos, $encabezado, $acciones);

@@ -3,7 +3,7 @@
           <div class="panel-heading">
             <div class="row"> 
                   <div class="col-xs-6 col-md-3">
-                    <!--<img src="{{photo}}" id="backimg" >-->
+                    <img src="{{photo}}" id="backimg" >
                        <a href="" class="thumbnail" id="photot" data-toggle="modal" data-target="#myModal">
                           <img src="{{photo}}" alt="User Avatar" class="img-circle" id="foto-perfil">
                         </a>

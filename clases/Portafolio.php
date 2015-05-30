@@ -87,11 +87,11 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\portafolio\\';
         $db = new MySQL();
         $sesion = new Sesion();
         $utilidades = new Utilidades();
-        
-        $query = "SELECT idPortafolio, NombreArchivo as id FROM cuenta WHERE cuenta_idCuenta = $id";
+                
+        $query = "SELECT idPortafolio, NombreArchivo as id FROM portafolio WHERE cuenta_idCuenta = $id";
         $resultado = $db->consulta($query);
         
-        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> >File');
+        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
         
         $variables['listaArchivos'] = $utilidades->convertirTabla($resultado, $encabezado);
         
