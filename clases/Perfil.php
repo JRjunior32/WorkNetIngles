@@ -72,7 +72,7 @@ class Perfil {
         $mysql = new MySQL();
         $sesion = new Sesion();
 
-        $consulta = ' select c.ImgCuenta, c.SitioWeb,c.Empresa, c.idCuenta, c.tipo, c.usuario, c.correo from cuenta c where c.idCuenta = ' . $id;        
+        $consulta = ' select c.ImgCuenta,c.FechaNac, c.SitioWeb,c.Empresa, c.idCuenta, c.tipo, c.usuario, c.correo from cuenta c where c.idCuenta = ' . $id;        
         
         $resultado = $mysql->consulta($consulta);
 
@@ -83,6 +83,7 @@ class Perfil {
         $variables['Correo'] = $resultado[0]['correo'];
         $variables['Empresa'] = $resultado[0]['Empresa'];
         $variables['Web'] = $resultado[0]['SitioWeb'];
+        $variables['Fun'] = $resultado[0]['FechaNac'];
         $variables['photo'] = '../fotos/'.$resultado[0]['usuario'].'\\'.$resultado[0]['ImgCuenta'];
         
         

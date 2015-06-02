@@ -13,8 +13,8 @@
         </div>
           <div class="panel-default">
               <div class="panel panel-heading">
-           <a href="#" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Friend</a>
-           <a href="#" class="btn btn-warning" id="med"><i class="fa fa-suitcase"></i> See Resume</a>
+           <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Friend</a>
+           <a href="" class="btn btn-warning" id="med"><i class="fa fa-file"></i> See Resume</a>
            <a href="#" class="btn btn-info" id="iz"><span class="fui-chat"></span> Messages</a>
             </div>
         </div>
