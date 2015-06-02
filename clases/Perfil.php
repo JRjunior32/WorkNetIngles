@@ -7,7 +7,7 @@ require_once realpath(dirname(__FILE__) . '/./Sesion.php');
 
 
 class Perfil {
-    var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\fotos\\';
+    var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\fotos\\';
 
     public function mostrarPerfil() {
         $plantilla = new Plantilla();
@@ -72,7 +72,7 @@ class Perfil {
         $mysql = new MySQL();
         $sesion = new Sesion();
 
-        $consulta = ' select c.ImgCuenta, c.SitioWeb,c.Empresa, c.idCuenta,c.FechaNac, c.tipo, c.usuario, c.correo from cuenta c where c.idCuenta = ' . $id;        
+        $consulta = ' select c.ImgCuenta, c.SitioWeb,c.Empresa, c.idCuenta, c.tipo, c.usuario, c.correo from cuenta c where c.idCuenta = ' . $id;        
         
         $resultado = $mysql->consulta($consulta);
 
@@ -82,7 +82,6 @@ class Perfil {
         $variables['Usuario'] = $resultado[0]['usuario'];
         $variables['Correo'] = $resultado[0]['correo'];
         $variables['Empresa'] = $resultado[0]['Empresa'];
-        $variables['Fun']=$resultado[0]['FechaNac'];
         $variables['Web'] = $resultado[0]['SitioWeb'];
         $variables['photo'] = '../fotos/'.$resultado[0]['usuario'].'\\'.$resultado[0]['ImgCuenta'];
         
@@ -140,4 +139,25 @@ class Perfil {
                     $utilidades->Redireccionar('controladores/verPerfilUsuario.php');
                 }
             }
+    public function verPerfilUsuarioAmigo($id){
+    
+      $plantilla = new Plantilla();
+        $mysql = new MySQL();
+        $sesion = new Sesion();
+
+        $consulta = ' select c.ImgCuenta, c.Nombre,c.Apellido, c.idCuenta, c.tipo, c.usuario, c.correo, c.apellido,c.dui from cuenta c where c.idCuenta = ' . $id;        
+        
+        $resultado = $mysql->consulta($consulta);
+
+        //print_r($resultado);
+         $variables['Id'] = $resultado[0]['idCuenta'];
+        $variables['DUI'] = $resultado[0]['dui'];
+        $variables['Usuario'] = $resultado[0]['usuario'];
+        $variables['Nombre'] = $resultado[0]['Nombre'];
+        $variables['Apellido'] = $resultado[0]['Apellido'];
+        $variables['Correo'] = $resultado[0]['correo'];
+        $variables['photo'] = '../fotos/'.$resultado[0]['usuario'].'\\'.$resultado[0]['ImgCuenta'];
+        
+        $plantilla->verPagina('perfilUsuarioV',$variables);
+    }
 }
