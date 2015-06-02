@@ -139,13 +139,13 @@ class Perfil {
                     $utilidades->Redireccionar('controladores/verPerfilUsuario.php');
                 }
             }
-    public function verPerfilUsuarioAmigo(){
+    public function verPerfilUsuarioAmigo($id){
     
       $plantilla = new Plantilla();
         $mysql = new MySQL();
         $sesion = new Sesion();
 
-        $consulta = ' select c.ImgCuenta, c.Nombre,c.Apellido, c.idCuenta, c.tipo, c.usuario, c.correo, c.apellido,c.dui from cuenta c where c.idCuenta = ' . $sesion->obtenerVariableSesion('idUsuario');        
+        $consulta = ' select c.ImgCuenta, c.Nombre,c.Apellido, c.idCuenta, c.tipo, c.usuario, c.correo, c.apellido,c.dui from cuenta c where c.idCuenta = ' . $id;        
         
         $resultado = $mysql->consulta($consulta);
 

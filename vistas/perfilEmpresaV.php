@@ -10,15 +10,15 @@
                   </div>
                 </div>
           </div>
-          <div class="panel-body">
-           <center><a href="#" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Friend</a></center><hr>
-           <center><a href="#" class="btn btn-warning"><i class="fa fa-suitcase"></i> See Portfolio</a></center><hr>
-            <center><a href="#" class="btn btn-info"><span class="fui-chat"></span> Messages</a></center>
-            
-            
+              <div class="panel-body">
+               <center><a href="#" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Friend</a></center><hr>
+               <center><a href="#" class="btn btn-warning"><i class="fa fa-suitcase"></i> See Portfolio</a></center><hr>
+                <center><a href="#" class="btn btn-info"><span class="fui-chat"></span> Messages</a></center>
 
 
-        </div>
+
+
+            </div>
     </div>
          <div class="panel panel-info" id="fieldsPD">
           <div class="panel-heading">

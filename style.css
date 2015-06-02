@@ -5,7 +5,7 @@
 }
 #perfil {
         
-        height: 85% !important;
+        height: 90% !important;
         width: 100% !important;
         margin-left: 0 !important;
 }
@@ -241,4 +241,12 @@ height: 35% !important;
 #imgc {
     width: 100% !important;
     height: 100% !important;
+}
+
+#iz {
+    float: right!important;
+}
+
+#med {
+    
 }
