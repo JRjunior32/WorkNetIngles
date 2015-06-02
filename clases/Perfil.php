@@ -139,4 +139,25 @@ class Perfil {
                     $utilidades->Redireccionar('controladores/verPerfilUsuario.php');
                 }
             }
+    public function verPerfilUsuarioAmigo(){
+    
+      $plantilla = new Plantilla();
+        $mysql = new MySQL();
+        $sesion = new Sesion();
+
+        $consulta = ' select c.ImgCuenta, c.Nombre,c.Apellido, c.idCuenta, c.tipo, c.usuario, c.correo, c.apellido,c.dui from cuenta c where c.idCuenta = ' . $sesion->obtenerVariableSesion('idUsuario');        
+        
+        $resultado = $mysql->consulta($consulta);
+
+        //print_r($resultado);
+         $variables['Id'] = $resultado[0]['idCuenta'];
+        $variables['DUI'] = $resultado[0]['dui'];
+        $variables['Usuario'] = $resultado[0]['usuario'];
+        $variables['Nombre'] = $resultado[0]['Nombre'];
+        $variables['Apellido'] = $resultado[0]['Apellido'];
+        $variables['Correo'] = $resultado[0]['correo'];
+        $variables['photo'] = '../fotos/'.$resultado[0]['usuario'].'\\'.$resultado[0]['ImgCuenta'];
+        
+        $plantilla->verPagina('perfilUsuarioV',$variables);
+    }
 }
