@@ -87,13 +87,19 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\portafolio\\';
         $db = new MySQL();
         $sesion = new Sesion();
         $utilidades = new Utilidades();
-                
+        
+        $usuario = 'SELECT Usuario FROM cuenta WHERE idCuenta ='.$id;
+        $nombreUsuario = $db->consulta($usuario);
+        
+        $nombreUsuario[0]['Usuario'];
+        
         $query = "SELECT idPortafolio, NombreArchivo as id FROM portafolio WHERE cuenta_idCuenta = $id";
         $resultado = $db->consulta($query);
         
         $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
-        
-        $variables['listaArchivos'] = $utilidades->convertirTabla($resultado, $encabezado);
+        $acciones = '<a href="../portafolio/'.$nombreUsuario[0]['Usuario'].'/{{id}}" ><center><i class="fa fa-download"></i></a>';
+
+        $variables['listaArchivos'] = $utilidades->convertirTabla($resultado, $encabezado, $acciones);
         
         $plantilla->verPagina('vistaPortafolioV', $variables);
 
