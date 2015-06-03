@@ -152,10 +152,10 @@ class Ofertas {
         
         if($result){
             $utilidades->mostrarMensaje('The offer was deleted successfully');
-            $utilidades->Redireccionar('../controladores/ofertas_empre.php');
+            $utilidades->Redireccionar('controladores/ofertas_empre.php');
         }else{
             $utilidades->mostrarMensaje('Sorry, something is wrong, please try again.');
-            $utilidades->Redireccionar('../controladores/ofertas_empre.php');
+            $utilidades->Redireccionar('controladores/ofertas_empre.php');
         }
     }
        
