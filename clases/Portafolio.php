@@ -4,7 +4,7 @@ require_once realpath(dirname(__FILE__) . '/./MySQL.php');
 require_once realpath(dirname(__FILE__) . '/./Plantilla.php');
 
 class Portafolio {
-var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\portafolio\\';
+var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
 
     public function mostrarFormulario(){
         $plantilla = new Plantilla();
@@ -67,6 +67,7 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\portafolio\\';
 
         $acciones = '<a href="../portafolio/'.$nombreUsuario.'/{{id}}" ><center><i class="fa fa-download"></i></a>';
         
+         $acciones.='<a href="./eliminarArchivo.php?idPortafolio={{id}}" ><center><i class="fui-cross"></i></a>';
          $acciones .= '<center><div class="ec-stars-wrapper">
                     <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
                     <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -104,6 +105,12 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\portafolio\\';
         $plantilla->verPagina('vistaPortafolioV', $variables);
 
 
+    }
+    public function eliminarArchivo($id){
+        $sesion = new Sesion();
+        
+        $carpeta = $sesion->obtenerVariableSesion('nombreUsuario');
+        unlink($this->rutaServidor.$carpeta.'\\'.$id);
     }
        
 }
