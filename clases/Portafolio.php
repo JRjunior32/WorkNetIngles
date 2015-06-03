@@ -108,9 +108,22 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
     }
     public function eliminarArchivo($id){
         $sesion = new Sesion();
+        $db = new MySQL();
+        $utilidades = new Utilidades();
         
         $carpeta = $sesion->obtenerVariableSesion('nombreUsuario');
-        unlink($this->rutaServidor.$carpeta.'\\'.$id);
+        unlink($this->rutaServidor.$carpeta.'\\'.$id);  
+        
+        $tabla='portafolio';
+        $where='NombreArchivo="'.$id.'"';
+        $resultado = $db->eliminarRegistro($tabla, $where);
+        
+        if($resultado)
+            $utilidades->mostrarMensaje('The file was deleted successfuly');
+        else
+            $utilidades->mostrarMensaje('Sorry!,something is wrong, please try again');
+        
+        $utilidades->Redireccionar('controladores/crearPortafolio.php');
     }
        
 }
