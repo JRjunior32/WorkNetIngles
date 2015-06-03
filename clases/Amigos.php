@@ -57,7 +57,21 @@ class Amigos {
         $mysql = new MySQL();
         $sesion = new Sesion();
         $utilidades = new Utilidades();
-
+        
+        $pn='';
+        $pu='./verPerfilUsuarioAmigo.php?idCuenta={{id}}';
+        $pe='./verPerfilAmigo.php?idCuenta={{id}}';
+        
+        $verificar = "SELECT Tipo FROM cuenta";
+        $exe = $mysql->consulta($verificar);
+        for ($i=0; $i<count($exe);$i++){
+            $tipou=$exe[$i]['Tipo'];
+                if ($tipou === '3')
+                    $pn = $pe;
+                elseif($tipou==='4')
+                    $pn = $pu;
+        }
+        
         $idUsuario = $sesion->obtenerVariableSesion('idUsuario');
 
         $consulta = 'select c.idCuenta as id, c.Usuario, c.Nombre,c.Apellido '
@@ -71,7 +85,7 @@ class Amigos {
 
         $acciones = '<a href="./chatear.php?idCuenta={{id}}"><span class="fui-chat"> </span></a>';
         $acciones .= '<a href="./eliminarAmigo.php?idCuenta={{id}}" id="textRed"><span class="fui-trash"></span></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}">&nbsp Profile</a>';
+        $acciones .= '<a href="'.$pn.'">&nbsp Profile</a>';
 
      
         $variables['listaAmigos'] = $utilidades->convertirTabla($listaAmigos, $encabezado, $acciones);
