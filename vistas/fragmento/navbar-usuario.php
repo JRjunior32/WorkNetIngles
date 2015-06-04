@@ -18,15 +18,22 @@
                 <li class="active"><a href="#"></a></li>
                 <li><a href="../controladores/Noticias.php"><span class="fui-home"></span> Inicio</a></li>                
                 <li><a href="perfilempre.php"><span class="fui-user"></span>Perfil</a></li>                
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span> Cuenta<b class="caret"></b></a>
+                                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span> Account<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="../controladores/buscaramigos.php"><span class="fui-plus"></span> Agregar amigos</a></li>
-                        <li><a href="../controladores/crearformCambiarcontra-Usuario.php"><span class="fui-gear"></span> Cambiar Contraseña</a></li>
-                        <li><a href="logout.php"><span class="fui-power"></span> Cerrar sesión</a></li>
+                        <li><span class="help-block" id="mover"><i class="fa fa-search"></i> Search friends</span></li>
+                        <li class="divider"></li>
+
+                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Enterprises</a></li>
+                        <li><a href="./buscarusuarios.php "><i class="fa fa-users"></i> Users</a></li>
+
+
+
+                        <li class="divider"></li>
+                        <li><a href="../controladores/crearformCambiarcontra-Empre.php"><span class="fui-gear"></span> Modify Password</a></li>
+                        <li><a href="logout.php"><span class="fui-power"></span> Log out</a></li>
 
                     </ul>
-                </li>
             </ul>
         </div>
     </div>
