@@ -54,11 +54,11 @@ class Curriculum {
         $result = $db->insertarRegistro($tabla, $columnas, $valores);
         
         if($result){
-            $utilidades->mostrarMensaje("Su curriculum se creo exitosamente");
+            $utilidades->mostrarMensaje("The resume was created successfully");
             $utilidades->Redireccionar('controladores/formCurriculum.php');
         }
         else{
-            $utilidades->mostrarMensaje("Ocurrio un error, vuela a intentar");
+            $utilidades->mostrarMensaje("Sorry!, something is wrong, please try again");
             $utilidades->Redireccionar('controladores/formCurriculum.php');
         }
 
@@ -72,18 +72,18 @@ class Curriculum {
             $c.='<div class="panel panel-default">
                   <div class="panel-heading">'.$C[$i]['Nombre_Completo'].'</div>
                     <div class="panel-body">
-                        <p>Telefono: '.$C[$i]['Telefono'].'<br>Celular:'.$C[$i]['Celular'].'<br>
-                        Dirección: '.$C[$i]['direccion'].'</p>
+                        <p>Phone Number: '.$C[$i]['Telefono'].'<br>Cellphone Number:'.$C[$i]['Celular'].'<br>
+                        Adreess: '.$C[$i]['direccion'].'</p>
                     </div>
-                    <div class="panel-heading">Formacion Academica:</div>
+                    <div class="panel-heading">Academic Background:</div>
                         <div class="panel-body">
                             <p>'.$C[$i]['FormacionAc'].'</p>
                     </div>
-                    <div class="panel-heading">Experiencia Laboral</div>
+                    <div class="panel-heading">Employment Experience</div>
                         <div class="panel-body">
                             <p>'.$C[$i]['Experiencia'].'</p>
                         </div>
-                    <div class="panel-heading">Referencias</div>
+                    <div class="panel-heading">Refereces</div>
                         <div class="panel-body">
                             <p>'.$C[$i]['Referencia1'].' : '.$C[$i]['TelRef1'].'<br>
                             '.$C[$i]['Referencia2'].' : '.$C[$i]['TelRef2'].'<br>
@@ -127,18 +127,18 @@ class Curriculum {
             $c.='<div class="panel panel-default">
                   <div class="panel-heading">'.$C[$i]['Nombre_Completo'].'</div>
                     <div class="panel-body">
-                        <p>Telefono: '.$C[$i]['Telefono'].'<br>Celular:'.$C[$i]['Celular'].'<br>
-                        Dirección: '.$C[$i]['direccion'].'</p>
+                        <p>Phone Number: '.$C[$i]['Telefono'].'<br>Cellphone Number:'.$C[$i]['Celular'].'<br>
+                        Adress: '.$C[$i]['direccion'].'</p>
                     </div>
-                    <div class="panel-heading">Formacion Academica:</div>
+                    <div class="panel-heading">Academic Background:</div>
                         <div class="panel-body">
                             <p>'.$C[$i]['FormacionAc'].'</p>
                     </div>
-                    <div class="panel-heading">Experiencia Laboral</div>
+                    <div class="panel-heading">Employnment Experience</div>
                         <div class="panel-body">
                             <p>'.$C[$i]['Experiencia'].'</p>
                         </div>
-                    <div class="panel-heading">Referencias</div>
+                    <div class="panel-heading">References</div>
                         <div class="panel-body">
                             <p>'.$C[$i]['Referencia1'].' : '.$C[$i]['TelRef1'].'<br>
                             '.$C[$i]['Referencia2'].' : '.$C[$i]['TelRef2'].'<br>

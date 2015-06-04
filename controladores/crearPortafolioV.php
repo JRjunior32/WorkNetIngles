@@ -6,7 +6,7 @@ require_once realpath(dirname(__FILE__) . '/../clases/Portafolio.php');
 
 
 $administrarUsuario = new AdministrarUsuarios();
-$usuariosPermitidos = array('2');
+$usuariosPermitidos = array('2','3','4');
 
 $administrarUsuario->verificarSesion($usuariosPermitidos);
 
