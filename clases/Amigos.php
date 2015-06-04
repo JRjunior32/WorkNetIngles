@@ -58,7 +58,7 @@ class Amigos {
         $sesion = new Sesion();
         $utilidades = new Utilidades();
         
-        $pn='';
+        $pn ='';
         $pu='./verPerfilUsuarioAmigo.php?idCuenta={{id}}';
         $pe='./verPerfilAmigo.php?idCuenta={{id}}';
         
@@ -66,9 +66,9 @@ class Amigos {
         $exe = $mysql->consulta($verificar);
         for ($i=0; $i<count($exe);$i++){
             $tipou=$exe[$i]['Tipo'];
-                if ($tipou === '3')
+                if ($tipou === '2')
                     $pn = $pe;
-                elseif($tipou==='4')
+                elseif($tipou ==='4')
                     $pn = $pu;
         }
         

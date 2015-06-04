@@ -122,7 +122,7 @@ class Ofertas {
         
         for ($i = 0; $i < count($Ofertas); $i++){
             $oferta .= '<blockquote class="public">
-                          <p>Title:</p> <small id="derecha">Empresa: <small class="text-success" id="derecha">' .$Ofertas[$i]['idCuenta'].'</small></small>
+                          <p>Title:</p> <small id="derecha">Company: <small class="text-success" id="derecha">' .$Ofertas[$i]['idCuenta'].'</small></small>
                           <small>'.$Ofertas[$i]['Titulo'].'</small>
                           <p>Detail:</p>
                           <small>'.$Ofertas[$i]['Detalle'].'</small>
