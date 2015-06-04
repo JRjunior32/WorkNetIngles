@@ -16,8 +16,8 @@
                     <button type="submit" class="btn btn-default"><span class="fui-search"></span></button>
                 </form>
                 <li class="active"><a href="#"></a></li>
-                <li><a href="../controladores/Noticias.php"><span class="fui-home"></span> Inicio</a></li>                
-                <li><a href="perfilempre.php"><span class="fui-user"></span>Perfil</a></li>                
+                <li><a href="../controladores/publicar.php"><span class="fui-home"></span> Home</a></li>                
+                <li><a href="./verPerfilUsuario.php"><span class="fui-user"></span>Profile</a></li>                
                                 <li class="dropdown">
                     <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span> Account<b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -30,7 +30,7 @@
 
 
                         <li class="divider"></li>
-                        <li><a href="../controladores/crearformCambiarcontra-Empre.php"><span class="fui-gear"></span> Modify Password</a></li>
+                        <li><a href="../controladores/crearformCambiarcontra-Usuario.php"><span class="fui-gear"></span> Modify Password</a></li>
                         <li><a href="logout.php"><span class="fui-power"></span> Log out</a></li>
 
                     </ul>
