@@ -69,7 +69,7 @@ class Amigos {
                 if ($tipou === '2')
                     $pn = $pe;
                 elseif($tipou ==='4')
-                    $pn = $pu;
+                    $pE = $pu;
         }
         
         $idUsuario = $sesion->obtenerVariableSesion('idUsuario');
