@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>Sing In</title>
+        <title>Sign In</title>
         <meta charset="utf-8">
         <link href="../vistas/recursos/css/bootstrap.css" rel="stylesheet">
         <link href="../vistas/recursos/css/flat-ui.css" rel="stylesheet">
@@ -26,13 +26,13 @@
                 </div>
                 <div id="divcen">
                     <center>
-                        <input class="btn btn-primary btn-lg btn-danger" type="submit" value="Sing In">
+                        <input class="btn btn-primary btn-lg btn-danger" type="submit" value="Sign In">
                         </div>
                 <a class="login-link" href="php/olvido.php">Forgot your password?</a>
 
                 </div><br>
                 <div class="login-form">
-                    <h4><center>Sing Up as:</center></h4>
+                    <h4><center>Sign Up as:</center></h4>
                     <div class="form-group">
                         <center>
                             <a class="btn btn-primary btn-lg btn-warning" href="formNuevaEmpresa.php">Company</a>   
