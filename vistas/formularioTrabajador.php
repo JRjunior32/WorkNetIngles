@@ -28,7 +28,7 @@
                 <input type="text" class="form-control login-field" id="letras" onkeydown="return validarLetras(event)" name="ape" placeholder="Surname" required />
             </div>
             <div class="form-group">
-                <label for="FechaNacimiento">Birthday (day/month/year):</label>
+                <label for="FechaNacimiento">Birthday (month/day/year):</label>
                 <input type="date" min="31/12/1996" class="form-control login-field" name="birth" placeholder="Birthday" required />
             </div>
             <div class="form-group">
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
                 <p class="text-center">
-                <input type="submit" id="btn" value="Sing Up" class="btn btn-primary btn-lg btn-warning">                
+                <input type="submit" id="btn" value="Sign Up" class="btn btn-primary btn-lg btn-warning">                
 
                 </p>  
             </div>

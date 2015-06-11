@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>Sing Up</title>
+        <title>Sign Up</title>
         <meta charset="utf-8">
         <link href="../vistas/recursos/css/bootstrap.css" rel="stylesheet">
         <link href="../vistas/recursos/css/flat-ui.css" rel="stylesheet">  
@@ -11,7 +11,7 @@
         <form action="../controladores/guardarUsuario.php" method="POST">
             <div class="login-form">
                 <div class="from-group">
-                    <center><h3>Sing Up</h3></center>                    
+                    <center><h3>Sign Up</h3></center>                    
                     User:<input type="text" class="form-control login-field" name="usuario" placeholder="User" required /><br>
                     </div>
                     <div class="from-group">
@@ -29,7 +29,7 @@
                     <div id="val2"></div>
                     </div>
                     <div class="from-group">
-                    Bith Day (day/month/year):<input type="date" class="form-control login-field" name="birth" placeholder="Bith Day" required /><br>
+                    Bith Day (month/day/year):<input type="date" class="form-control login-field" name="birth" placeholder="Bith Day" required /><br>
                     DUI:<input type="text" class="form-control login-field" id="num" onkeydown="return validarNumeros(event)" maxlength="10" name="dui" placeholder="DUI" required /><br>
                     <p class="text-center">
                         <input type="submit" name="Registrar" value="Sing Up" class="btn btn-primary btn-lg btn-warning" >
