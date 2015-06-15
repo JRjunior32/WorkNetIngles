@@ -166,11 +166,13 @@ height: 35% !important;
 
 .public {
     background: #ECF0F1 !important;
-    border-radius: 5px !important;
+    border-radius: 10px !important;
 }
 
 .fechapub {
     font-size: 15px !important;
+    float: right !important;
+    
 }
 
 .fondi{
@@ -264,4 +266,50 @@ height: 35% !important;
 #medre {
         margin-left: % !important;
 
+}
+
+.search {
+    z-index: 100 !important;
+    position: absolute !important;
+    margin-left: 18% !important;
+    margin-top: 4% !important;
+    width: 195px !important;
+}
+
+.zeti {
+    z-index:auto;
+}
+.boton{
+    font-size: 11px !important;
+    line-height: 0 !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important; 
+    background-color: #344E78 !important;
+    width: 20% !important;
+}
+.seccion{
+    background-color: #BDC3C7;
+
+}
+
+
+#iz {
+  float: left !important;
+}
+.boton{
+    font-size: 11px !important;
+    line-height: 0 !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important; 
+    background-color: #344E78 !important;
+}
+.seccion{
+    background-color: #BDC3C7;
+
+}
+
+#de {
+    float: right!important;
+    margin-bottom:inherit!important;
+    border-radius: 5px !important;
 }
