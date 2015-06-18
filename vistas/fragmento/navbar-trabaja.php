@@ -32,7 +32,7 @@
 
 
                         <li class="divider"></li>
-                        <li><a href="../controladores/crearformCambiarcontra-Trabajador.php"><span class="fui-gear"></span> Cambiar Contraseña</a></li>
+                        <li><a href="../controladores/crearformCambiarcontra-Trabajador.php"><span class="fui-gear"></span> Change Password</a></li>
                         <li><a href="logout.php"><span class="fui-power"></span> Log Out</a></li>
 
                     </ul>

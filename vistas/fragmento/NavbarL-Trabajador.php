@@ -14,11 +14,11 @@
         <h4 class="modal-title" id="myModalLabel">¡Warning!</h4>
       </div>
       <div class="modal-body">
-        .
+        As a worker you can only suggest events to your company.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <a type="button" href="../controladores/formEventos.php" class="btn btn-primary">Aceptar</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a type="button" href="../controladores/formEventos.php" class="btn btn-primary">OK</a>
       </div>
     </div>
   </div>
