@@ -54,12 +54,12 @@ class Curriculum {
         $result = $db->insertarRegistro($tabla, $columnas, $valores);
         
         if($result){
-            $utilidades->mostrarMensaje("Su curriculum se creo exitosamente");
-            $utilidades->Redireccionar('formCurriculum.php');
+            $utilidades->mostrarMensaje("El curriculum se creo exitosamente");
+            $utilidades->Redireccionar('controladores/formCurriculum.php');
         }
         else{
-            $utilidades->mostrarMensaje("Ocurrio un error, vuela a intentar");
-            $utilidades->Redireccionar('formCurriculum.php');
+            $utilidades->mostrarMensaje("Lo sentimos!, Ocurrio un error, por favor intente de nuevo");
+            $utilidades->Redireccionar('controladores/formCurriculum.php');
         }
 
     }
@@ -72,10 +72,10 @@ class Curriculum {
             $c.='<div class="panel panel-default">
                   <div class="panel-heading">'.$C[$i]['Nombre_Completo'].'</div>
                     <div class="panel-body">
-                        <p>Telefono: '.$C[$i]['Telefono'].'<br>Celular:'.$C[$i]['Celular'].'<br>
-                        Dirección: '.$C[$i]['direccion'].'</p>
+                        <p>Numero Telefonico: '.$C[$i]['Telefono'].'<br>Celular:'.$C[$i]['Celular'].'<br>
+                        Direccion: '.$C[$i]['direccion'].'</p>
                     </div>
-                    <div class="panel-heading">Formacion Academica:</div>
+                    <div class="panel-heading">Experiencia Academica:</div>
                         <div class="panel-body">
                             <p>'.$C[$i]['FormacionAc'].'</p>
                     </div>
@@ -105,5 +105,46 @@ class Curriculum {
         $variables['curriculum'] = $this->convertirCurHTML($result);
         
         $plantilla->verPagina('curriculum',$variables);
+    }
+    
+    public function verCurriculumA($id){
+        $sql = new MySQL();
+        $sesion = new Sesion();
+        $plantilla = new Plantilla();
+        
+        $query = 'SELECT Nombre_Completo,Telefono,Celular,direccion,FormacionAc,Experiencia,Referencia1,TelRef1,Referencia2,TelRef2,Referencia3,TelRef3,idCuenta_Cuenta FROM curriculum WHERE idCuenta_cuenta='.$id;
+        $result = $sql->consulta($query);
+        
+        $variables['curriculumV'] = $this->convertirCurAmigoHTML($result);
+        
+        $plantilla->verPagina('curriculumV',$variables);
+    }
+        public function convertirCurAmigoHTML($C = array()){
+        
+        $c = '';
+        
+        for ($i = 0; $i < count($C); $i++){
+            $c.='<div class="panel panel-default">
+                  <div class="panel-heading">'.$C[$i]['Nombre_Completo'].'</div>
+                    <div class="panel-body">
+                        <p>Numero Telefonico: '.$C[$i]['Telefono'].'<br>Celular:'.$C[$i]['Celular'].'<br>
+                        Direccion: '.$C[$i]['direccion'].'</p>
+                    </div>
+                    <div class="panel-heading">Experiencia Academica:</div>
+                        <div class="panel-body">
+                            <p>'.$C[$i]['FormacionAc'].'</p>
+                    </div>
+                    <div class="panel-heading">Experiencia Laboral</div>
+                        <div class="panel-body">
+                            <p>'.$C[$i]['Experiencia'].'</p>
+                        </div>
+                    <div class="panel-heading">Referencias</div>
+                        <div class="panel-body">
+                            <p>'.$C[$i]['Referencia1'].' : '.$C[$i]['TelRef1'].'<br>
+                            '.$C[$i]['Referencia2'].' : '.$C[$i]['TelRef2'].'<br>
+                            '.$C[$i]['Referencia3'].' : '.$C[$i]['TelRef3'].'<br></p>
+                </div>';
+        }
+        return $c;
     }
 }

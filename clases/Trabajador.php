@@ -28,7 +28,7 @@ class Trabajador {
         $pass=$datosTrabajador['pass'];
         $repass=$datosTrabajador['repass'];
         $img = 'default.jpg';
-        $empresa = 'no definida';        
+        $empresa = $sesion->obtenerVariableSesion('nombreUsuario');        
         $name=$datosTrabajador['name'];
         $ape=$datosTrabajador['ape'];
         $birth=$datosTrabajador['birth'];        
@@ -57,15 +57,15 @@ class Trabajador {
        if($this->validarNombreUnico($usuario))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('The nickname already exist, please try again with a diferent nickname!');
+            $utilidades->mostrarMensaje('El usuario ya está registrado. Por favor intente con un usuario diferente.');
             $plantilla->verPagina('formularioTrabajador');
             return 0;
         }
          
         if (isset($resultado))
-            $utilidades->mostrarMensaje('Congratulations!,The user is Working now!');
+            $utilidades->mostrarMensaje('Felicidades, el usuario se registro exitosamente!');
         else
-            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again.');                    
+            $utilidades->mostrarMensaje('Lo sentimos!, ocurrio un problema, por favor vuelva a intentar.');                    
          
         $plantilla->verPagina('formularioTrabajador');
     }

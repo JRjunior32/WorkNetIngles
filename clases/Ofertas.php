@@ -34,9 +34,9 @@ class Ofertas {
         $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
 
         if ($resultado)
-            $utilidades->mostrarMensaje('The offer job was created successfuly!');
+            $utilidades->mostrarMensaje('La oferta de trabjado se creo correctamente!');
         else
-            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again.');                
+            $utilidades->mostrarMensaje('Lo sentimos!,Ocurrio un error, por favor intente de nuevo.');                
         
         $plantilla->verPagina();
     }
@@ -81,16 +81,17 @@ class Ofertas {
         
         for ($i = 0; $i < count($Ofertas); $i++){
             $oferta .= '<blockquote class="public">
-                          <a href="./eliminarOferta.php?id="><small class="text-danger" id="derecha"><i class="fa fa-trash"></i></small></a>
-                          <p>Title:</p>
+                          <a href="./eliminarOferta.php?idOfertas='.$Ofertas[$i]['id'].'"><small class="text-danger" id="derecha"><i class="fa fa-trash"></i></small></a>
+                          <p>Título:</p>
+                          <input type="hidden" value='.$Ofertas[$i]['id'].'>
                           <small>'.$Ofertas[$i]['Titulo'].'</small>
-                          <p>Detail:</p>
+                          <p>Detalle:</p>
                           <small>'.$Ofertas[$i]['Detalle'].'</small>
-                          <p>Position:</p>
+                          <p>Cargo::</p>
                           <small>'.$Ofertas[$i]['Cargo'].'</small>
-                          <p>Years:</p>
+                          <p>Edad:</p>
                           <small>'.$Ofertas[$i]['Edad'].'</small>
-                          <p>Requirement:</p>
+                          <p>Requisitos:</p>
                           <small><i class="fa fa-ellipsis-h"></i> '.$Ofertas[$i]['Requisitos'].'</small>
                         </blockquote>';
         }
@@ -121,15 +122,15 @@ class Ofertas {
         
         for ($i = 0; $i < count($Ofertas); $i++){
             $oferta .= '<blockquote class="public">
-                          <p>Title:</p> <small id="derecha">Empresa: <small class="text-success" id="derecha">' .$Ofertas[$i]['idCuenta'].'</small></small>
+                          <p>Título:</p> <small id="derecha">Empresa: <small class="text-success" id="derecha">' .$Ofertas[$i]['idCuenta'].'</small></small>
                           <small>'.$Ofertas[$i]['Titulo'].'</small>
-                          <p>Detail::</p>
+                          <p>Detalle:</p>
                           <small>'.$Ofertas[$i]['Detalle'].'</small>
-                          <p>Position:</p>
+                          <p>Cargo:</p>
                           <small>'.$Ofertas[$i]['Cargo'].'</small>
-                          <p>Years:</p>
-                          <small>'.$Ofertas[$i]['Edad'].'</small>
-                          <p>Requirement:</p>
+                          <p>Edad:</p>
+                          <small>'.$Ofertas[$i]['Edad'].'</small><a href="#" class="btn btn-success" id="iz">Aplicar</a>
+                          <p>Requisitos:</p>
                           <small><i class="fa fa-ellipsis-h"></i> '.$Ofertas[$i]['Requisitos'].'</small>
                         </blockquote>';
         }
@@ -142,12 +143,20 @@ class Ofertas {
         $db = new MySQL();
         $sesion = new Sesion();
         $plantilla = new Plantilla();
+        $utilidades = new Utilidades();
         
         $tabla = 'ofertas';
         $where = 'idOfertas ='.$id;
         
         $result = $db->eliminarRegistro($tabla, $where);
         
+        if($result){
+            $utilidades->mostrarMensaje('La oferta se elimino correctamente');
+            $utilidades->Redireccionar('controladores/ofertas_empre.php');
+        }else{
+            $utilidades->mostrarMensaje('Lo sentimos, Ocurrio un error, por favor intentelo de nuevo.');
+            $utilidades->Redireccionar('controladores/ofertas_empre.php');
+        }
     }
        
 }

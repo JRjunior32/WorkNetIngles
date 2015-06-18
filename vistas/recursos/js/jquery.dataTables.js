@@ -11111,7 +11111,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Mostrando _START_ de _END_ de _TOTAL_ ",
+			"sInfo": "Showing _START_ to _END_ of _TOTAL_ ",
 	
 	
 			/**
@@ -11132,7 +11132,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Mostrando 0 to 0 of 0 ",
+			"sInfoEmpty": "Showing 0 to 0 of 0 ",
 	
 	
 			/**
@@ -11272,7 +11272,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Show _MENU_ ",
 	
 	
 			/**

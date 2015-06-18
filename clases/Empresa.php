@@ -47,18 +47,18 @@ if($dateNow > $birth)
         if($this->validarNombreUnico($user))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('The user already exist, please try again with a diferent nickname');
+            $utilidades->mostrarMensaje('El usuario existe actualmente, por favor intente de nuevo');
             $plantilla->verPaginaSinPlantilla('formularioEmpresa');
             return 0;
         }
     
          
         if (isset($resultado)){
-            $utilidades->mostrarMensaje('Congratulations! the user is Working now!');
+            $utilidades->mostrarMensaje('Felicidades! usted es parte de WorkNet ahora!');
             $plantilla->verPaginaSinPlantilla('index');
         }
         else{
-            $utilidades->mostrarMensaje('Sorry!, something is wrong please try again');                    
+            $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un error, por favor intente de nuevo');                    
          
         $plantilla->verPaginaSinPlantilla('formularioEmpresa');
         }
@@ -84,12 +84,12 @@ if($dateNow > $birth)
         $idUsuario = $sesion->obtenerVariableSesion('idUsuario');
 
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Empresa from cuenta '
-                . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 2';
+                . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 2 AND idCuenta !='.$idUsuario.' ';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'User', 'First Name', 'Last Name', 'Enterprise');
+        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Empresa');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
 
 
 

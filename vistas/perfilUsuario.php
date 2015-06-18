@@ -8,26 +8,27 @@
                         </a>
                 </div>
           </div>
-          <div class="panel-body">
-            <form action="./subirFoto.php"  method="POST" enctype="multipart/form-data">
+
+    </div>
+        <div class="panel-body">
+            <form action="./subirFotoUsuario.php"  method="POST" enctype="multipart/form-data">
             <input type="file" class="btn btn-info" name="file" id="btnfoto"><br>
             <button type="submit" class="btn btn-info" id="btnfile"><i class="fa fa-upload"></i></button>
             </form>
         </div>
-    </div>
         </div>
-
+          
     <div class="panel panel-default">
             <div class=" panel-heading">
-                General Information
+                Información General
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-            <b>User:</b> {{Usuario}}<br>
+            <b>Usuario:</b> {{Usuario}}<br>
             <b>DUI:</b> {{DUI}}<br>
-            <b>First Name:</b> {{Nombre}}<br>
-              <b>Surname: </b> {{Apellido}}<br>
+            <b>Nombre:</b> {{Nombre}}<br>
+              <b>Apellido: </b> {{Apellido}}<br>
             <b>E-mail:</b> {{Correo}}<br>
           </div>
     </div>
@@ -47,4 +48,3 @@
     </div>
   </div>
 </div>
-

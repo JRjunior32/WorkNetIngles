@@ -4,7 +4,7 @@ require_once realpath(dirname(__FILE__) . '/./MySQL.php');
 require_once realpath(dirname(__FILE__) . '/./Plantilla.php');
 
 class Portafolio {
-var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
+var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\portafolio\\';
 
     public function mostrarFormulario(){
         $plantilla = new Plantilla();
@@ -36,12 +36,12 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         
                 $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
                 
-                $utilidades-> mostrarMensaje('The file was updated successfuly!');
+                $utilidades-> mostrarMensaje('El archivo se subio exitosamente!');
         
                 $plantilla->verPagina();
         
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos, Ocurrio un error, intente de nuevo por favor.');
                 }else{
                     $this->crearDirectorio($carpeta);
                     //echo $this->rutaServidor.$carpeta."\\";
@@ -63,10 +63,11 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         
         $listaArchivos = $mysql->consulta($consulta);
         
-        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
+        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> Archivo');
 
         $acciones = '<a href="../portafolio/'.$nombreUsuario.'/{{id}}" ><center><i class="fa fa-download"></i></a>';
         
+         $acciones.='<a id="textRed" href="./eliminarArchivo.php?idPortafolio={{id}}" > <i class="fui-cross"></i></a></div></center>';
          $acciones .= '<center><div class="ec-stars-wrapper">
                     <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
                     <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -88,16 +89,48 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         $sesion = new Sesion();
         $utilidades = new Utilidades();
         
-        $query = "SELECT idPortafolio, NombreArchivo as id FROM cuenta WHERE cuenta_idCuenta = $id";
+        $usuario = 'SELECT Usuario FROM cuenta WHERE idCuenta ='.$id;
+        $nombreUsuario = $db->consulta($usuario);
+        
+        $nombreUsuario[0]['Usuario'];
+        
+        $query = "SELECT idPortafolio, NombreArchivo as id FROM portafolio WHERE cuenta_idCuenta = $id";
         $resultado = $db->consulta($query);
         
-        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> >File');
-        
-        $variables['listaArchivos'] = $utilidades->convertirTabla($resultado, $encabezado);
+        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
+        $acciones = '<a href="../portafolio/'.$nombreUsuario[0]['Usuario'].'/{{id}}" ><center><i class="fa fa-download"></i></a>';
+        $acciones .= '<center><div class="ec-stars-wrapper">
+                    <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+                    <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+                    <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+                    <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+                    <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+                    </div>';
+
+        $variables['listaArchivos'] = $utilidades->convertirTabla($resultado, $encabezado, $acciones);
         
         $plantilla->verPagina('vistaPortafolioV', $variables);
 
 
+    }
+    public function eliminarArchivo($id){
+        $sesion = new Sesion();
+        $db = new MySQL();
+        $utilidades = new Utilidades();
+        
+        $carpeta = $sesion->obtenerVariableSesion('nombreUsuario');
+        unlink($this->rutaServidor.$carpeta.'\\'.$id);  
+        
+        $tabla='portafolio';
+        $where='NombreArchivo="'.$id.'"';
+        $resultado = $db->eliminarRegistro($tabla, $where);
+        
+        if($resultado)
+            $utilidades->mostrarMensaje('El archivo se elimino Exitosamente');
+        else
+            $utilidades->mostrarMensaje('Lo sentimos!, ocurrio un problema, por favor vuelva a intentar');
+        
+        $utilidades->Redireccionar('controladores/crearPortafolio.php');
     }
        
 }
