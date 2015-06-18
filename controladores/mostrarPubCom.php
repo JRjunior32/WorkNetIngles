@@ -1,14 +1,13 @@
 <?php
 require_once realpath(dirname(__FILE__) . '/../clases/AdministrarUsuarios.php');
-require_once realpath(dirname(__FILE__) . '/../clases/Ofertas.php');
+require_once realpath(dirname(__FILE__) . '/../clases/Comentarios.php');
 
 
 $administrarUsuario = new AdministrarUsuarios();
 $usuariosPermitidos = array('1','2');
 
 $administrarUsuario->verificarSesion($usuariosPermitidos);
+$com = new Comentarios();
+$idPub=$_GET['idPub'];
 
-$ofertas = new Ofertas();
-$id = $_GET['idOfertas'];
-
-$ofertas->eliminarOferta($id);
+$com->mostrarPubCom($idPub);

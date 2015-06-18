@@ -1,11 +1,11 @@
 #derecha{
     float: right!important;
-    margin-bottom: 33% !important;
+    margin-top: -1% !important;
     margin-right: 3px !important;
 }
 #perfil {
         
-        height: 90% !important;
+        height: 95% !important;
         width: 100% !important;
         margin-left: 0 !important;
 }
@@ -33,7 +33,8 @@
 }
 
 #publicacion {
-    height: 100px;      
+    height: 100px;
+    resize: vertical;
 }
 #img-chat{
     width: 50px !important;
@@ -166,11 +167,13 @@ height: 35% !important;
 
 .public {
     background: #ECF0F1 !important;
-    border-radius: 5px !important;
+    border-radius: 10px !important;
 }
 
 .fechapub {
     font-size: 15px !important;
+    float: right !important;
+    
 }
 
 .fondi{
@@ -238,15 +241,76 @@ height: 35% !important;
 
 
 
+#backimg{
+    position: fixed;
+    z-index: -100;
+    overflow: hidden;
+    }
+
 #imgc {
-    width: 100% !important;
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
 }
 
 #iz {
-    float: right!important;
+    float: right !important;
 }
 
 #med {
-    
+    margin-left: 25% !important;
+}
+
+#pr {
+    background: #ecf0f1 !important;
+}
+
+#medre {
+        margin-left: % !important;
+
+}
+
+.search {
+    z-index: 100 !important;
+    position: absolute !important;
+    margin-left: 18% !important;
+    margin-top: 4% !important;
+    width: 195px !important;
+}
+
+.zeti {
+    z-index:auto;
+}
+.boton{
+    font-size: 11px !important;
+    line-height: 0 !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important; 
+    background-color: #344E78 !important;
+    width: 20% !important;
+}
+.seccion{
+    background-color: #BDC3C7;
+
+}
+
+
+#iz {
+  float: left !important;
+}
+.boton{
+    font-size: 11px !important;
+    line-height: 0 !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important; 
+    background-color: #344E78 !important;
+}
+.seccion{
+    background-color: #BDC3C7;
+
+}
+
+#de {
+    float: right!important;
+    margin-bottom:inherit!important;
+    border-radius: 5px !important;
 }

@@ -1,8 +1,8 @@
 <?php
 
-require_once realpath(dirname(__FILE__) . '/../clases/Perfil.php');
+require_once realpath(dirname(__FILE__) . '/../clases/Portafolio.php');
 
 
-$perfil = new Perfil();
+$portafolio = new Portafolio();
 $archivo = $_FILES;
-$perfil->subirFoto($archivo);
+$portafolio->subirArchivo($archivo);

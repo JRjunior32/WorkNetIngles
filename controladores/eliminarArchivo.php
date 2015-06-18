@@ -1,14 +1,13 @@
 <?php
 require_once realpath(dirname(__FILE__) . '/../clases/AdministrarUsuarios.php');
-require_once realpath(dirname(__FILE__) . '/../clases/Ofertas.php');
+require_once realpath(dirname(__FILE__) . '/../clases/Portafolio.php');
 
 
 $administrarUsuario = new AdministrarUsuarios();
 $usuariosPermitidos = array('1','2');
 
 $administrarUsuario->verificarSesion($usuariosPermitidos);
+$portafolio = new Portafolio();
+$id=$_GET['idPortafolio'];
 
-$ofertas = new Ofertas();
-$id = $_GET['idOfertas'];
-
-$ofertas->eliminarOferta($id);
+$portafolio->eliminarArchivo($id);

@@ -1,6 +1,6 @@
 <?php
 require_once realpath(dirname(__FILE__) . '/../clases/AdministrarUsuarios.php');
-require_once realpath(dirname(__FILE__) . '/../clases/Ofertas.php');
+require_once realpath(dirname(__FILE__) . '/../clases/Publicaciones.php');
 
 
 $administrarUsuario = new AdministrarUsuarios();
@@ -8,7 +8,7 @@ $usuariosPermitidos = array('1','2');
 
 $administrarUsuario->verificarSesion($usuariosPermitidos);
 
-$ofertas = new Ofertas();
-$id = $_GET['idOfertas'];
+$p = new Publicaciones();
+$id = $_GET['idPub'];
 
-$ofertas->eliminarOferta($id);
+$p->work($id);
