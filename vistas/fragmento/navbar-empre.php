@@ -24,7 +24,7 @@
                     <ul class="dropdown-menu">
                         <li><span class="help-block" id="mover"><i class="fa fa-search"></i> Search Friends</span></li>
                         <li class="divider"></li>
-                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Enterprices</a></li>
+                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Enterprises</a></li>
                         <li><a href="../controladores/buscarusuarios.php "><i class="fa fa-users"></i> Users</a></li>
                         <li class="divider"></li>
                         <li><a href="../controladores/crearformCambiarcontra-Empre.php"><span class="fui-gear"></span> Modify Password</a></li>

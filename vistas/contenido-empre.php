@@ -1,7 +1,7 @@
      
 <div class="panel panel-warning" id="newsfeed2">
   <div class="panel-heading">
-    <h3 class="panel-title">NewsFeed</h3>
+    <h3 class="panel-title">News Feed</h3>
   </div>
   <div class="panel-body">
     <div class="form-group">

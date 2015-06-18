@@ -21,7 +21,7 @@
                         <input type="password" minlength="5"  class="form-control login-field" placeholder="Confirm Password" name="newrepass" required><br><br>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="Guardar">
+                        <input type="submit" class="btn btn-success" value="Save">
                     </div>
                    
                 </div>

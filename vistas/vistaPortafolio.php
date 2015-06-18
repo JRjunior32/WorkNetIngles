@@ -12,7 +12,7 @@
               <br>
                   <center><input type="file" name="file" class="btn btn-info"></center>
               <br>
-                  <center><input type="submit" value="Actualizar" class="btn btn-warning"></center>
+                  <center><input type="submit" value="Update" class="btn btn-warning"></center>
               
           </form>
 
