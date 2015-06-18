@@ -20,15 +20,15 @@
 
     <div class="panel panel-default">
             <div class=" panel-heading">
-                Información General
+                General Information
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-            <b>Usuario:</b> {{Usuario}}<br>
-            <b>Empresa:</b> {{Empresa}}<br>
+            <b>User:</b> {{Usuario}}<br>
+            <b>Enterprise:</b> {{Empresa}}<br>
             <b>E-mail:</b> {{Correo}}<br>
-            <b>Fecha de fundación:</b> {{Fun}}<br>
+            <b>Fundation Date:</b> {{Fun}}<br>
             <b>Web Site:</b> {{Web}}<br>
           </div>
     </div>

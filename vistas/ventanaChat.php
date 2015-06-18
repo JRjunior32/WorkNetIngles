@@ -11,7 +11,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a href="#" onclick="actualizaChat({{miamigo}});return false;" ><span class="fui-info-circle">
-                                    </span>Actualizar</a></li>                            
+                                    </span>Refresh</a></li>                            
                         </ul>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                                                     </span>--->  
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input type="text" name="mensaje" class="form-control" placeholder="Escribe tu mensaje aqui">
+                                    <input type="text" name="mensaje" class="form-control" placeholder="Write your message here">
                                     <span class="input-group-btn">
                                         <button class="btn btn-default" type=""><span class="fui-arrow-right"></span></button>
                                     </span>

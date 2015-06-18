@@ -1,14 +1,14 @@
 
 <div class="panel panel-primary" id="portafoliod">
   <div class="panel-heading">
-    <h3 class="panel-title">Portafolio</h3>
+    <h3 class="panel-title">Portfolio</h3>
   </div>
   <div class="panel-body">
       {{listaArchivos}}
       
       <div class="login-form" id="portafolio">
           <form action="../controladores/subirArchivo.php" method="POST" enctype="multipart/form-data">
-              <h5><center>Subir archivo</center></h5>
+              <h5><center>Update file</center></h5>
               <br>
                   <center><input type="file" name="file" class="btn btn-info"></center>
               <br>
