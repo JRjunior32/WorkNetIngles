@@ -27,10 +27,10 @@ class Categoria {
             
          if($this->validarCategoriaUnica($cat)){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
-             $utilidades->mostrarMensaje('The category was added successfuly!');
+             $utilidades->mostrarMensaje('La se agrego correctamente categoria!');
             $plantilla->verPagina('');
          }else{
-            $utilidades->mostrarMensaje('Sorry, the category already exist, try with other name');
+            $utilidades->mostrarMensaje('Lo sentimos, La categoria existe actualmente, por favor intente de nuevo.');
             $plantilla->verPagina('');
             return 0;
     }
@@ -55,9 +55,9 @@ class Categoria {
         $query = 'SELECT idCategorias as id, NombreCat FROM categorias';
         $result = $db->consulta($query);
         
-        $acciones = '<center><a href="#" class="btn btn-danger"><span class="fui-trash"></span></a>';   
+        $acciones = '<center><a href="./eliminarCategoria.php?idCategorias={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';   
         
-        $encabezado = ['ID' , 'Category'];
+        $encabezado = ['ID' , 'Categoria'];
         
         $variables['listaCategorias'] = $utilidades->convertirTabla($result, $encabezado, $acciones);
         
@@ -67,6 +67,7 @@ class Categoria {
     public function eliminarCategoria($id){
         $db = new MySQL();
         $plantilla = new Plantilla();
+        $utilidades = new Utilidades();
         
         $tabla = 'categorias';
         $where = 'idCategorias='.$id;
@@ -74,6 +75,7 @@ class Categoria {
         $result = $db->eliminarRegistro($tabla, $where);
         
         if($result)
-            $utilidades->mostrarMensaje('');
+            $utilidades->mostrarMensaje('La categoria se elimino correctamente');
+        $utilidades->Redireccionar('controladores/vercat.php');
     }
 }

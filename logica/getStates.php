@@ -4,7 +4,8 @@
 
 	$partialStates = $_POST['partialState'];
 
-	$states = mysql_query("SELECT idCuenta as id, Usuario, imgCuenta FROM cuenta WERE Usuario LIKE '%$partialStates%'");
+	$kueri = "SELECT Usuario FROM cuenta WHERE Usuario LIKE '%$partialStates%'";
+	$states = mysql_query($kueri) or die ("Error en " . mysql_error());
 	while ($state = mysql_fetch_array($states)) {
 		echo "<div>".$state['Usuario']."</div>";
 	}

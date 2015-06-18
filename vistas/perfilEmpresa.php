@@ -5,7 +5,11 @@
                   <div class="col-xs-6 col-md-3">
                     
                        <a href="" class="thumbnail" id="photot" data-toggle="modal" data-target="#myModal">
+<<<<<<< HEAD
                           <img src="{{photo}}" alt="User Avatar" class="img-circle" id="foto-perfil">
+=======
+                          <img src="{{photo}}" alt="Usuario Avatar" class="img-circle" id="foto-perfil">
+>>>>>>> origin/Traduccion-Minero
                         </a>
                 </div>
           </div>
@@ -20,15 +24,15 @@
 
     <div class="panel panel-default">
             <div class=" panel-heading">
-                General Information
+                Información General
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-            <b>User:</b> {{Usuario}}<br>
-            <b>Company:</b> {{Empresa}}<br>
+            <b>Usuario:</b> {{Usuario}}<br>
+            <b>Empresa:</b> {{Empresa}}<br>
             <b>E-mail:</b> {{Correo}}<br>
-            <b>Fundation Date:</b> {{Fun}}<br>
+            <b>Fecha de fundación:</b> {{Fun}}<br>
             <b>Web Site:</b> {{Web}}<br>
           </div>
     </div>

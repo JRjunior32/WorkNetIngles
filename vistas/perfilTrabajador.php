@@ -10,41 +10,28 @@
           </div>
 
     </div>
+        <div class="panel-body">
+            <form action="./subirFotoTrabajador.php"  method="POST" enctype="multipart/form-data">
+            <input type="file" class="btn btn-info" name="file" id="btnfoto"><br>
+            <button type="submit" class="btn btn-info" id="btnfile"><i class="fa fa-upload"></i></button>
+            </form>
         </div>
-          <div class="panel-default">
-              <div class="panel panel-heading">
-<<<<<<< HEAD
-           <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Friend</a>
-           <a href="./verCurriculumA.php?idCuenta_cuenta={{Id}}" class="btn btn-warning" id="iz"><i class="fa fa-file"></i> See Resume</a>
-=======
-           <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Agregar amigo</a>
-           <a href="./verCurriculumA.php?idCuenta_cuenta={{Id}}" class="btn btn-warning" id="iz"><i class="fa fa-file"></i> Ver Currículum</a>
->>>>>>> origin/Traduccion-Minero
-            </div>
         </div>
+          
     <div class="panel panel-default">
             <div class=" panel-heading">
-<<<<<<< HEAD
-                General Information
-=======
                 Información General
->>>>>>> origin/Traduccion-Minero
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-<<<<<<< HEAD
-            <b>User:</b> {{Usuario}}<br>
-            <b>DUI:</b> {{DUI}}<br>
-            <b>First Name:</b> {{Nombre}}<br>
-              <b>Surname: </b> {{Apellido}}<br>
-=======
             <b>Usuario:</b> {{Usuario}}<br>
             <b>DUI:</b> {{DUI}}<br>
             <b>Nombre:</b> {{Nombre}}<br>
-              <b>Apellido: </b> {{Apellido}}<br>
->>>>>>> origin/Traduccion-Minero
+            <b>Empresa:</b> {{Empresa}}<br>
+            <b>Apellido: </b> {{Apellido}}<br>
             <b>E-mail:</b> {{Correo}}<br>
+            <b>Fecha Nacimiento:</b> {{Nac}}<br>
           </div>
     </div>
     

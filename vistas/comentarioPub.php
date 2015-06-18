@@ -1,6 +1,10 @@
 <div class="panel panel-success">
   <div class="panel-heading">
+<<<<<<< HEAD
     <h3 class="panel-title">Publication</h3>
+=======
+    <h3 class="panel-title">Publicacion</h3>
+>>>>>>> origin/Traduccion-Minero
   </div>
   <div class="panel-body">
       {{publicacion}}

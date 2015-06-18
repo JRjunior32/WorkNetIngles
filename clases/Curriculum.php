@@ -54,11 +54,19 @@ class Curriculum {
         $result = $db->insertarRegistro($tabla, $columnas, $valores);
         
         if($result){
+<<<<<<< HEAD
             $utilidades->mostrarMensaje("The resume was created successfully");
             $utilidades->Redireccionar('controladores/formCurriculum.php');
         }
         else{
             $utilidades->mostrarMensaje("Sorry!, something is wrong, please try again");
+=======
+            $utilidades->mostrarMensaje("El curriculum se creo exitosamente");
+            $utilidades->Redireccionar('controladores/formCurriculum.php');
+        }
+        else{
+            $utilidades->mostrarMensaje("Lo sentimos!, Ocurrio un error, por favor intente de nuevo");
+>>>>>>> origin/Traduccion-Minero
             $utilidades->Redireccionar('controladores/formCurriculum.php');
         }
 
@@ -72,10 +80,17 @@ class Curriculum {
             $c.='<div class="panel panel-default">
                   <div class="panel-heading">'.$C[$i]['Nombre_Completo'].'</div>
                     <div class="panel-body">
+<<<<<<< HEAD
                         <p>Phone Number: '.$C[$i]['Telefono'].'<br>Cellphone Number:'.$C[$i]['Celular'].'<br>
                         Adreess: '.$C[$i]['direccion'].'</p>
                     </div>
                     <div class="panel-heading">Academic Background:</div>
+=======
+                        <p>Numero Telefonico: '.$C[$i]['Telefono'].'<br>Celular:'.$C[$i]['Celular'].'<br>
+                        Direccion: '.$C[$i]['direccion'].'</p>
+                    </div>
+                    <div class="panel-heading">Experiencia Academica:</div>
+>>>>>>> origin/Traduccion-Minero
                         <div class="panel-body">
                             <p>'.$C[$i]['FormacionAc'].'</p>
                     </div>
@@ -127,6 +142,7 @@ class Curriculum {
             $c.='<div class="panel panel-default">
                   <div class="panel-heading">'.$C[$i]['Nombre_Completo'].'</div>
                     <div class="panel-body">
+<<<<<<< HEAD
                         <p>Phone Number: '.$C[$i]['Telefono'].'<br>Cellphone Number:'.$C[$i]['Celular'].'<br>
                         Adress: '.$C[$i]['direccion'].'</p>
                     </div>
@@ -139,6 +155,20 @@ class Curriculum {
                             <p>'.$C[$i]['Experiencia'].'</p>
                         </div>
                     <div class="panel-heading">References</div>
+=======
+                        <p>Numero Telefonico: '.$C[$i]['Telefono'].'<br>Celular:'.$C[$i]['Celular'].'<br>
+                        Direccion: '.$C[$i]['direccion'].'</p>
+                    </div>
+                    <div class="panel-heading">Experiencia Academica:</div>
+                        <div class="panel-body">
+                            <p>'.$C[$i]['FormacionAc'].'</p>
+                    </div>
+                    <div class="panel-heading">Experiencia Laboral</div>
+                        <div class="panel-body">
+                            <p>'.$C[$i]['Experiencia'].'</p>
+                        </div>
+                    <div class="panel-heading">Referencias</div>
+>>>>>>> origin/Traduccion-Minero
                         <div class="panel-body">
                             <p>'.$C[$i]['Referencia1'].' : '.$C[$i]['TelRef1'].'<br>
                             '.$C[$i]['Referencia2'].' : '.$C[$i]['TelRef2'].'<br>

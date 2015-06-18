@@ -13,10 +13,10 @@ class Amigos {
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Empresa from cuenta '
                 . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' )';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'User', 'First Name', 'Last Name', 'Enterprise');
+        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Empresa');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
 
 
 
@@ -43,9 +43,9 @@ class Amigos {
                 $valores = $sesion->obtenerVariableSesion('idUsuario') . ',' . $id;
                 $resultado = $mysql->insertarRegistro($tabla, $columnas, $valores);
                 if ($resultado)
-                    $utilidades->mostrarMensaje('The user was added successfuly!');
+                    $utilidades->mostrarMensaje('Se ha añidido exitosamente el usuario a su lista de amigos');
                 else
-                    $utilidades->mostrarMensaje('Sorry!, Something is wrong  \n Please Try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo .');
             }
         }
         $plantilla->verPagina();
@@ -81,11 +81,15 @@ class Amigos {
         
         $listaAmigos = $mysql->consulta($consulta);
         
-        $encabezado = array('ID', 'User', 'First Name', 'Last Name');
+        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido');
 
         $acciones = '<a href="./chatear.php?idCuenta={{id}}"><span class="fui-chat"> </span></a>';
         $acciones .= '<a href="./eliminarAmigo.php?idCuenta={{id}}" id="textRed"><span class="fui-trash"></span></a>';
+<<<<<<< HEAD
         $acciones .= '<a href="'.$pn.'">&nbsp Profile</a>';
+=======
+        $acciones .= '<a href="'.$pn.'">&nbsp Perfil</a>';
+>>>>>>> origin/Traduccion-Minero
 
      
         $variables['listaAmigos'] = $utilidades->convertirTabla($listaAmigos, $encabezado, $acciones);
@@ -104,10 +108,10 @@ class Amigos {
         $resultado = $db->eliminarRegistro($tabla, $where);
         
         if($resultado){
-            $utilidades->mostrarMensaje('The user was removed from your friends list.');
+            $utilidades->mostrarMensaje('El usuario se elimino exitosamente!.');
             $utilidades->redireccionar('controladores/mensajes.php');
         }else
-            $utilidades->mostrarMensaje('Sorry!, Something is wrong, please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo.');
 
         
     }

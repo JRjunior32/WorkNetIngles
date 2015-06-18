@@ -39,16 +39,16 @@ class Evento {
         if($FechaIni <= $FechaFin){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         }else{
-            $utilidades->mostrarMensaje('The event can not be finish before start ');
+            $utilidades->mostrarMensaje('Lo sentimos, el evento no puede terminar antes que incie ');
         }
             }else{
-                    $utilidades->mostrarMensaje('Sorry!, please check the date and try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, por favor verifique las fechas');
             }
          
         if (isset($resultado))
-            $utilidades->mostrarMensaje('The event was created successfuly!');
+            $utilidades->mostrarMensaje('El evento se creo correctamente!');
         else
-            $utilidades->mostrarMensaje('Sorry!, something is wrong, please try again!');                    
+            $utilidades->mostrarMensaje('Lo sentimos!,Oucrrio un problema, por favor intentelo de nuevo!0');                    
         
         $plantilla->verPagina();
   }
