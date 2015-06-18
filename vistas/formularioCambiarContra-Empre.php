@@ -11,7 +11,7 @@
         <form action="../controladores/cambiarContraEmpre.php" method="POST">
             <div class="login-form" id="cat">
                 <div class="from-group">
-                    <center><h3>Modify Password</h3></center>
+                    <center><h3>Change Password</h3></center>
                     <div class="form-group">
                         <label>Current Password:</label>
                         <input type="password" minlegth="5" class="form-control login-field" placeholder="Current Password" name="oldpass" required>

@@ -7,7 +7,7 @@
     <div class="form-group">
         <form action="../controladores/guardarPub.php" method="POST">
                 <div class="form-group">
-                  <label class="control-label">Write Someting...</label>
+                  <label class="control-label">Let's do some workneting...</label>
                   <div class="input-group">
                       <textarea type="text" name="texto" class="form-control" id="publicacion" required></textarea>
                     <span class="input-group-btn">

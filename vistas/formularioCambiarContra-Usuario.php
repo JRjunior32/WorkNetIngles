@@ -11,12 +11,12 @@
         <form action="../controladores/cambiarContraUsuario.php" method="POST">
             <div class="login-form">
                 <div class="from-group">
-                    <center><h3>Cambiar contraseña</h3></center>
+                    <center><h3>Change Password</h3></center>
                     <div class="form-group">
-                        <label>Contraseña actual:</label>
+                        <label>Current Password:</label>
                         <input type="password" minlength="5"  class="form-control login-field" placeholder="Contraseña actual" name="oldpass" required>
                         <br><br>
-                        <label>Nueva contraseña:</label>
+                        <label>New Password:</label>
                         <input type="password" minlength="5"  class="form-control login-field" placeholder="Nueva contraseña" name="newpass" required><br><br>
                         <input type="password" minlength="5"  class="form-control login-field" placeholder="Repita nueva contraseña" name="newrepass" required><br><br>
                     </div>
