@@ -27,10 +27,10 @@ class Categoria {
             
          if($this->validarCategoriaUnica($cat)){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
-             $utilidades->mostrarMensaje('La se agrego correctamente categoria!');
+             $utilidades->mostrarMensaje('The category has been successfully added!');
             $plantilla->verPagina('');
          }else{
-            $utilidades->mostrarMensaje('Lo sentimos, La categoria existe actualmente, por favor intente de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
             $plantilla->verPagina('');
             return 0;
     }
