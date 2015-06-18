@@ -4,7 +4,7 @@ require_once realpath(dirname(__FILE__) . '/./MySQL.php');
 require_once realpath(dirname(__FILE__) . '/./Plantilla.php');
 
 class Portafolio {
-var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
+var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\portafolio\\';
 
     public function mostrarFormulario(){
         $plantilla = new Plantilla();
@@ -67,11 +67,7 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
 
         $acciones = '<a href="../portafolio/'.$nombreUsuario.'/{{id}}" ><center><i class="fa fa-download"></i></a>';
         
-<<<<<<< HEAD
-         $acciones.='<a href="./eliminarArchivo.php?idPortafolio={{id}}" ><center><i class="fui-cross"></i></a>';
-=======
          $acciones.='<a id="textRed" href="./eliminarArchivo.php?idPortafolio={{id}}" > <i class="fui-cross"></i></a></div></center>';
->>>>>>> origin/Traduccion-Minero
          $acciones .= '<center><div class="ec-stars-wrapper">
                     <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
                     <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
@@ -130,15 +126,9 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         $resultado = $db->eliminarRegistro($tabla, $where);
         
         if($resultado)
-<<<<<<< HEAD
-            $utilidades->mostrarMensaje('The file was deleted successfuly');
-        else
-            $utilidades->mostrarMensaje('Sorry!,something is wrong, please try again');
-=======
             $utilidades->mostrarMensaje('El archivo se elimino Exitosamente');
         else
             $utilidades->mostrarMensaje('Lo sentimos!, ocurrio un problema, por favor vuelva a intentar');
->>>>>>> origin/Traduccion-Minero
         
         $utilidades->Redireccionar('controladores/crearPortafolio.php');
     }

@@ -1,11 +1,7 @@
 <!DOCTYPE>
 <html>
     <head>
-<<<<<<< HEAD
-        <title>Sign Up</title>
-=======
         <title>Regístrate</title>
->>>>>>> origin/Traduccion-Minero
         <meta charset="utf-8">
         <link href="../vistas/recursos/css/bootstrap.css" rel="stylesheet">
         <link href="../vistas/recursos/css/flat-ui.css" rel="stylesheet">  
@@ -15,13 +11,8 @@
         <form action="../controladores/guardarUsuario.php" method="POST">
             <div class="login-form">
                 <div class="from-group">
-<<<<<<< HEAD
-                    <center><h3>Sign Up</h3></center>                    
-                    User:<input type="text" class="form-control login-field" name="usuario" placeholder="User" required /><br>
-=======
                     <center><h3>Regístrate</h3></center>                    
                     Usuario:<input type="text" class="form-control login-field" name="usuario" placeholder="Usuario" required /><br>
->>>>>>> origin/Traduccion-Minero
                     </div>
                     <div class="from-group">
                     Contraseña:<input type="password" minlength="5" id="pass" class="form-control login-field" name="pass" placeholder="Contraseña" required /> <br>
@@ -38,11 +29,7 @@
                     <div id="val2"></div>
                     </div>
                     <div class="from-group">
-<<<<<<< HEAD
-                    Bith Day (month/day/year):<input type="date" class="form-control login-field" name="birth" placeholder="Bith Day" required /><br>
-=======
                     Fecha de Nacimiento (mes/día/año):<input type="date" class="form-control login-field" name="birth" placeholder="Fecha de nacimiento" required /><br>
->>>>>>> origin/Traduccion-Minero
                     DUI:<input type="text" class="form-control login-field" id="num" onkeydown="return validarNumeros(event)" maxlength="10" name="dui" placeholder="DUI" required /><br>
                     <p class="text-center">
                         <input type="submit" name="Registrar" value="Registrar" class="btn btn-primary btn-lg btn-warning" >

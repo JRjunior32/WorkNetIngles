@@ -7,7 +7,7 @@ require_once realpath(dirname(__FILE__) . '/./Sesion.php');
 
 
 class Perfil {
-    var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\fotos\\';
+    var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\fotos\\';
 
     public function mostrarPerfil() {
         $plantilla = new Plantilla();
@@ -161,8 +161,6 @@ class Perfil {
         
         $plantilla->verPagina('perfilUsuarioV',$variables);
     }
-<<<<<<< HEAD
-=======
     public function mostrarPerfilTrabajador() {
         $plantilla = new Plantilla();
         $mysql = new MySQL();
@@ -215,5 +213,4 @@ class Perfil {
                     $utilidades->Redireccionar('controladores/verPerfilTrabajador.php');
                 }
             }
->>>>>>> origin/Traduccion-Minero
 }

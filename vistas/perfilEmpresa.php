@@ -5,11 +5,7 @@
                   <div class="col-xs-6 col-md-3">
                     
                        <a href="" class="thumbnail" id="photot" data-toggle="modal" data-target="#myModal">
-<<<<<<< HEAD
-                          <img src="{{photo}}" alt="User Avatar" class="img-circle" id="foto-perfil">
-=======
                           <img src="{{photo}}" alt="Usuario Avatar" class="img-circle" id="foto-perfil">
->>>>>>> origin/Traduccion-Minero
                         </a>
                 </div>
           </div>

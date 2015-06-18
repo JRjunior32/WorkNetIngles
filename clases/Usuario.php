@@ -334,11 +334,7 @@ class Usuario {
         $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'E-mail');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-<<<<<<< HEAD
-        $acciones .= '<a href="./verPerfilUsuarioAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
-=======
         $acciones .= '<a href="./verPerfilUsuarioAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
->>>>>>> origin/Traduccion-Minero
 
 
 

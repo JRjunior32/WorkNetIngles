@@ -1,11 +1,7 @@
 <!DOCTYPE>
 <html>
     <head>
-<<<<<<< HEAD
-        <title>Sign In</title>
-=======
         <title>Inicia Sesión</title>
->>>>>>> origin/Traduccion-Minero
         <meta charset="utf-8">
         <link href="../vistas/recursos/css/bootstrap.css" rel="stylesheet">
         <link href="../vistas/recursos/css/flat-ui.css" rel="stylesheet">
@@ -30,21 +26,13 @@
                 </div>
                 <div id="divcen">
                     <center>
-<<<<<<< HEAD
-                        <input class="btn btn-primary btn-lg btn-danger" type="submit" value="Sign In">
-=======
                         <input class="btn btn-primary btn-lg btn-danger" type="submit" value="Inicia Sesión">
->>>>>>> origin/Traduccion-Minero
                         </div>
                 <a class="login-link" href="php/olvido.php">¿Olvidaste tu contraseña?</a>
 
                 </div><br>
                 <div class="login-form">
-<<<<<<< HEAD
-                    <h4><center>Sign Up as:</center></h4>
-=======
                     <h4><center>Regístrate como:</center></h4>
->>>>>>> origin/Traduccion-Minero
                     <div class="form-group">
                         <center>
                             <a class="btn btn-primary btn-lg btn-warning" href="formNuevaEmpresa.php">Empresa</a>   

@@ -28,13 +28,8 @@
                 <input type="text" class="form-control login-field" id="letras" onkeydown="return validarLetras(event)" name="ape" placeholder="Apellido" required />
             </div>
             <div class="form-group">
-<<<<<<< HEAD
-                <label for="FechaNacimiento">Birthday (month/day/year):</label>
-                <input type="date" min="31/12/1996" class="form-control login-field" name="birth" placeholder="Birthday" required />
-=======
                 <label for="FechaNacimiento">Fecha de nacimiento (mes/día/año):</label>
                 <input type="date" min="31/12/1996" class="form-control login-field" name="birth" placeholder="Fecha de nacimiento" required />
->>>>>>> origin/Traduccion-Minero
             </div>
             <div class="form-group">
                 <label for="DUI">DUI:</label>
@@ -42,11 +37,7 @@
             </div>
             <div class="form-group">
                 <p class="text-center">
-<<<<<<< HEAD
-                <input type="submit" id="btn" value="Sign Up" class="btn btn-primary btn-lg btn-warning">                
-=======
                 <input type="submit" id="btn" value="Registrar" class="btn btn-primary btn-lg btn-warning">                
->>>>>>> origin/Traduccion-Minero
 
                 </p>  
             </div>

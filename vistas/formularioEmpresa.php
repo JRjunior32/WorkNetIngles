@@ -9,11 +9,7 @@
     </head>
     <body class="fondi">
         <div class="login-form">
-<<<<<<< HEAD
-            <center><h3>Sign Up</h3></center>                   
-=======
             <center><h3>Regístrate</h3></center>                   
->>>>>>> origin/Traduccion-Minero
             <form action="../controladores/guardarEmpresa.php" method="POST">
                 <div class='form-group'>     
                     <label for="Empresa">Empresa:</label><br>
@@ -36,13 +32,8 @@
                     <input type='text' class='form-control login-field' id="letras" onkeydown="return validarLetras(event)" name='ape' placeholder='Apellido' required /><br>
                     <label for="DUI">DUI:</label><br>
                     <input type='text' maxlength="10"id="num" onkeydown="return validarNumeros(event)" class='form-control login-field' name='dui' placeholder='DUI' required /><br>
-<<<<<<< HEAD
-                    <label for="FechaNacimiento"> Fundation Date (month/day/year):</label><br>
-                    <input type='date' class='form-control login-field' name='birth' placeholder='Fundation Date' required /><br>
-=======
                     <label for="FechaNacimiento"> Fecha de fundación (mes/día/año):</label><br>
                     <input type='date' class='form-control login-field' name='birth' placeholder='Fecha de fundación' required /><br>
->>>>>>> origin/Traduccion-Minero
                     <label for="email">E-mail:</label><br>
                     <div class='form-group'> 
                     <input type='email' id="email" class='form-control login-field' name='email' placeholder='E-mail' required /><br>

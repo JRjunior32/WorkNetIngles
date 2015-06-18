@@ -17,11 +17,7 @@
                         <input type="text" class="form-control login-field" placeholder="Categoría" name="cat" required>
                     </div>
                     <div class="form-group">
-<<<<<<< HEAD
-                        <input type="submit" class="btn btn-success" id="derecha" value="Save">
-=======
                         <input type="submit" class="btn btn-success" id="derecha" value="Guardar">
->>>>>>> origin/Traduccion-Minero
                     </div>
                    
                 </div>
