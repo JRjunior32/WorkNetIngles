@@ -47,18 +47,18 @@ if($dateNow > $birth)
         if($this->validarNombreUnico($user))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('El usuario existe actualmente, por favor intente de nuevo');
+            $utilidades->mostrarMensaje('The user already exists, please try with another user.');
             $plantilla->verPaginaSinPlantilla('formularioEmpresa');
             return 0;
         }
     
          
         if (isset($resultado)){
-            $utilidades->mostrarMensaje('Felicidades! usted es parte de WorkNet ahora!');
+            $utilidades->mostrarMensaje('Congrats! Now you are a WorkNet User.');
             $plantilla->verPaginaSinPlantilla('index');
         }
         else{
-            $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un error, por favor intente de nuevo');                    
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');                    
          
         $plantilla->verPaginaSinPlantilla('formularioEmpresa');
         }

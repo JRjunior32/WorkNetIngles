@@ -54,10 +54,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
+                $utilidades-> mostrarMensaje('The picture was successfully updated');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
+                    $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -127,10 +127,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
+                $utilidades-> mostrarMensaje('The picture was successfully updated.');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
+                    $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -200,10 +200,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
+                $utilidades-> mostrarMensaje('The picture was successfully updated.');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
+                    $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
                     $plantilla->verPagina('perfilTrabajador');
                 }else{
                     $this->crearDirectorio($carpeta);
