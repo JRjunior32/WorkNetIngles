@@ -55,7 +55,7 @@ class Publicaciones {
         $sesion = new Sesion();
         $id = $sesion->obtenerVariableSesion('idUsuario');
 
-        $query = "SELECT imgCuenta FROM cuenta WHERE idCuenta=$id";
+        $query = 'SELECT imgCuenta FROM cuenta WHERE idCuenta='.$id;
         $result = $db->consulta($query);
         
         $photo = $result[0]['imgCuenta'];
