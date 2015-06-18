@@ -45,7 +45,9 @@ class Empresa {
 if($dateNow > $birth)
     if ($password == $repassword && $email == $remail)
         if($this->validarNombreUnico($user))
-            $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
+                if($this->validarNombreUsuario($name))
+                    if($this->validarNombreUsuario($ape))
+                        $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
             $utilidades->mostrarMensaje('The user already exists, please try with another user.');
             $plantilla->verPaginaSinPlantilla('formularioEmpresa');
@@ -98,5 +100,14 @@ if($dateNow > $birth)
 
         $sesion->agregarVariableSesion('permisoAgregarAmigo', '1');
         $plantilla->verPagina('listaPersonas', $variables);
+    }
+        private function validarNombreUsuario ($nombreUsuario){
+        $permitidos = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            for ($i = 0; $i<strlen($nombreUsuario); $i++){
+                if(strpos($permitidos, substr($nombreUsuario, $i, 1)))
+                    return true;
+                else
+                    return false;
+            }
     }
 }
