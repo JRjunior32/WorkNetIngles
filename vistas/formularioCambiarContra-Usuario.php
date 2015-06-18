@@ -8,7 +8,7 @@
         <link href="../style.css" rel="stylesheet">    
     </head>
     <body>
-        <form action="../controladores/cambiarContraTrabajador.php" method="POST">
+        <form action="../controladores/cambiarContraUsuario.php" method="POST">
             <div class="login-form">
                 <div class="from-group">
                     <center><h3>Cambiar contraseña</h3></center>

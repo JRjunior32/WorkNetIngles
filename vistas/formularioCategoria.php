@@ -11,13 +11,13 @@
         <form action="../controladores/guardarcategoria.php" method="POST">
             <div class="login-form" id="cat">
                 <div class="from-group">
-                    <center><h3>Agregar categoría</h3></center>
+                    <center><h3>Create Category</h3></center>
                     <div class="form-group">
-                        <label>Categoría:</label>
-                        <input type="text" class="form-control login-field" placeholder="Categoría" name="cat" required>
+                        <label>Category:</label>
+                        <input type="text" class="form-control login-field" placeholder="Category" name="cat" required>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success" id="derecha" value="Guardar">
+                        <input type="submit" class="btn btn-success" id="derecha" value="Save">
                     </div>
                    
                 </div>
