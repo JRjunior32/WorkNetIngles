@@ -67,8 +67,8 @@ class Publicaciones {
                        <br><img src="../fotos/'.$Pub[$i]['Usuario_cuenta'].'/'.$Pub[$i]['ImgUsuario'].'" class="img-circle" id="img-pub">
                         <p><b>'.$Pub[$i]['Texto'].'</b></p>
                         <a href="../controladores/works.php?idPub='.$Pub[$i]['id'].'" class="btn btn-default boton" id="btn btn"><i class="fa fa-suitcase"></i> Work</a >
-                        <a href="./mostrarPubCom.php?idPub='.$Pub[$i]['id'].'" class="btn btn-default boton" ><span class="fui-chat"></span></i> Comentar </a>
-                        <button type="button" class="btn btn-default boton" id=""><span class="fui-cross"></span></i>Denuncia </button><span class="badge" id="de">Esta publicion tiene ' .$Pub[$i]['works'].' work(s)</span>
+                        <a href="./mostrarPubCom.php?idPub='.$Pub[$i]['id'].'" class="btn btn-default boton" ><span class="fui-chat"></span></i> Comment </a>
+                        <button type="button" class="btn btn-default boton" id=""><span class="fui-cross"></span></i>Denuncia </button><span class="badge" id="de">This publication has ' .$Pub[$i]['works'].' work(s)</span>
                     </blockquote>';      
                 }
         return $pub;

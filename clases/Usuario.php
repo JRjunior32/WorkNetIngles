@@ -58,17 +58,17 @@ class Usuario {
         if($this->validarNombreUnico($usuario))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('El usuario ya está registrado. Por favor intente con un usuario diferente.');
+            $utilidades->mostrarMensaje('The username is already registered, please try with another username.');
             $plantilla->verPaginaSinPlantilla('formularioNuevoUsuario');
             return 0;
         }
          
         if (isset($resultado)){
-            $utilidades->mostrarMensaje('¡Felicitaciones! Ya eres parte de WorkNet.');
+            $utilidades->mostrarMensaje('Congrats! The user was successfully created. Now you are a WokNet User!');
             $plantilla->verPaginaSinPlantilla('index');
         }
         else{
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');                    
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');                    
          
         $plantilla->verPaginaSinPlantilla('formularioNuevoUsuario');
         }
@@ -139,9 +139,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('¡El usuario ahora es activo!');
+            $utilidades->mostrarMensaje('The user is now active!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
         
         $plantilla->verPagina();
     }
@@ -159,9 +159,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('¡El usuario ahora es inactivo!');
+            $utilidades->mostrarMensaje('The user is now Inactive!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
         
         $plantilla->verPagina();
     }
@@ -179,9 +179,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('La contraseña se recuperó a WorkNet2015');
+            $utilidades->mostrarMensaje('The password was changed to WorkNet2015');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
         
         $plantilla->verPagina();
     }
@@ -200,9 +200,9 @@ class Usuario {
         $resultado = $mysql->eliminarRegistro($tabla, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('¡El usuario se eliminó satisfactoriamente!');
+            $utilidades->mostrarMensaje('The user was successfully deleted!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
         
         $plantilla->verPagina();
     }
@@ -226,9 +226,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('¡La contraseña se cambió satisfactoriamente!');
+            $utilidades->mostrarMensaje('The password was successfully changed!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
         
         $plantilla->verPagina();  
     }
@@ -252,9 +252,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('¡La contraseña se cambió satisfactoriamente!');
+            $utilidades->mostrarMensaje('The password was successfully changed.');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
         
         $plantilla->verPagina();  
     }
@@ -277,9 +277,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('¡La contraseña se cambió satisfactoriamente!');
+            $utilidades->mostrarMensaje('The password was successfully changed!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
         
         $plantilla->verPagina();  
     }
@@ -314,9 +314,9 @@ class Usuario {
         $resultado = $mysql->modificarRegistro($tabla, $cambio, $where);
         
         if ($resultado)
-            $utilidades->mostrarMensaje('¡La contraseña se cambió satisfactoriamente!');
+            $utilidades->mostrarMensaje('The password was successfully changed!');
         else
-            $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
         
         $plantilla->verPagina();  
     }

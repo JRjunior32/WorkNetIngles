@@ -57,15 +57,15 @@ class Trabajador {
        if($this->validarNombreUnico($usuario))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('El usuario ya está registrado. Por favor intente con un usuario diferente.');
+            $utilidades->mostrarMensaje('The username is already registered, please try with another username.');
             $plantilla->verPagina('formularioTrabajador');
             return 0;
         }
          
         if (isset($resultado))
-            $utilidades->mostrarMensaje('Felicidades, el usuario se registro exitosamente!');
+            $utilidades->mostrarMensaje('Congrats! The user was successfully created.');
         else
-            $utilidades->mostrarMensaje('Lo sentimos!, ocurrio un problema, por favor vuelva a intentar.');                    
+            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');                    
          
         $plantilla->verPagina('formularioTrabajador');
     }
