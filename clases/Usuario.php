@@ -83,7 +83,7 @@ class Usuario {
         $cuenta = $sesion->obtenerVariableSesion('idUsuario');
         $query = "SELECT idCuenta as id, Usuario, Nombre, Apellido FROM cuenta where Tipo = '3' AND cuenta_cuenta=$cuenta";
         $listaUsuarios = $mysql->consulta($query);
-        $encabezado = array('ID', 'Usuario', 'Nombre','Apellido');
+        $encabezado = array('ID', 'User', 'Name','Surname');
         $acciones = '<center><a href="./eliminarUsuario.php?idCuenta={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';
         $acciones .= ' <a href="./recuperarClave.php?idCuenta={{id}}" class = "btn btn-info" ><span class="fui-new"></span></a><br><br>';
         
@@ -106,7 +106,7 @@ class Usuario {
 
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,if(Estado = 1,"Active","Inactive") as Estado from cuenta where Tipo!=1';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Estado');
+        $encabezado = array('ID', 'User', 'Name', 'Surname', 'State');
         
         $acciones = '<center><a href="./activarUsuario.php?idCuenta={{id}}" class="btn btn-success" id="acciones"><span class="fui-check"></span></a>';
         $acciones .= ' <a href="./desactivarUsuario.php?idCuenta={{id}}" class = "btn btn-danger" id="acciones"><span class="fui-cross"></span></a>';

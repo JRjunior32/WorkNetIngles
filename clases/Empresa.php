@@ -86,10 +86,10 @@ if($dateNow > $birth)
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Empresa from cuenta '
                 . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 2 AND idCuenta !='.$idUsuario.' ';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Empresa');
+        $encabezado = array('ID', 'User', 'Name', 'Surname', 'Enperprise');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
 
 
 

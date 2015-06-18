@@ -63,7 +63,7 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         
         $listaArchivos = $mysql->consulta($consulta);
         
-        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> Archivo');
+        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
 
         $acciones = '<a href="../portafolio/'.$nombreUsuario.'/{{id}}" ><center><i class="fa fa-download"></i></a>';
         

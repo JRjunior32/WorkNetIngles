@@ -57,7 +57,7 @@ class Categoria {
         
         $acciones = '<center><a href="./eliminarCategoria.php?idCategorias={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';   
         
-        $encabezado = ['ID' , 'Categoria'];
+        $encabezado = ['ID' , 'Category'];
         
         $variables['listaCategorias'] = $utilidades->convertirTabla($result, $encabezado, $acciones);
         
@@ -75,7 +75,7 @@ class Categoria {
         $result = $db->eliminarRegistro($tabla, $where);
         
         if($result)
-            $utilidades->mostrarMensaje('La categoria se elimino correctamente');
+            $utilidades->mostrarMensaje('The category was created succesfully');
         $utilidades->Redireccionar('controladores/vercat.php');
     }
 }
