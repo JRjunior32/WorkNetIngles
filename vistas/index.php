@@ -12,7 +12,7 @@
 
             <div class="login-form">                
                 <center><h1>Worknet</h1></center>
-                <p font-size="14pt">WorkNet, the social network for companies, employers, and employees.</p>              
+                <p font-size="14pt">WorkNet, the social network for companies, businessman, and employees.</p>              
 
                 <div class="form-group">
 
