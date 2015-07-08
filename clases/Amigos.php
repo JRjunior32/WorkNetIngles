@@ -43,11 +43,22 @@ class Amigos {
                 $valores = $sesion->obtenerVariableSesion('idUsuario') . ',' . $id;
                 $resultado = $mysql->insertarRegistro($tabla, $columnas, $valores);
                 if ($resultado)
-                    $utilidades->mostrarMensaje('Now you are fololowing this user.');
+                    $utilidades->mostrarMensaje('Se ha añidido exitosamente el usuario a su lista de amigos');
                 else
-                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo .');
             }
         }
+        
+        $new = 'SELECT new_count FROM cuenta WHERE idCuenta ='.$id;
+        $count = $mysql->consulta($new);
+        
+        $contador = $count[0]['new_count'];
+        $tabla2 = 'cuenta';
+        $cambio2 = 'new_count='.$contador.'+'.'1';
+        $where2 = 'idCuenta='.$id;
+        
+        $sumar = $mysql ->modificarRegistro($tabla2,$cambio2,$where2);
+        
         $plantilla->verPagina();
     }
 
@@ -104,10 +115,10 @@ class Amigos {
         $resultado = $db->eliminarRegistro($tabla, $where);
         
         if($resultado){
-            $utilidades->mostrarMensaje('You are not longer following this user!');
+            $utilidades->mostrarMensaje('El usuario se elimino exitosamente!.');
             $utilidades->redireccionar('controladores/mensajes.php');
         }else
-            $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo.');
 
         
     }

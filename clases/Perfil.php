@@ -7,7 +7,7 @@ require_once realpath(dirname(__FILE__) . '/./Sesion.php');
 
 
 class Perfil {
-    var $rutaServidor='C:\\xampp\\htdocs\\WorkNetInlges\\fotos\\';
+    var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\fotos\\';
 
     public function mostrarPerfil() {
         $plantilla = new Plantilla();
@@ -54,7 +54,7 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('The profile picture was successfully uploaded.');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
                 
                 if ($archivo['file']['error']>0){
                     $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
@@ -127,10 +127,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('The picture was successfully updated.');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -200,10 +200,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('The picture was successfully updated.');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
                     $plantilla->verPagina('perfilTrabajador');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -217,15 +217,55 @@ class Perfil {
     public function editarCorreo($editor){
         $db = new MySQL();
         $sesion = new Sesion();
+        $utilidades = new Utilidades();
         
         $id = $sesion->ObtenerVariableSesion('idUsuario');
         $newEmail = $editor['newEmail'];
         
         $tabla = 'cuenta';
-        $cambio = 'Correo ='.$newEmail;
+        $cambio = 'Correo ="'.$newEmail.'"';
         $where = 'idCuenta='.$id;
         
         $resultado = $db->modificarRegistro($tabla,$cambio,$where);
-        $utilidades = Redireccionar('controladores/publicar.php');
+        
+        if($resultado)
+            $utilidades-> mostrarMensaje('El correo se ha actualizado correctamente');
+        $utilidades -> Redireccionar('controladores/perfil_Mostrar.php');
+    }
+    
+    public function editarWeb($editor){
+        $db = new MySQL();
+        $sesion = new Sesion();
+        $utilidades = new Utilidades();
+        
+        $id = $sesion->ObtenerVariableSesion('idUsuario');
+        $newWeb = $editor['newWeb'];
+        
+        $tabla = 'cuenta';
+        $cambio = 'SitioWeb="'.$newWeb.'"';
+        $where = 'idCuenta='.$id;
+        $resultado = $db->modificarRegistro($tabla,$cambio,$where);
+        
+        if($resultado)
+            $utilidades-> mostrarMensaje('El correo se ha actualizado correctamente');
+        $utilidades -> Redireccionar('controladores/perfil_Mostrar.php');
+    }
+        public function editarCorreoUsuario($editor){
+        $db = new MySQL();
+        $sesion = new Sesion();
+        $utilidades = new Utilidades();
+        
+        $id = $sesion->ObtenerVariableSesion('idUsuario');
+        $newEmail = $editor['newEmail'];
+        
+        $tabla = 'cuenta';
+        $cambio = 'Correo ="'.$newEmail.'"';
+        $where = 'idCuenta='.$id;
+        
+        $resultado = $db->modificarRegistro($tabla,$cambio,$where);
+        
+        if($resultado)
+            $utilidades-> mostrarMensaje('El correo se ha actualizado correctamente');
+        $utilidades -> Redireccionar('controladores/verPerfilUsuario.php');
     }
 }

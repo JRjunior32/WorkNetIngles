@@ -18,6 +18,7 @@ class Evento {
         $plantilla = new Plantilla();
         $dateNow = new DateTime();
         $date = $dateNow->format('Y-m-d');
+        $Sesion = new Sesion();
         
         
         $tabla = 'eventos';
@@ -27,7 +28,7 @@ class Evento {
         $FechaFin=$datosEvento['termina'];
         $Nombre=$datosEvento['nombre'];
         $Descripcion=$datosEvento['descripcion'];
-        $idCuenta=1;
+        $idCuenta=$Sesion->obtenerVariableSesion('idUsuario');
         
         $valores = '"'.$idCuenta. '","' . 
                     $FechaIni. '","' . 
@@ -39,17 +40,17 @@ class Evento {
         if($FechaIni <= $FechaFin){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         }else{
-            $utilidades->mostrarMensaje('Sorry, the even can not end berfore it starts.');
+            $utilidades->mostrarMensaje('Lo sentimos, el evento no puede terminar antes que incie ');
         }
             }else{
-                    $utilidades->mostrarMensaje('Sorry! Please verify the dates.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, por favor verifique las fechas');
             }
          
         if (isset($resultado))
-            $utilidades->mostrarMensaje('The event was successfully created.!');
+            $utilidades->mostrarMensaje('El evento se creo correctamente!');
         else
-            $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');                    
+            $utilidades->mostrarMensaje('Lo sentimos!,Oucrrio un problema, por favor intentelo de nuevo!0');                    
         
-        $plantilla->verPagina();
-  }
+        $utilidades->Redireccionar('controladores/formEventos.php');
+     }
 }

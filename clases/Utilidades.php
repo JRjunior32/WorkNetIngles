@@ -2,7 +2,7 @@
 
 
 class Utilidades {
-var $carpetaSitio='/WorkNetIngles';
+var $carpetaSitio='/WorkNet';
  
     public function redireccionar($url = 'index.php') {
         $respuesta = "<script type='text/javascript'> window.location='" . $this->retornarURLSitio() . '/' . $url . "'; </script>";        

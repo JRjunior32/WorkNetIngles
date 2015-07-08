@@ -53,26 +53,23 @@ class Usuario {
                     $estado . '"';
 
         
-        //validando el nombre de usuario
     if ($pass == $repass && $mail == $remail)
         if($this->validarNombreUnico($usuario))
-                if($this->validarNombreUsuario($name))
-                        if($this->validarNombreUsuario($ape))
-                            $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
+            $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
             $utilidades->mostrarMensaje('El usuario ya está registrado. Por favor intente con un usuario diferente.');
             $plantilla->verPaginaSinPlantilla('formularioNuevoUsuario');
             return 0;
         }
          
-        if (isset($resultado)){
+        if ($resultado){
             $utilidades->mostrarMensaje('¡Felicitaciones! Ya eres parte de WorkNet.');
             $plantilla->verPaginaSinPlantilla('index');
         }
         else{
             $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');                    
          
-        $plantilla->verPaginaSinPlantilla('formularioNuevoUsuario');
+            $utilidades->Redireccionar('controladores/index.php');
         }
     }
     
@@ -86,11 +83,12 @@ class Usuario {
         $query = "SELECT idCuenta as id, Usuario, Nombre, Apellido FROM cuenta where Tipo = '3' AND cuenta_cuenta=$cuenta";
         $listaUsuarios = $mysql->consulta($query);
         $encabezado = array('ID', 'Usuario', 'Nombre','Apellido');
-        $acciones = '<center><a href="./eliminarUsuario.php?idCuenta={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';
-        $acciones .= ' <a href="./recuperarClave.php?idCuenta={{id}}" class = "btn btn-info" ><span class="fui-new"></span></a><br><br>';
+        $acciones = '<center><a data-toggle="modal" data-target="#deleteUser" class="btn btn-danger"><span class="fui-trash"></span></a>';
+        $acciones .= ' <a data-toggle="modal" data-target="#recoverPass" class = "btn btn-info" ><span class="fui-new"></span></a><br><br>';
         
         if(count($listaUsuarios) >= 1 ){
             $variables['listaUsuarios'] = $utilidades->convertirTabla($listaUsuarios, $encabezado, $acciones);
+            $variables['id']=$listaUsuarios[0]['id'];
             $sesion->agregarVariableSesion('permisoAccionesUsuario','1');
         }else{
             $variables['listaUsuarios'] ='';
@@ -106,19 +104,19 @@ class Usuario {
         $utilidades = new Utilidades();
         
 
-        $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,if(Estado = 1,"Activo","Inactivo") as Estado from cuenta where Tipo!=1';
+        $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,if(Estado = 1,"Active","Inactive") as Estado from cuenta where Tipo!=1';
         $listaUsuarios = $mysql->consulta($consulta);
         $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Estado');
         
-        $acciones = '<center><a href="./activarUsuario.php?idCuenta={{id}}" class="btn btn-success" id="acciones"><span class="fui-check"></span></a>';
-        $acciones .= ' <a href="./desactivarUsuario.php?idCuenta={{id}}" class = "btn btn-danger" id="acciones"><span class="fui-cross"></span></a>';
-        $acciones .= ' <a href="./recuperarClave.php?idCuenta={{id}}" class = "btn btn-info" id="acciones" ><span class="fui-new"></span></a>';
-        $acciones .= ' <a href="./eliminarUsuario.php?idCuenta={{id}}" class="btn btn-danger" id="acciones"><span class="fui-trash"></span></a></center>';
+        $acciones = '<center><a data-toggle="modal" data-target="#activarUser" class="btn btn-success" id="acciones"><span class="fui-check"></span></a>';
+        $acciones .= ' <a  data-toggle="modal" data-target="#descativarUser" class = "btn btn-danger" id="acciones"><span class="fui-cross"></span></a>';
+        $acciones .= ' <a  data-toggle="modal" data-target="#recoverPass" class = "btn btn-info" id="acciones" ><span class="fui-new"></span></a>';
+        $acciones .= ' <a  data-toggle="modal" data-target="#deleteUser" class="btn btn-danger" id="acciones"><span class="fui-trash"></span></a></center>';
         
 
       
         $variables['listaUsuarios'] = $utilidades->convertirTabla($listaUsuarios, $encabezado, $acciones);
-
+        $variables['id'] = $listaUsuarios[0]['id'];
         /*
          * Mostramos la pagina en el navegador         
          * 
@@ -145,7 +143,7 @@ class Usuario {
         else
             $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
         
-        $plantilla->verPagina();
+        $utilidades->Redireccionar('controladores/usuarios_admin.php');
     }
     
     public function desactivarUsuario($id){
@@ -165,7 +163,7 @@ class Usuario {
         else
             $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
         
-        $plantilla->verPagina();
+        $utilidades->Redireccionar('controladores/usuarios_admin.php');
     }
     
     public function recuperarClave($id){
@@ -185,7 +183,7 @@ class Usuario {
         else
             $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
         
-        $plantilla->verPagina();
+        $utilidades->Redireccionar('controladores/usuarios_admin.php');
     }
     
 
@@ -206,7 +204,7 @@ class Usuario {
         else
             $utilidades->mostrarMensaje('Lo sentimos, algo ha salido mal. Por favor intenta de nuevo.');
         
-        $plantilla->verPagina();
+        $utilidades->Redireccionar('controladores/usuarios_admin.php');
     }
 
 
@@ -331,7 +329,7 @@ class Usuario {
         $idUsuario = $sesion->obtenerVariableSesion('idUsuario');
 
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Correo from cuenta '
-                . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 4';
+                . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 4 AND idCuenta !='.$idUsuario.'';
         $listaUsuarios = $mysql->consulta($consulta);
         $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'E-mail');
 
@@ -346,27 +344,5 @@ class Usuario {
         $sesion->agregarVariableSesion('permisoAgregarAmigo', '1');
         $plantilla->verPagina('listaPersonas', $variables);
     }
-        private function validarNombreUsuario ($nombreUsuario){
-        $permitidos = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            for ($i = 0; $i<strlen($nombreUsuario); $i++){
-                if(strpos($permitidos, substr($nombreUsuario, $i, 1)))
-                    return true;
-                else
-                    return false;
-            }
-    }
-    private function validarMayorEdad($edad){
-        $date= new DateTime();
-        $dateNow = $date->format('Y-m-d');
-        $anioAc = substr($dateNow,0,-6);
-        $anioEdad = substr($edad,0,-6);
-        $checkAge = ($anioEdad - $anioAc);
-        
-        if ($checkAge <= 18)
-            return false;
-        elseif($checkAge >= 18)
-            return true;
-        
 
-    }
 }

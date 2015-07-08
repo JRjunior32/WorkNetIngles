@@ -38,9 +38,9 @@ class Ofertas {
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
 
         if (isset($resultado))
-            $utilidades->mostrarMensaje('The employment offer was successfully created.');
+            $utilidades->mostrarMensaje('La oferta de trabjado se creo correctamente!');
         else
-            $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');                
+            $utilidades->mostrarMensaje('Lo sentimos!,Ocurrio un error, por favor intente de nuevo.');                
         
         $utilidades->Redireccionar('controladores/formOfertas.php');
     }
@@ -88,35 +88,35 @@ class Ofertas {
 
             switch($Ofertas[$i]['Genero']){
                 case 'F':
-                $genero = "Feminine";
+                $genero = "Femenino";
                 break;
                 
                 case 'A':
-                $genero = "Both";
+                $genero = "Ambos";
                 break;
                 
                 case 'M':
-                $genero = "Masculine";
+                $genero = "Masculino";
                 break;
             }
             $oferta .= '<div class="panel panel-default"><input type="hidden" value="'.$Ofertas[$i]['id'].'" name="idOfer">
                           <div class="panel-heading">
                             <h3 class="panel-title"><center>'.$Ofertas[$i]['Titulo'].'</center></h3><a href="#" class="text-default dropdown-toggle" id="deE" data-toggle="dropdown"><i class="fa fa-cogs"></i></a>
                                                                                                     <ul class="dropdown-menu" id="enfren">
-                                                                                                    <li><a href="./eliminarOferta.php?idOfertas='.$Ofertas[$i]['id'].'"><i class="fa fa-trash-o"></i> Delete Offer</a></li>
-                                                                                                    <li><a href="./remplazarVarOferta.php?idOfertas='.$Ofertas[$i]['id'].'"><i class="fa fa-pencil"></i> Edit Offer</a></li>
-                                                                                                    <li><a href="./verInteresados.php?idOferta='.$Ofertas[$i]['id'].'"><i class="fa fa-eye"></i> See Interested</a></li>
+                                                                                                    <li><a href="./eliminarOferta.php?idOfertas='.$Ofertas[$i]['id'].'"><i class="fa fa-trash-o"></i> Eliminar Oferta</a></li>
+                                                                                                    <li><a href="./remplazarVarOferta.php?idOfertas='.$Ofertas[$i]['id'].'"><i class="fa fa-pencil"></i> Editar Oferta</a></li>
+                                                                                                    <li><a href="./verInteresados.php?idOferta='.$Ofertas[$i]['id'].'"><i class="fa fa-eye"></i> Ver interesados</a></li>
                                                                                                     </ul>
                           </div>
                           <div class="panel-body">
                             <p>'.$Ofertas[$i]['Detalle'].'</p>
                             <br>
-                            <p><b>Gender: </b>'.$genero.'</p>
-                            <p><b>Salary: $</b>'.$Ofertas[$i]['Salario'].'
-                            <span class="help-block">Salary per hour</span></p>
-                            <p><b>Charge: </b>'.$Ofertas[$i]['Cargo'].'</p>
-                            <p><b>Age: </b>'.$Ofertas[$i]['Edad'].'</p>
-                            <p><b>Address: </b>'.$Ofertas[$i]['Direccion'].'</p>
+                            <p><b>Genero: </b>'.$genero.'</p>
+                            <p><b>Salario: $</b>'.$Ofertas[$i]['Salario'].'
+                            <span class="help-block">Salario por hora</span></p>
+                            <p><b>Cargo: </b>'.$Ofertas[$i]['Cargo'].'</p>
+                            <p><b>Edad: </b>'.$Ofertas[$i]['Edad'].'</p>
+                            <p><b>Direccion: </b>'.$Ofertas[$i]['Direccion'].'</p>
                           </div>
                         </div>';
                         
@@ -154,15 +154,15 @@ class Ofertas {
         for ($i = 0; $i < count($Ofertas); $i++){
             switch($Ofertas[$i]['Genero']){
                 case 'F':
-                $genero = "Feminine";
+                $genero = "Femenino";
                 break;
                 
                 case 'A':
-                $genero = "Both";
+                $genero = "Ambos";
                 break;
                 
                 case 'M':
-                $genero = "Masculine";
+                $genero = "Masculino";
                 break;
             }
             $oferta .= '<div class="panel panel-default"><input type="hidden" value="'.$Ofertas[$i]['id'].'" name="idOfer">
@@ -170,20 +170,20 @@ class Ofertas {
                             <h3 class="panel-title"><center>'.$Ofertas[$i]['Titulo'].'</center></h3><a href="#" class="dropdown-toggle" id="deE" data-toggle="dropdown"><i class="fa fa-caret-down"></i></a>
                                                                                                     <ul class="dropdown-menu" id="enfren">
                                                                                                     
-                                                                                                    <li><a data-toggle="modal" data-target="#app" href="#"><i class="fa fa-plus-circle"></i> Apply</a></li>
+                                                                                                    <li><a data-toggle="modal" data-target="#app" href="#"><i class="fa fa-plus-circle"></i> Aplicar</a></li>
                                                                                                     
-                                                                                                    <li><a href="verPerfilAmigo.php?idCuenta='.$Ofertas[$i]['idCuenta'].'"><i class="fa fa-eye"></i> See Enterprise Profile</a></li>
+                                                                                                    <li><a href="verPerfilAmigo.php?idCuenta='.$Ofertas[$i]['idCuenta'].'"><i class="fa fa-eye"></i> Ver Perfil Empresa</a></li>
                                                                                                     </ul>
                           </div>
                           <div class="panel-body">
                             <p>'.$Ofertas[$i]['Detalle'].'</p>
                             <br>
-                            <p><b>Gender: </b>'.$genero.'</p>
-                            <p><b>Salary: $</b>'.$Ofertas[$i]['Salario'].'
+                            <p><b>Genero: </b>'.$genero.'</p>
+                            <p><b>Salario: $</b>'.$Ofertas[$i]['Salario'].'
                             <span class="help-block">Salario por hora</span></p>
-                            <p><b>Charge: </b>'.$Ofertas[$i]['Cargo'].'</p>
-                            <p><b>Age: </b>'.$Ofertas[$i]['Edad'].'</p>
-                            <p><b>Address: </b>'.$Ofertas[$i]['Direccion'].'</p>
+                            <p><b>Cargo: </b>'.$Ofertas[$i]['Cargo'].'</p>
+                            <p><b>Edad: </b>'.$Ofertas[$i]['Edad'].'</p>
+                            <p><b>Direccion: </b>'.$Ofertas[$i]['Direccion'].'</p>
                           </div>
                         </div>';
         }
@@ -204,10 +204,10 @@ class Ofertas {
         $result = $db->eliminarRegistro($tabla, $where);
         
         if($result){
-            $utilidades->mostrarMensaje('The offer was successfully created.');
+            $utilidades->mostrarMensaje('La oferta se elimino correctamente');
             $utilidades->Redireccionar('controladores/ofertas_empre.php');
         }else{
-            $utilidades->mostrarMensaje('Sorry! There was an error. Please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos, Ocurrio un error, por favor intentelo de nuevo.');
             $utilidades->Redireccionar('controladores/ofertas_empre.php');
         }
     }
@@ -265,9 +265,9 @@ class Ofertas {
             $resultado = $bd->modificarRegistro($tabla,$cambio,$where);
 
         if (isset($resultado))
-            $utilidades->mostrarMensaje('The employment was successfully edited!');
+            $utilidades->mostrarMensaje('La oferta de trabjado se edito correctamente!');
         else
-            $utilidades->mostrarMensaje('Sorry! There was an error. Please try again.');                
+            $utilidades->mostrarMensaje('Lo sentimos!,Ocurrio un error, por favor intente de nuevo.');                
         
         $utilidades->Redireccionar('controladores/formOfertas.php');
     }

@@ -1,6 +1,7 @@
 <?php
 require_once realpath(dirname(__FILE__) . '/./Utilidades.php');
 require_once realpath(dirname(__FILE__) . '/./Sesion.php');
+require_once realpath(dirname(__FILE__) . '/./MySQL.php');
 
 class Plantilla {
 
@@ -34,8 +35,8 @@ class Plantilla {
 
     private function aplicarPlantilla($contenido = '') {
         $plantilla = $this->cargarArchivo($this->plantilla);
-        
         $sesion = new Sesion();        
+ 
         if($sesion->obtenerVariableSesion('tipoUsuario') == 1){
             $menuSuperior = $this->cargarArchivo('fragmento/navbar-ini');
             $menuLateral = $this->cargarArchivo('fragmento/NavBarL-Ad');
@@ -54,10 +55,12 @@ class Plantilla {
         }     
         if($sesion->obtenerVariableSesion('tipoUsuario') == 4){
             $menuSuperior = $this->cargarArchivo('fragmento/navbar-usuario');
+
             $menuLateral = $this->cargarArchivo('fragmento/NavbarL-Usuario');
             if ($contenido=='')
                 $contenido=$this->cargarArchivo('fragmento/contenido-usuario');
         }     
+
         
         $plantilla = str_replace('{{menuSuperior}}', $menuSuperior, $plantilla);        
         $plantilla = str_replace('{{menuLateral}}', $menuLateral, $plantilla);
@@ -102,4 +105,5 @@ class Plantilla {
             }
             echo $paginaWeb . $respuesta;
             }
+
 }

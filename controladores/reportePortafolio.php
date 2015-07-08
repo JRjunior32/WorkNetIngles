@@ -1,13 +1,11 @@
 <?php
-
 require_once realpath(dirname(__FILE__) . '/../clases/AdministrarUsuarios.php');
-require_once realpath(dirname(__FILE__) . '/../clases/Amigos.php');
-
+require_once realpath(dirname(__FILE__) . '/../clases/Reportes.php');
 
 $administrarUsuario = new AdministrarUsuarios();
+$usuariosPermitidos = array('1');
 
-$usuariosPermitidos = array('2','3','4');
 $administrarUsuario->verificarSesion($usuariosPermitidos);
 
-$amigos = new Amigos();
-$amigos->VerPersonas();
+$reporte = new Reportes();
+$reporte -> reportesPortafolio();

@@ -55,23 +55,21 @@ class Trabajador {
                     $cuenta. '"';
     if ($pass == $repass)
        if($this->validarNombreUnico($usuario))
-        if($this->validarNombreUsuario($name))
-                $if($this->validarNombreUsuario($ape))
-                    $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
+            $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
             $utilidades->mostrarMensaje('El usuario ya está registrado. Por favor intente con un usuario diferente.');
-            $plantilla->verPagina('formularioTrabajador');
+            $utilidades->Redireccionar('controladores/creartrabajador.php');
             return 0;
         }
          
-        if (isset($resultado))
+        if ($resultado)
             $utilidades->mostrarMensaje('Felicidades, el usuario se registro exitosamente!');
         else
             $utilidades->mostrarMensaje('Lo sentimos!, ocurrio un problema, por favor vuelva a intentar.');                    
          
-        $plantilla->verPagina('formularioTrabajador');
-    }
-     private function validarNombreUnico($nombreUsuario) {
+            $utilidades->Redireccionar('controladores/creartrabajador.php');    }
+     
+    private function validarNombreUnico($nombreUsuario) {
         $db = new MySQL();
          
         $consulta = 'select idCuenta from cuenta where Usuario = "'. $nombreUsuario .'"';
@@ -82,13 +80,5 @@ class Trabajador {
             return true;
          
     }
-            private function validarNombreUsuario ($nombreUsuario){
-                $permitidos = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                    for ($i = 0; $i<strlen($nombreUsuario); $i++){
-                        if(strpos($permitidos, substr($nombreUsuario, $i, 1)))
-                            return true;
-                        else
-                            return false;
-            }
-    }
+
 }
