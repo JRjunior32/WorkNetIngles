@@ -49,18 +49,18 @@ if($dateNow > $birth)
               if($this->validarNombreUsuario($ape))
                 $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('El usuario existe actualmente o el campo Nombre contiene caracteres numericos, por favor intente de nuevo');
+            $utilidades->mostrarMensaje('The user already exists or the Name field has number characters, please try again.');
             $utilidades->Redireccionar('controladores/formNuevaEmpresa.php');
             return 0;
         }
     
       
         if (isset($resultado)){
-            $utilidades->mostrarMensaje('Felicidades! usted es parte de WorkNet ahora!');
+            $utilidades->mostrarMensaje('Congrats! Now you are a WorkNet User.');
             $utilidades->Redireccionar('index');
         }
         else{
-            $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un error, por favor intente de nuevo');                    
+            $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');                    
          
         $plantilla->verPaginaSinPlantilla('formularioEmpresa');
         }

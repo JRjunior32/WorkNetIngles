@@ -36,12 +36,12 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         
                 $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
                 
-                $utilidades-> mostrarMensaje('El archivo se subio exitosamente!');
+                $utilidades-> mostrarMensaje('The file was successfully updated!');
         
                 $plantilla->verPagina();
         
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Lo sentimos, Ocurrio un error, intente de nuevo por favor.');
+                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
                 }else{
                     $this->crearDirectorio($carpeta);
                     //echo $this->rutaServidor.$carpeta."\\";
@@ -63,7 +63,7 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         
         $listaArchivos = $mysql->consulta($consulta);
         
-        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> Archivo');
+        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
 
         $acciones = '<a href="../portafolio/'.$nombreUsuario.'/{{id}}" ><center><i class="fa fa-download"></i></a>';
         
@@ -100,11 +100,11 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
         $acciones = '<a href="../portafolio/'.$nombreUsuario[0]['Usuario'].'/{{id}}" ><center><i class="fa fa-download"></i></a>';
         $acciones .= '<center><div class="ec-stars-wrapper">
-                    <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-                    <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-                    <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-                    <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-                    <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+                    <a href="#" data-value="1" title="Vote 1 star">&#9733;</a>
+                    <a href="#" data-value="2" title="Vote 2 stars">&#9733;</a>
+                    <a href="#" data-value="3" title="Vote 3 stars">&#9733;</a>
+                    <a href="#" data-value="4" title="Vote 4 stars">&#9733;</a>
+                    <a href="#" data-value="5" title="Vote 5 stars">&#9733;</a>
                     </div>';
 
         $variables['listaArchivos'] = $utilidades->convertirTabla($resultado, $encabezado, $acciones);
@@ -126,9 +126,9 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         $resultado = $db->eliminarRegistro($tabla, $where);
         
         if($resultado)
-            $utilidades->mostrarMensaje('El archivo se elimino Exitosamente');
+            $utilidades->mostrarMensaje('The file was successfully deleted.');
         else
-            $utilidades->mostrarMensaje('Lo sentimos!, ocurrio un problema, por favor vuelva a intentar');
+            $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
         
         $utilidades->Redireccionar('controladores/crearPortafolio.php');
     }
