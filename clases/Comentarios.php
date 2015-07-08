@@ -76,7 +76,7 @@ class Comentarios {
         $ingreso = $db->insertarRegistro($tabla, $columnas, $valores);
         
         if($ingreso == FALSE)
-            $utilidades ->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor vuelva a intentar');
+            $utilidades ->mostrarMensaje('Sorry! There was a problem. Please try again.');
         $utilidades->Redireccionar('controladores/publicar.php');
     }
 
@@ -135,7 +135,7 @@ class Comentarios {
                         <input type="hidden" value="'.$Pub[$i]['id'].'" name="idPub">
                        <a href="#"><small class="col-xs-3">'.$Pub[$i]['Usuario_cuenta'].'</cite></small></a><small class="fechapub">'.$Pub[$i]['Fecha'].'</small><a href="#" id="esquinaInfe" class="text-default dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cogs"></span></a>
                                                                                                                                                                   <ul class="dropdown-menu" id="enfrent">
-                                                                                                                                                                    <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash-o"></i> Eliminar</a></li>
+                                                                                                                                                                    <li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash-o"></i> Delete</a></li>
                                                                                                                                                                   </ul> 
                        <br><img src="../fotos/'.$Pub[$i]['Usuario_cuenta'].'/'.$Pub[$i]['ImgUsuario'].'" class="img-circle" id="img-pub">
                         <p><b>'.$Pub[$i]['Texto'].'</b></p>

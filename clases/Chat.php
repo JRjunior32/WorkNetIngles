@@ -100,7 +100,7 @@ class Chat {
                     $idAmigo . '"';        
         $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);        
         if (!$resultado)            
-            $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un error, por favor intente de nuevo!.');                            
+            $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');                            
         $this->mostrarChat($idAmigo);
     }
     public function actualizarChat($idAmigo) {
