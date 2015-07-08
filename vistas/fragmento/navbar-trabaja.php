@@ -12,28 +12,28 @@
             <ul class="nav navbar-nav">
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Buscar">
+                        <input type="text" class="form-control" placeholder="Search">
                     </div>
                     <button type="submit" class="btn btn-default"><span class="fui-search"></span></button>
                 </form>
                 <li class="active"><a href="#"></a></li>
-                <li><a href="../controladores/publicar.php"><span class="fui-home"></span> Inicio</a></li>                
-                <li><a href="./verPerfilTrabajador.php"><span class="fui-user"></span>Perfil</a></li>                
+                <li><a href="../controladores/publicar.php"><span class="fui-home"></span> Home</a></li>                
+                <li><a href="./verPerfilTrabajador.php"><span class="fui-user"></span>Profile</a></li>                
                                 
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span> Cuenta<b class="caret"></b></a>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span> Account<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><span class="help-block" id="mover"><i class="fa fa-search"></i> Buscar Amigos</span></li>
+                        <li><span class="help-block" id="mover"><i class="fa fa-search"></i> Search Friends</span></li>
                         <li class="divider"></li>
 
-                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Empresas</a></li>
-                        <li><a href="./buscarusuarios.php "><i class="fa fa-users"></i> Usuarios</a></li>
+                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Enterprises</a></li>
+                        <li><a href="./buscarusuarios.php "><i class="fa fa-users"></i> Users</a></li>
 
 
 
                         <li class="divider"></li>
-                        <li><a href="../controladores/crearformCambiarcontra-Trabajador.php"><span class="fui-gear"></span> Cambiar Contraseña</a></li>
-                        <li><a href="logout.php"><span class="fui-power"></span> Cerrar Sesión</a></li>
+                        <li><a href="../controladores/crearformCambiarcontra-Trabajador.php"><span class="fui-gear"></span> Change Password</a></li>
+                        <li><a href="logout.php"><span class="fui-power"></span> Log Out</a></li>
 
                     </ul>
                 </li>

@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Create Resume</h3>
+    <h3 class="panel-title">Create Résumé</h3>
   </div>
  <form method="POST" action="../controladores/guardarCurriculum.php">
     <div class="panel-body">

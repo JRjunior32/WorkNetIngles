@@ -13,8 +13,8 @@
         </div>
           <div class="panel-default">
               <div class="panel panel-heading">
-           <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Agregar amigo</a>
-           <a href="./verCurriculumA.php?idCuenta_cuenta={{Id}}" class="btn btn-warning" id="iz"><i class="fa fa-file"></i> Ver Currículum</a>
+           <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Friend</a>
+           <a href="./verCurriculumA.php?idCuenta_cuenta={{Id}}" class="btn btn-warning" id="iz"><i class="fa fa-file"></i> View résumé</a>
             </div>
         </div>
     <div class="panel panel-default">
@@ -27,8 +27,8 @@
             <b>Usuario:</b> {{Usuario}}<br>
             <b>DUI:</b> {{DUI}}<br>
             <b>Nombre:</b> {{Nombre}}<br>
-              <b>Apellido: </b> {{Apellido}}<br>
-            <b>E-mail:</b> {{Correo}}<br>
+              <b>Surname: </b> {{Apellido}}<br>
+            <b>Email:</b> {{Correo}}<br>
           </div>
     </div>
     

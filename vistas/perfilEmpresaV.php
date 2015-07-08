@@ -15,25 +15,25 @@
     
         <div class="panel panel-default">
             <div class=" panel-heading">
-                <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Agregar amigo</a>
+                <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Firend</a>
                 <a href="./crearPortafolioV.php?cuenta_idCuenta={{Id}}" class="btn btn-warning" id="med"><i class="fa fa-suitcase"></i> Portafolio</a>
-                <a href="#" class="btn btn-danger" id="iz"><i class="fui-cross"></i> Denunciar</a>
+                <a href="#" class="btn btn-danger" id="iz"><i class="fui-cross"></i> Denounce</a>
 
             </div>
     </div>
     
     <div class="panel panel-default">
             <div class=" panel-heading">
-               <b>Información General</b> 
+               <b>Brief Information</b> 
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-            <b>Usuario:</b> {{Usuario}}<br>
-            <b>Empresa:</b> {{Empresa}}<br>
-            <b>E-mail:</b> {{Correo}}<br>
-            <b>Fecha de fundación:</b> {{Fun}}<br>
-            <b>Web Site:</b> {{Web}}<br>
+            <b>User:</b> {{Usuario}}<br>
+            <b>Enterprise:</b> {{Empresa}}<br>
+            <b>Email:</b> {{Correo}}<br>
+            <b>Fundation D:</b> {{Fun}}<br>
+            <b>Website:</b> {{Web}}<br>
           </div>
     </div>
     <input type="hidden" value="{{Id}}">

@@ -11,7 +11,7 @@
             <ul class="nav navbar-nav">
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Busqueda de usuarios"  onkeyup="getStates(this.value)">
+                        <input type="text" class="form-control" placeholder="Search for Users"  onkeyup="getStates(this.value)">
 
                     </div>
                     <button type="submit" class="btn btn-default"><span class="fui-search"></span></button>
@@ -24,7 +24,7 @@
                     <ul class="dropdown-menu">
                         <li><span class="help-block" id="mover"><i class="fa fa-search"></i> Search Friends</span></li>
                         <li class="divider"></li>
-                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Enterprise</a></li>
+                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Enterprises</a></li>
                         <li><a href="../controladores/buscarusuarios.php "><i class="fa fa-users"></i> Users</a></li>
                         <li class="divider"></li>
                         <li><a href="../controladores/crearformCambiarcontra-Empre.php"><span class="fui-gear"></span> Change Password</a></li>
