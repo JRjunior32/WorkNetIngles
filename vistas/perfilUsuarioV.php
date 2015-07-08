@@ -19,14 +19,14 @@
         </div>
     <div class="panel panel-default">
             <div class=" panel-heading">
-                Información General
+                Brief Information
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-            <b>Usuario:</b> {{Usuario}}<br>
+            <b>User:</b> {{Usuario}}<br>
             <b>DUI:</b> {{DUI}}<br>
-            <b>Nombre:</b> {{Nombre}}<br>
+            <b>Name:</b> {{Nombre}}<br>
               <b>Surname: </b> {{Apellido}}<br>
             <b>Email:</b> {{Correo}}<br>
           </div>
