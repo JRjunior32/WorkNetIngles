@@ -47,18 +47,18 @@ if($dateNow > $birth)
         if($this->validarNombreUnico($user))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('El usuario existe actualmente, por favor intente de nuevo');
+            $utilidades->mostrarMensaje('The User already exists. Please try again with another one.');
             $utilidades->Redireccionar('controladores/formNuevaEmpresa.php');
             return 0;
         }
     
       
         if ($resultado){
-            $utilidades->mostrarMensaje('Felicidades! usted es parte de WorkNet ahora!');
+            $utilidades->mostrarMensaje('Congrats! Now you are part of WorkNet!');
             $utilidades->Redireccionar('controladores/index.php');
         }
         else{
-            $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un error, por favor intente de nuevo');                    
+            $utilidades->mostrarMensaje('Sorry! There was a mistake. Please try again.');                    
          $utilidades->Redireccionar('controladores/formNuevaEmpresa.php');
         }
     }
@@ -88,7 +88,7 @@ if($dateNow > $birth)
         $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Empresa');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
 
 
 

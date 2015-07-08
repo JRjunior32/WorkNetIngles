@@ -22,7 +22,7 @@
                           .$idcuenta.'"';
             $resultado = $db -> insertarRegistro($tabla,$columnas,$valores);
             if($resultado){
-                $utilidades->mostrarMensaje('Gracias por tu colaboracion, juntos haremos de WorkNet un lugar limpio y seguro');
+                $utilidades->mostrarMensaje('Thanks for your colaboration. Together we are going to make WorkNet a better place.');
             }
                     $utilidades->Redireccionar('controladores/publicar.php');
 
