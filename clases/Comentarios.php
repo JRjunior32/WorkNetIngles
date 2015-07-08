@@ -73,7 +73,7 @@ class Comentarios {
         $ingreso = $db->insertarRegistro($tabla, $columnas, $valores);
         
         if($ingreso == FALSE)
-            $utilidades ->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor vuelva a intentar');
+            $utilidades ->mostrarMensaje('Sorry! There was an error. Please try again.');
         $utilidades->Redireccionar('controladores/publicar.php');
     }
 

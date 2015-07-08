@@ -43,9 +43,9 @@ class Amigos {
                 $valores = $sesion->obtenerVariableSesion('idUsuario') . ',' . $id;
                 $resultado = $mysql->insertarRegistro($tabla, $columnas, $valores);
                 if ($resultado)
-                    $utilidades->mostrarMensaje('Se ha añidido exitosamente el usuario a su lista de amigos');
+                    $utilidades->mostrarMensaje('Now you are fololowing this user.');
                 else
-                    $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo .');
+                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
             }
         }
         $plantilla->verPagina();
@@ -104,10 +104,10 @@ class Amigos {
         $resultado = $db->eliminarRegistro($tabla, $where);
         
         if($resultado){
-            $utilidades->mostrarMensaje('El usuario se elimino exitosamente!.');
+            $utilidades->mostrarMensaje('You are not longer following this user!');
             $utilidades->redireccionar('controladores/mensajes.php');
         }else
-            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
 
         
     }

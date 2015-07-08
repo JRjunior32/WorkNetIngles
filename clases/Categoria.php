@@ -27,10 +27,10 @@ class Categoria {
             
          if($this->validarCategoriaUnica($cat)){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
-             $utilidades->mostrarMensaje('La se agrego correctamente categoria!');
+             $utilidades->mostrarMensaje('The category was successfully created');
             $plantilla->verPagina('');
          }else{
-            $utilidades->mostrarMensaje('Lo sentimos, La categoria existe actualmente, por favor intente de nuevo.');
+            $utilidades->mostrarMensaje('Sorry! The category already exists. Please try again.');
             $plantilla->verPagina('');
             return 0;
     }
@@ -75,7 +75,7 @@ class Categoria {
         $result = $db->eliminarRegistro($tabla, $where);
         
         if($result)
-            $utilidades->mostrarMensaje('La categoria se elimino correctamente');
+            $utilidades->mostrarMensaje('The category was successfully deleted.');
         $utilidades->Redireccionar('controladores/vercat.php');
     }
 }
