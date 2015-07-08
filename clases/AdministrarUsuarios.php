@@ -47,7 +47,7 @@ class AdministrarUsuarios {
                 $this->idUsuario = $resultado[$i]['idCuenta'];
             }
         } else {
-            $utilidades->mostrarMensaje('Sorry! The user or the password are incorrect, please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos! El usuario o contraseña son incorrectos, Por favor intente de nuevo');
             $utilidades->redireccionar('index.php');
         }
 
@@ -103,7 +103,7 @@ class AdministrarUsuarios {
         for ($i = 0; $i < count($resultado); $i++)
             $id = $resultado[$i]['idCuenta'];
 
-        $salida = "<div class='list-group col-xs-3'><a href='perfilempre.php?id=$id' class='list-group-item active'>Profile<br></a>";
+        $salida = "<div class='list-group col-xs-3'><a href='perfilempre.php?id=$id' class='list-group-item active'>Perfil<br></a>";
                
         return $salida;
     }

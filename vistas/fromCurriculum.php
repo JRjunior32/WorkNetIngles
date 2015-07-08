@@ -1,6 +1,6 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Create Resumé</h3>
+    <h3 class="panel-title">Create Resume</h3>
   </div>
  <form method="POST" action="../controladores/guardarCurriculum.php">
     <div class="panel-body">
@@ -77,7 +77,7 @@
     </div>
         <center>
         <a class="btn btn-default" href="../controladores/publicar.php"> Cancel</a>
-        <input type="submit" class="btn btn-success" value="Save">
+        <input type="submit" class="btn btn-success">
         </center><br>
     </form>
 

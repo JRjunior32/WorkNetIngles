@@ -4,7 +4,7 @@ require_once realpath(dirname(__FILE__) . '/./MySQL.php');
 require_once realpath(dirname(__FILE__) . '/./Plantilla.php');
 
 class Portafolio {
-var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
+var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\portafolio\\';
 
     public function mostrarFormulario(){
         $plantilla = new Plantilla();
@@ -36,12 +36,12 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         
                 $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
                 
-                $utilidades-> mostrarMensaje('The file was successfully uploaded.');
+                $utilidades-> mostrarMensaje('El archivo se subio exitosamente!');
         
                 $plantilla->verPagina();
         
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos, Ocurrio un error, intente de nuevo por favor.');
                 }else{
                     $this->crearDirectorio($carpeta);
                     //echo $this->rutaServidor.$carpeta."\\";
@@ -63,7 +63,7 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         
         $listaArchivos = $mysql->consulta($consulta);
         
-        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
+        $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> Archivo');
 
         $acciones = '<a href="../portafolio/'.$nombreUsuario.'/{{id}}" ><center><i class="fa fa-download"></i></a>';
         
@@ -126,9 +126,9 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         $resultado = $db->eliminarRegistro($tabla, $where);
         
         if($resultado)
-            $utilidades->mostrarMensaje('The file was successfully deleted');
+            $utilidades->mostrarMensaje('El archivo se elimino Exitosamente');
         else
-            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos!, ocurrio un problema, por favor vuelva a intentar');
         
         $utilidades->Redireccionar('controladores/crearPortafolio.php');
     }

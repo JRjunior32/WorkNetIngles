@@ -8,15 +8,15 @@
         <link href="../style.css" rel="stylesheet">    
     </head>
     <body>
-        <form action="../controladores/cambiarContraUsuario.php" method="POST">
+        <form action="../controladores/cambiarContraTrabajador.php" method="POST">
             <div class="login-form">
                 <div class="from-group">
-                    <center><h3>Change Password</h3></center>
+                    <center><h3>Cambiar contraseña</h3></center>
                     <div class="form-group">
-                        <label>Current Password:</label>
+                        <label>Contraseña actual:</label>
                         <input type="password" minlength="5"  class="form-control login-field" placeholder="Contraseña actual" name="oldpass" required>
                         <br><br>
-                        <label>New Password:</label>
+                        <label>Nueva contraseña:</label>
                         <input type="password" minlength="5"  class="form-control login-field" placeholder="Nueva contraseña" name="newpass" required><br><br>
                         <input type="password" minlength="5"  class="form-control login-field" placeholder="Repita nueva contraseña" name="newrepass" required><br><br>
                     </div>

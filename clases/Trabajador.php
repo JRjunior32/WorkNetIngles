@@ -55,19 +55,19 @@ class Trabajador {
                     $cuenta. '"';
     if ($pass == $repass)
        if($this->validarNombreUnico($usuario))
-                if($this->validarNombreUsuario($name))
-                    if($this->validarNombreUsuario($ape))
-            $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
+        if($this->validarNombreUsuario($name))
+                $if($this->validarNombreUsuario($ape))
+                    $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('The username is already registered, please try with another username.');
+            $utilidades->mostrarMensaje('El usuario ya está registrado. Por favor intente con un usuario diferente.');
             $plantilla->verPagina('formularioTrabajador');
             return 0;
         }
          
         if (isset($resultado))
-            $utilidades->mostrarMensaje('Congrats! The user was successfully created.');
+            $utilidades->mostrarMensaje('Felicidades, el usuario se registro exitosamente!');
         else
-            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');                    
+            $utilidades->mostrarMensaje('Lo sentimos!, ocurrio un problema, por favor vuelva a intentar.');                    
          
         $plantilla->verPagina('formularioTrabajador');
     }
@@ -83,12 +83,12 @@ class Trabajador {
          
     }
             private function validarNombreUsuario ($nombreUsuario){
-        $permitidos = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            for ($i = 0; $i<strlen($nombreUsuario); $i++){
-                if(strpos($permitidos, substr($nombreUsuario, $i, 1)))
-                    return true;
-                else
-                    return false;
+                $permitidos = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    for ($i = 0; $i<strlen($nombreUsuario); $i++){
+                        if(strpos($permitidos, substr($nombreUsuario, $i, 1)))
+                            return true;
+                        else
+                            return false;
             }
     }
 }

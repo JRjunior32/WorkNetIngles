@@ -45,22 +45,22 @@ class Empresa {
 if($dateNow > $birth)
     if ($password == $repassword && $email == $remail)
         if($this->validarNombreUnico($user))
-                if($this->validarNombreUsuario($name))
-                    if($this->validarNombreUsuario($ape))
-                        $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
+            if($this->validarNombreUsuario($name))
+              if($this->validarNombreUsuario($ape))
+                $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('The user already exists, please try with another user.');
-            $plantilla->verPaginaSinPlantilla('formularioEmpresa');
+            $utilidades->mostrarMensaje('El usuario existe actualmente o el campo Nombre contiene caracteres numericos, por favor intente de nuevo');
+            $utilidades->Redireccionar('controladores/formNuevaEmpresa.php');
             return 0;
         }
     
-         
+      
         if (isset($resultado)){
-            $utilidades->mostrarMensaje('Congrats! Now you are a WorkNet User.');
-            $plantilla->verPaginaSinPlantilla('index');
+            $utilidades->mostrarMensaje('Felicidades! usted es parte de WorkNet ahora!');
+            $utilidades->Redireccionar('index');
         }
         else{
-            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');                    
+            $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un error, por favor intente de nuevo');                    
          
         $plantilla->verPaginaSinPlantilla('formularioEmpresa');
         }
@@ -88,10 +88,10 @@ if($dateNow > $birth)
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Empresa from cuenta '
                 . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 2 AND idCuenta !='.$idUsuario.' ';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'User', 'Name', 'Surname', 'Enterprise');
+        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Empresa');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
 
 
 
@@ -101,7 +101,8 @@ if($dateNow > $birth)
         $sesion->agregarVariableSesion('permisoAgregarAmigo', '1');
         $plantilla->verPagina('listaPersonas', $variables);
     }
-        private function validarNombreUsuario ($nombreUsuario){
+    
+    private function validarNombreUsuario ($nombreUsuario){
         $permitidos = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
             for ($i = 0; $i<strlen($nombreUsuario); $i++){
                 if(strpos($permitidos, substr($nombreUsuario, $i, 1)))

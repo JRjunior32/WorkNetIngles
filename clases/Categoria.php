@@ -27,10 +27,10 @@ class Categoria {
             
          if($this->validarCategoriaUnica($cat)){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
-             $utilidades->mostrarMensaje('The category has been successfully added!');
+             $utilidades->mostrarMensaje('La se agrego correctamente categoria!');
             $plantilla->verPagina('');
          }else{
-            $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos, La categoria existe actualmente, por favor intente de nuevo.');
             $plantilla->verPagina('');
             return 0;
     }
@@ -57,7 +57,7 @@ class Categoria {
         
         $acciones = '<center><a href="./eliminarCategoria.php?idCategorias={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';   
         
-        $encabezado = ['ID' , 'Category'];
+        $encabezado = ['ID' , 'Categoria'];
         
         $variables['listaCategorias'] = $utilidades->convertirTabla($result, $encabezado, $acciones);
         
@@ -75,7 +75,7 @@ class Categoria {
         $result = $db->eliminarRegistro($tabla, $where);
         
         if($result)
-            $utilidades->mostrarMensaje('The category was created succesfully');
+            $utilidades->mostrarMensaje('La categoria se elimino correctamente');
         $utilidades->Redireccionar('controladores/vercat.php');
     }
 }

@@ -2,7 +2,7 @@
 
 
 class Utilidades {
-var $carpetaSitio='/WorkNetIngles';
+var $carpetaSitio='/WorkNet';
  
     public function redireccionar($url = 'index.php') {
         $respuesta = "<script type='text/javascript'> window.location='" . $this->retornarURLSitio() . '/' . $url . "'; </script>";        
@@ -25,7 +25,7 @@ var $carpetaSitio='/WorkNetIngles';
 
 
     public function convertirTabla($arreglo = array(), $encabezado = array(),$acciones='') {
-        $encabezado[]="Options";
+        $encabezado[]="Opciones";
         $tabla = '<table id="miTabla" class="display" cellspacing="0" width="100%">';
         $tabla .= '<thead><tr>';
 

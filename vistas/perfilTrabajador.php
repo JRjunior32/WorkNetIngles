@@ -20,18 +20,18 @@
           
     <div class="panel panel-default">
             <div class=" panel-heading">
-                General Information
+                Información General
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-            <b>User:</b> {{Usuario}}<br>
+            <b>Usuario:</b> {{Usuario}}<br>
             <b>DUI:</b> {{DUI}}<br>
-            <b>Name:</b> {{Nombre}}<br>
-            <b>Enterprise:</b> {{Empresa}}<br>
-            <b>Surname: </b> {{Apellido}}<br>
+            <b>Nombre:</b> {{Nombre}}<br>
+            <b>Empresa:</b> {{Empresa}}<br>
+            <b>Apellido: </b> {{Apellido}}<br>
             <b>E-mail:</b> {{Correo}}<br>
-            <b>Birth Day:</b> {{Nac}}<br>
+            <b>Fecha Nacimiento:</b> {{Nac}}<br>
           </div>
     </div>
     

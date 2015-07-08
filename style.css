@@ -146,7 +146,6 @@ height: 35% !important;
   white-space: nowrap;
   cursor: pointer;
   font-size: 10pt;
-  
     
 
 }
@@ -314,4 +313,8 @@ height: 35% !important;
     float: right!important;
     margin-bottom:inherit!important;
     border-radius: 5px !important;
+}
+
+.iznore {
+    border-top-right-radius: 0px !important;
 }

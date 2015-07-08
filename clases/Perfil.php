@@ -7,7 +7,7 @@ require_once realpath(dirname(__FILE__) . '/./Sesion.php');
 
 
 class Perfil {
-    var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\fotos\\';
+    var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\fotos\\';
 
     public function mostrarPerfil() {
         $plantilla = new Plantilla();
@@ -54,10 +54,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('The picture was successfully updated');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -127,10 +127,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('The picture was successfully updated.');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -200,10 +200,10 @@ class Perfil {
          
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
                 
-                $utilidades-> mostrarMensaje('The picture was successfully updated.');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
                 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! there was an error, please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
                     $plantilla->verPagina('perfilTrabajador');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -213,4 +213,19 @@ class Perfil {
                     $utilidades->Redireccionar('controladores/verPerfilTrabajador.php');
                 }
             }
+    
+    public function editarCorreo($editor){
+        $db = new MySQL();
+        $sesion = new Sesion();
+        
+        $id = $sesion->ObtenerVariableSesion('idUsuario');
+        $newEmail = $editor['newEmail'];
+        
+        $tabla = 'cuenta';
+        $cambio = 'Correo ='.$newEmail;
+        $where = 'idCuenta='.$id;
+        
+        $resultado = $db->modificarRegistro($tabla,$cambio,$where);
+        $utilidades = Redireccionar('controladores/publicar.php');
+    }
 }
