@@ -48,31 +48,31 @@ class Amigos {
                     $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
             }
         }
-        
+
         $new = 'SELECT new_count FROM cuenta WHERE idCuenta ='.$id;
         $count = $mysql->consulta($new);
-        
+
         $contador = $count[0]['new_count'];
         $tabla2 = 'cuenta';
         $cambio2 = 'new_count='.$contador.'+'.'1';
         $where2 = 'idCuenta='.$id;
-        
+
         $sumar = $mysql ->modificarRegistro($tabla2,$cambio2,$where2);
-        
+
         $plantilla->verPagina();
     }
 
-  
+
     public function VerAmigos() {
         $plantilla = new Plantilla();
         $mysql = new MySQL();
         $sesion = new Sesion();
         $utilidades = new Utilidades();
-        
+
         $pn ='';
         $pu='./verPerfilUsuarioAmigo.php?idCuenta={{id}}';
         $pe='./verPerfilAmigo.php?idCuenta={{id}}';
-        
+
         $verificar = "SELECT Tipo FROM cuenta";
         $exe = $mysql->consulta($verificar);
         for ($i=0; $i<count($exe);$i++){
@@ -82,45 +82,45 @@ class Amigos {
                 elseif($tipou ==='4')
                     $pE = $pu;
         }
-        
+
         $idUsuario = $sesion->obtenerVariableSesion('idUsuario');
 
         $consulta = 'select c.idCuenta as id, c.Usuario, c.Nombre,c.Apellido '
                     .' from cuenta c, Amigo a '
                     .' where a.idCuentaAmigo = c.idCuenta '
                     .' and a.idCuenta = ' . $idUsuario;
-        
+
         $listaAmigos = $mysql->consulta($consulta);
-        
-        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido');
+
+        $encabezado = array('ID', 'User', 'Name', 'Surname');
 
         $acciones = '<a href="./chatear.php?idCuenta={{id}}"><span class="fui-chat"> </span></a>';
         $acciones .= '<a href="./eliminarAmigo.php?idCuenta={{id}}" id="textRed"><span class="fui-trash"></span></a>';
         $acciones .= '<a href="'.$pn.'">&nbsp Perfil</a>';
 
-     
+
         $variables['listaAmigos'] = $utilidades->convertirTabla($listaAmigos, $encabezado, $acciones);
 
-             
+
         $plantilla->verPagina('listaAmigos', $variables);
     }
     public function eliminarAmigo($id){
         $db = new MySQL();
         $sesion = new Sesion();
         $utilidades = new Utilidades();
-        
+
         $tabla = 'amigo';
         $where = 'idCuentaAmigo ='.$id;
-        
+
         $resultado = $db->eliminarRegistro($tabla, $where);
-        
+
         if($resultado){
             $utilidades->mostrarMensaje('You are not following this user any more.');
             $utilidades->redireccionar('controladores/mensajes.php');
         }else
             $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
 
-        
+
     }
 
 }
