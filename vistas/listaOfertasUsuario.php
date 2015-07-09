@@ -15,8 +15,8 @@
       </div>
     <form action="./guardarAplicador.php" method="POST">
       <div class="modal-body">
-        Esta seguro de enviar una solicitud de aplicacion en la oferta seleccionada?
-          <span class="help-block">Esta acción no se podra revertir</span>
+        Are you sure you want to apply to this offer?
+          <span class="help-block">This action can't be reverted.</span>
           <input type="hidden" value="{{idOferta}}" name="idOferta">
           <input type="hidden" value="{{idEmpresa}}" name="idEmpresa">
       </div>
