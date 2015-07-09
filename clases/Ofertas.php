@@ -134,8 +134,9 @@ class Ofertas {
         $sesion = new Sesion();
         $plantilla = new Plantilla();
         
-        
-        $query = 'SELECT idOfertas as id,idCuenta,Titulo,Detalle,Genero,Salario,Direccion,Cargo,Edad,Requisitos FROM ofertas';
+        $idUser = $sesion->obtenerVariableSesion('idUsuario');
+        $query = 'SELECT o.idOfertas as id,o.idCuenta,o.Titulo,o.Detalle,o.Genero,o.Salario,o.Direccion,o.Cargo,o.Edad,o.Requisitos FROM ofertas o
+        WHERE o.idCuenta in (select idCuentaAmigo from amigo where idCuenta = '.$idUser.')';
         $result = $db->consulta($query);
         
         $variables['idOferta']=$result[0]['id'];

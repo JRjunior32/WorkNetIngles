@@ -19,5 +19,7 @@ class Notificaciones{
         $plantilla->verPagina('verNotificaciones', $variables);
     }
     
-    public function
+    public function convertirNotiHTML(){
+        $bd = new MySQL();
+    }
 }
