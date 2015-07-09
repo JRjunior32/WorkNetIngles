@@ -25,9 +25,9 @@
             $resultado = $db->insertarRegistro($tabla,$columnas,$valores);
             
             if($resultado)
-                $utilidades->mostrarMensaje('Su solicitud se envio correctamente');
+                $utilidades->mostrarMensaje('Your application was successfully sended.');
             else
-                $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, Por favor intente de nuevo');
+                $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
             $utilidades->Redireccionar('controladores/verOfertasUsuario.php');
     }
         
