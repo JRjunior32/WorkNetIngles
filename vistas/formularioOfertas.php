@@ -1,37 +1,37 @@
 <div class="panel panel-primary" id="ofer">
     <div class="panel-heading">        
-        <h3 class="panel-title"><p class="text-center">Nueva Oferta de Trabajado</p></h3>        
+        <h3 class="panel-title"><p class="text-center">New Employment Offer</p></h3>        
     </div>
     <div class="panel-body">
         <form action="../controladores/guardarOfertas.php" method="POST">    
             <div class="form-group">
-                <label for="Titulo">Plaza:</label>
-                <input type="text" class="form-control login-field" name="titulo" placeholder="Titulo" required />
+                <label for="Titulo">Position:</label>
+                <input type="text" class="form-control login-field" name="titulo" placeholder="Title" required />
 
-                <label for="Requisitos">Detalle:</label>
-                <textarea type="text" id="publicacion" class="form-control login-field" name="detalle" placeholder="Detalle" required></textarea>
-                <label for="Info">Cargo:</label>
-                <input type="text" class="form-control login-field" name="cargo" placeholder="Cargo" required />
-                <label for="Info">Edad:</label>
-                <input type="text" id="edad" onkeydown="return validarNumeros(event)" class="form-control login-field" name="edad" placeholder="Edad" maxlength="2" required />
-                <label for="Genero">Genero:</label>
+                <label for="Requisitos">Detail:</label>
+                <textarea type="text" id="publicacion" class="form-control login-field" name="detalle" placeholder="Detail" required></textarea>
+                <label for="Info">Charge:</label>
+                <input type="text" class="form-control login-field" name="cargo" placeholder="Charge" required />
+                <label for="Info">Age:</label>
+                <input type="text" id="edad" onkeydown="return validarNumeros(event)" class="form-control login-field" name="edad" placeholder="Age" maxlength="2" required />
+                <label for="Genero">Gender:</label>
                 <select name="genero" class="form-control" id="select">
-                    <option value="M">Masculino</option>
-                    <option value="F">Femenino</option>
-                    <option value="A">Ambos</option>
+                    <option value="M">Masculine</option>
+                    <option value="F">Feminine</option>
+                    <option value="A">Both</option>
                 </select>
-                <label for="salario">Salario</label>
+                <label for="salario">Salary</label>
                 <div class="input-group">
                     <span class="input-group-addon ">$</span>
                     <input type="text" class="form-control" name="salario" onkeypress="mascara(this,'.',patSalario,true)" minlength="5" required>
                 </div>
-                <span class="help-block">Salario por hora</span>
-                <label for="direccion">Dirección</label>
-                <textarea type="text" id="publicacion" class="form-control login-field" name="adress" placeholder="Dirección" required></textarea>
-                <label for="Info">Requirientos:</label>
-                <input type="text"  class="form-control login-field" name="requisitos" placeholder="Requerimientos" required /><br>
-                <input type="submit" value="Crear" class="btn btn-primary btn-lg btn-warning">                
-                <a href="./publicar.php" class="btn btn-danger">Cancelar</a>
+                <span class="help-block">Salary per hour</span>
+                <label for="direccion">Address</label>
+                <textarea type="text" id="publicacion" class="form-control login-field" name="adress" placeholder="Address" required></textarea>
+                <label for="Info">Requirements:</label>
+                <input type="text"  class="form-control login-field" name="requisitos" placeholder="Requirements" required /><br>
+                <input type="submit" value="Create" class="btn btn-primary btn-lg btn-warning">                
+                <a href="./publicar.php" class="btn btn-danger">Cancel</a>
                 </p>
             </div>    
         </form>

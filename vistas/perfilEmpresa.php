@@ -29,7 +29,7 @@
             <b>Enterprise:</b> {{Empresa}}<br>
             <b>Email:</b> {{Correo}} <small id="de"><a href =""  data-toggle="modal" data-target="#ChangeE-mail">Edit<i class="fa fa-pencil"> </i></a></small><br>
             <b>Fundation Date:</b> {{Fun}}<br>
-            <b>Website:</b> {{Web}} <small id="de"><a href ="">Edit<i class="fa fa-pencil"> </i></a></small><br>
+            <b>Website:</b> {{Web}} <small id="de"><a href ="" data-toggle="modal" data-target="#ChangeWeb"> Edit<i class="fa fa-pencil"> </i></a></small><br>
           </div>
     </div>
     
@@ -81,22 +81,22 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Cambiar Pagina Web</h4>
+        <h4 class="modal-title" id="myModalLabel">Change Web Page</h4>
       </div>
       <div class="modal-body">
         <form action="./cambiarWeb.php" method="POST">
           <div class="form-group">
-             <label class="control-label" for="disabledInput">Pagina Web Anterior</label>
+             <label class="control-label" for="disabledInput">Old Web Page</label>
              <input class="form-control" id="disabledInput" value="{{Web}}" type="text" placeholder="Disabled input here..." disabled="">
         </div>
           <div class="form-group">
-              <label class="control-label" for="focusedInput">Nueva Pagina Web</label>
+              <label class="control-label" for="focusedInput">New Web Page</label>
               <input class="form-control" name="newWeb" id="focusedInput" type="url" required>
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-        <input type="submit" class="btn btn-primary" value="Guardar Cambios">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Save">
       </div>
     </div>
      </form>

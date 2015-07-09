@@ -15,7 +15,7 @@
     
         <div class="panel panel-default">
             <div class=" panel-heading">
-                <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Add Firend</a>
+                <a href="./agregarAmigo.php?idCuenta={{Id}}" class="btn btn-success"><i class="fa fa-user-plus"></i> Follow</a>
                 <a href="./crearPortafolioV.php?cuenta_idCuenta={{Id}}" class="btn btn-warning" id="med"><i class="fa fa-suitcase"></i> Portafolio</a>
                 <a href="#" class="btn btn-danger" id="iz"><i class="fui-cross"></i> Denounce</a>
 
