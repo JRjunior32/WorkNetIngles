@@ -10,7 +10,7 @@
               </a>
               <a href="./vercat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Categories
               </a>
-                <a href="./verDenuncias.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Denouces
+                <a href="./verDenuncias.php" class="list-group-item"><span class="fui-cross"></span> Denouces
               </a>
               <a href="./tiposReporte.php" class="list-group-item"><span class="fui-document"></span> Reports
               </a>
