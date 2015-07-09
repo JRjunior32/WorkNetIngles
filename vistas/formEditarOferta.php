@@ -1,33 +1,11 @@
 <div class="panel panel-primary" id="ofer">
     <div class="panel-heading">        
-<<<<<<< HEAD
-        <h3 class="panel-title"><p class="text-center">Nueva Oferta de Trabajado</p></h3>        
-=======
         <h3 class="panel-title"><p class="text-center">New Employement Offers</p></h3>        
->>>>>>> origin/traduccionVistas
     </div>
     <div class="panel-body">
         <form action="../controladores/editarOferta.php" method="POST">    
             <div class="form-group">
                 <input type="hidden" name="id" value="{{id}}">   
-<<<<<<< HEAD
-                <label for="Titulo">Plaza:</label>
-                <input type="text" class="form-control login-field" value="{{plaza}}" name="titulo" placeholder="Titulo" required />
-
-                <label for="Requisitos">Detalle:</label>
-                <textarea type="text" id="publicacion" class="form-control login-field"  name="detalle" placeholder="Detalle" required>{{detalle}}</textarea>
-                <label for="Info">Cargo:</label>
-                <input type="text" class="form-control login-field" value="{{cargo}}" name="cargo" placeholder="Cargo" required />
-                <label for="Info">Edad:</label>
-                <input type="text" id="edad" onkeydown="return validarNumeros(event)" value="{{edad}}" class="form-control login-field" name="edad" placeholder="Edad" maxlength="2" required />
-                <label for="Genero">Genero:</label>
-                <select name="genero" class="form-control" id="select">
-                    <option value="M">Masculino</option>
-                    <option value="F">Femenino</option>
-                    <option value="A">Ambos</option>
-                </select>
-                <label for="salario">Salario</label>
-=======
                 <label for="Titulo">Workplace:</label>
                 <input type="text" class="form-control login-field" value="{{plaza}}" name="titulo" placeholder="Workplace" required />
 
@@ -44,20 +22,10 @@
                     <option value="A">Both</option>
                 </select>
                 <label for="salario">Salary</label>
->>>>>>> origin/traduccionVistas
                 <div class="input-group">
                     <span class="input-group-addon ">$</span>
                     <input type="text" class="form-control" value="{{salario}}" name="salario" onkeypress="mascara(this,'.',patSalario,true)" minlength="5" required>
                 </div>
-<<<<<<< HEAD
-                <span class="help-block">Salario por hora</span>
-                <label for="direccion">Dirección</label>
-                <textarea type="text" id="publicacion" class="form-control login-field" name="adress" placeholder="Dirección" required>{{direccion}}</textarea>
-                <label for="Info">Requirientos:</label>
-                <input type="text"  class="form-control login-field" name="requisitos" value="{{requerimientos}}" placeholder="Requerimientos" required /><br>
-                <input type="submit" value="Crear" class="btn btn-primary btn-lg btn-warning">                
-                <a href="./publicar.php" class="btn btn-danger">Cancelar</a>
-=======
                 <span class="help-block">Salary per Hour</span>
                 <label for="direccion">Address</label>
                 <textarea type="text" id="publicacion" class="form-control login-field" name="adress" placeholder="Address" required>{{direccion}}</textarea>
@@ -65,7 +33,6 @@
                 <input type="text"  class="form-control login-field" name="requisitos" value="{{requerimientos}}" placeholder="Requerimientos" required /><br>
                 <input type="submit" value="Create" class="btn btn-primary btn-lg btn-warning">                
                 <a href="./publicar.php" class="btn btn-danger">Cancel</a>
->>>>>>> origin/traduccionVistas
                 </p>
             </div>    
         </form>

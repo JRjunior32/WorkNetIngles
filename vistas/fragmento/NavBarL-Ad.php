@@ -9,15 +9,8 @@
               <a href="crearcat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Create Categories
               </a>
               <a href="vercat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Categories
-
               </a>
-<<<<<<< HEAD
-                <a href="./verDenuncias.php" class="list-group-item"><span class="fui-cross"></span> Denuncias
-              </a>
-              <a href="./tiposReporte.php" class="list-group-item"><span class="fui-document"></span> Reportes
-=======
               <a href="#" class="list-group-item"><span class="fui-document"></span> Reports
->>>>>>> origin/traduccionVistas
               </a>
               <a href="logout.php" class="list-group-item"><span class="fui-power"></span> Log Out
               </a>

@@ -18,10 +18,10 @@
                         <br><br>
                         <label>New Password:</label>
                         <input type="password" minlength="5"  class="form-control login-field" placeholder="New password" name="newpass" required><br><br>
-                        <input type="password" minlength="5"   class="form-control login-field" placeholder="Repita nueva contraseña" name="newrepass" required><br><br>
+                        <input type="password" minlength="5"   class="form-control login-field" placeholder="Repeat new password" name="newrepass" required><br><br>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="btn btn-success" value="Guardar">
+                        <input type="submit" class="btn btn-success" value="Save">
                     </div>
                    
                 </div>

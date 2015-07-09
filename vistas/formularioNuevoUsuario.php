@@ -20,13 +20,8 @@
                     <div id="val"></div>
                     </div>
                     <div class="from-group">
-<<<<<<< HEAD
-                    Nombre:<input type="text"id="letras" onkeypress="return numeros(event)"  class="form-control login-field" name="name" placeholder="Nombre" /><br>
-                    Apellido:<input type="text"id="letras" onkeypress="return numeros(event)"  class="form-control login-field" name="ape" placeholder="Apellido" required /><br>
-=======
                     Name:<input type="text"id="letras" onkeydown="return validarLetras(event)" class="form-control login-field" name="name" placeholder="Name" /><br>
                     Surname:<input type="text"id="letras" onkeydown="return validarLetras(event)" class="form-control login-field" name="ape" placeholder="Surname" required /><br>
->>>>>>> origin/traduccionVistas
                     </div>
                     <div class="from-group">
                     Email:<input type="email" id="email" class="form-control login-field" name="mail" placeholder="Email" required /><br>
@@ -141,24 +136,5 @@
                     d.value = val
                     d.valant = val
             }
-}
-</script>
-<script>
-    function numeros(e){
-    key = e.keyCode || e.which;
-    tecla = String.fromCharCode(key).toLowerCase();
-    letras = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    especiales = [8,37,39,46];
- 
-    tecla_especial = false
-    for(var i in especiales){
- if(key == especiales[i]){
-     tecla_especial = true;
-     break;
-        } 
-    }
- 
-    if(letras.indexOf(tecla)==-1 && !tecla_especial)
-        return false;
 }
 </script>

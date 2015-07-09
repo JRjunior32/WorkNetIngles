@@ -28,11 +28,7 @@
                     <center>
                         <input class="btn btn-primary btn-lg btn-danger" type="submit" value="Log In">
                         </div>
-<<<<<<< HEAD
-                <a class="login-link" href="./formRecuperar.php">¿Olvidaste tu contraseña?</a>
-=======
                 <a class="login-link" href="php/olvido.php">Forgot your password?</a>
->>>>>>> origin/traduccionVistas
 
                 </div><br>
                 <div class="login-form">
