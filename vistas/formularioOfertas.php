@@ -5,6 +5,7 @@
     <div class="panel-body">
         <form action="../controladores/guardarOfertas.php" method="POST">    
             <div class="form-group">
+<<<<<<< HEAD
                 <label for="Titulo">Plaza:</label>
                 <input type="text" class="form-control login-field" name="titulo" placeholder="Titulo" required />
 
@@ -30,8 +31,22 @@
                 <textarea type="text" id="publicacion" class="form-control login-field" name="adress" placeholder="Dirección" required></textarea>
                 <label for="Info">Requirientos:</label>
                 <input type="text"  class="form-control login-field" name="requisitos" placeholder="Requerimientos" required /><br>
+=======
+                <label for="Titulo">Title:</label>
+                <input type="text" class="form-control login-field" name="titulo" placeholder="Title" required />
+
+                <label for="Requisitos">Details:</label>
+                <input type="text" class="form-control login-field" name="detalle" placeholder="Details" required />
+                <!-- <textarea class="form-control login-field" name="requisitos" placeholder="Requisitos" required /></textarea><br> -->
+                <label for="Info">Position:</label>
+                <input type="text" class="form-control login-field" name="cargo" placeholder="Position" required />
+                <label for="Info">Age:</label>
+                <input type="text" id="edad" class="form-control login-field" name="edad" placeholder="Age" required />
+                <label for="Info">Requirements:</label>
+                <input type="text"  class="form-control login-field" name="requisitos" placeholder="Requirements" required /><br>
+>>>>>>> origin/traduccionVistas
                 <input type="submit" value="Crear" class="btn btn-primary btn-lg btn-warning">                
-                <a href="./publicar.php" class="btn btn-danger">Cancelar</a>
+                <a href="./publicar.php" class="btn btn-danger">Cancel</a>
                 </p>
             </div>    
         </form>

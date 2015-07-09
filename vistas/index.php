@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>Inicia Sesión</title>
+        <title>Log In</title>
         <meta charset="utf-8">
         <link href="../vistas/recursos/css/bootstrap.css" rel="stylesheet">
         <link href="../vistas/recursos/css/flat-ui.css" rel="stylesheet">
@@ -12,31 +12,35 @@
 
             <div class="login-form">                
                 <center><h1>Worknet</h1></center>
-                <p font-size="14pt">WorkNet, una red social para empresas, empresarios y trabajadores.</p>              
+                <p font-size="14pt">WorkNet, a social network for enterprises, businessmen and workers.</p>              
 
                 <div class="form-group">
 
-                    <input type="text" class="form-control login-field" name="user" placeholder="Usuario" id="login-name" />
+                    <input type="text" class="form-control login-field" name="user" placeholder="User" id="login-name" />
                     <label class="login-field-icon fui-user" for="login-name"></label>
                 </div>
 
                 <div class="form-group">
-                    <input type="password" class="form-control login-field" name="pass" placeholder="Contraseña" id="login-pass" />
+                    <input type="password" class="form-control login-field" name="pass" placeholder="Password" id="login-pass" />
                     <label class="login-field-icon fui-lock" for="login-pass"></label>
                 </div>
                 <div id="divcen">
                     <center>
-                        <input class="btn btn-primary btn-lg btn-danger" type="submit" value="Inicia Sesión">
+                        <input class="btn btn-primary btn-lg btn-danger" type="submit" value="Log In">
                         </div>
+<<<<<<< HEAD
                 <a class="login-link" href="./formRecuperar.php">¿Olvidaste tu contraseña?</a>
+=======
+                <a class="login-link" href="php/olvido.php">Forgot your password?</a>
+>>>>>>> origin/traduccionVistas
 
                 </div><br>
                 <div class="login-form">
-                    <h4><center>Regístrate como:</center></h4>
+                    <h4><center>Sign up as:</center></h4>
                     <div class="form-group">
                         <center>
-                            <a class="btn btn-primary btn-lg btn-warning" href="formNuevaEmpresa.php">Empresa</a>   
-                            <a class="btn btn-primary btn-lg btn-info" href="formCrearUsuario.php">Usuario</a>   
+                            <a class="btn btn-primary btn-lg btn-warning" href="formNuevaEmpresa.php">Enterprise</a>   
+                            <a class="btn btn-primary btn-lg btn-info" href="formCrearUsuario.php">User</a>   
                         </center>
                     </div>  
                 </div>
