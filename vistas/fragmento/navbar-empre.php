@@ -30,7 +30,7 @@
                         <li><a href="../controladores/buscarusuarios.php "><i class="fa fa-users"></i> Users</a></li>
                         <li class="divider"></li>
                         <li><a href="../controladores/crearformCambiarcontra-Empre.php"><span class="fui-gear"></span> Change Password</a></li>
-                        <li><a href="logout.php"><span class="fui-power"></span> Log Out</a></li>
+                        <li><a href="./logout.php"><span class="fui-power"></span> Log Out</a></li>
 
                     </ul>
                 </li>
