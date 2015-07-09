@@ -58,8 +58,17 @@ class Amigos {
         $where2 = 'idCuenta='.$id;
 
         $sumar = $mysql ->modificarRegistro($tabla2,$cambio2,$where2);
+        
+        $tabla3 = 'solicitudes';
+        $columnas3 ='Tipo,cuentaAmigo,cuenta_idCuenta';
+        $tipo = 1;
+        $idCuenta_cuenta = $sesion->obtenerVariableSesion('idUsuario');
+        $valores3 = '"' .$tipo. '","' 
+                     .$id.'","'
+                     .$idCuenta_cuenta.'"';
+        $consuLta= $mysql ->insertarRegistro($tabla3,$columnas3,$valores3);
 
-        $plantilla->verPagina();
+        $utilidades->Redireccionar('controladores/publicar.php');
     }
 
 

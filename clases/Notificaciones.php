@@ -18,4 +18,6 @@ class Notificaciones{
         
         $plantilla->verPagina('verNotificaciones', $variables);
     }
+    
+    public function
 }
