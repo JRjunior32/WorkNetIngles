@@ -13,7 +13,7 @@ class Amigos {
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Empresa from cuenta '
                 . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' )';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'User', 'Name', 'Surname', 'Enterprise');
+        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Empresa');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
         $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
@@ -43,9 +43,9 @@ class Amigos {
                 $valores = $sesion->obtenerVariableSesion('idUsuario') . ',' . $id;
                 $resultado = $mysql->insertarRegistro($tabla, $columnas, $valores);
                 if ($resultado)
-                    $utilidades->mostrarMensaje('You are now following this User!');
+                    $utilidades->mostrarMensaje('Se ha añidido exitosamente el usuario a su lista de amigos');
                 else
-                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo .');
             }
         }
         
@@ -115,10 +115,10 @@ class Amigos {
         $resultado = $db->eliminarRegistro($tabla, $where);
         
         if($resultado){
-            $utilidades->mostrarMensaje('You are not following this user any more.');
+            $utilidades->mostrarMensaje('El usuario se elimino exitosamente!.');
             $utilidades->redireccionar('controladores/mensajes.php');
         }else
-            $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo.');
 
         
     }

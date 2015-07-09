@@ -30,7 +30,7 @@ class Categoria {
              $utilidades->mostrarMensaje('La se agrego correctamente categoria!');
             $plantilla->verPagina('');
          }else{
-            $utilidades->mostrarMensaje('Sorry! The category already exists. Please try again with another different.');
+            $utilidades->mostrarMensaje('Lo sentimos, La categoria existe actualmente, por favor intente de nuevo.');
             $plantilla->verPagina('');
             return 0;
     }
@@ -75,7 +75,7 @@ class Categoria {
         $result = $db->eliminarRegistro($tabla, $where);
         
         if($result)
-            $utilidades->mostrarMensaje('The category was successfully deleted.');
+            $utilidades->mostrarMensaje('La categoria se elimino correctamente');
         $utilidades->Redireccionar('controladores/vercat.php');
     }
 }
