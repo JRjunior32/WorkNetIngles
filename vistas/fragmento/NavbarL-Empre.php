@@ -1,4 +1,3 @@
-
 <a href='./perfil_Mostrar.php' class='list-group-item active'>Profile<br></a>
 <a href="./mensajes.php" class="list-group-item"><i class="fa fa-users"></i>Friends</a>
 <a href="./creartrabajador.php" class="list-group-item"><span class="fui-plus"></span>Create Worker</a>

@@ -9,7 +9,6 @@
               <a href="crearcat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Create Categories
               </a>
               <a href="vercat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Categories
-
               </a>
               <a href="#" class="list-group-item"><span class="fui-document"></span> Reports
               </a>
