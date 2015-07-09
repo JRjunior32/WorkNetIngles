@@ -11079,7 +11079,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "Sin Resultados",
+			"sEmptyTable": "No data",
 	
 	
 			/**
