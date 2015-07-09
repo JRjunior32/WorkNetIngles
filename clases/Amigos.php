@@ -42,31 +42,35 @@ class Amigos {
             if ($sesion->existeVariableSesion('idUsuario')) {
                 $valores = $sesion->obtenerVariableSesion('idUsuario') . ',' . $id;
                 $resultado = $mysql->insertarRegistro($tabla, $columnas, $valores);
-                if ($resultado)
+                if ($resultado){
                     $utilidades->mostrarMensaje('You are now following this User!');
+                            $new = 'SELECT new_count FROM cuenta WHERE idCuenta ='.$id;
+                            $count = $mysql->consulta($new);
+
+                            $contador = $count[0]['new_count'];
+                            $tabla2 = 'cuenta';
+                            $cambio2 = 'new_count='.$contador.'+'.'1';
+                            $where2 = 'idCuenta='.$id;
+
+                            $sumar = $mysql ->modificarRegistro($tabla2,$cambio2,$where2);
+
+                            $tabla3 = 'solicitudes';
+                            $columnas3 ='Tipo,cuentaAmigo,cuenta_idCuenta,user_idCuenta';
+                            $tipo = 1;
+                            $idCuenta_cuenta = $sesion->obtenerVariableSesion('idUsuario');
+                            $user_idCuenta=$sesion->obtenerVariableSesion('nombreUsuario');
+                            $valores3 = '"' .$tipo. '","' 
+                                         .$id.'","'
+                                         .$idCuenta_cuenta.'","'
+                                         .$user_idCuenta.'"';
+                            $consuLta= $mysql ->insertarRegistro($tabla3,$columnas3,$valores3);
+                }
                 else
                     $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
             }
         }
 
-        $new = 'SELECT new_count FROM cuenta WHERE idCuenta ='.$id;
-        $count = $mysql->consulta($new);
-
-        $contador = $count[0]['new_count'];
-        $tabla2 = 'cuenta';
-        $cambio2 = 'new_count='.$contador.'+'.'1';
-        $where2 = 'idCuenta='.$id;
-
-        $sumar = $mysql ->modificarRegistro($tabla2,$cambio2,$where2);
-        
-        $tabla3 = 'solicitudes';
-        $columnas3 ='Tipo,cuentaAmigo,cuenta_idCuenta';
-        $tipo = 1;
-        $idCuenta_cuenta = $sesion->obtenerVariableSesion('idUsuario');
-        $valores3 = '"' .$tipo. '","' 
-                     .$id.'","'
-                     .$idCuenta_cuenta.'"';
-        $consuLta= $mysql ->insertarRegistro($tabla3,$columnas3,$valores3);
+       
 
         $utilidades->Redireccionar('controladores/publicar.php');
     }
