@@ -17,7 +17,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a type="button" href="../controladores/formEventos.php" class="btn btn-primary">Ok</a>
+        <a type="button" href="../controladores/formEventosTrabaja.php" class="btn btn-primary">Ok</a>
       </div>
     </div>
   </div>

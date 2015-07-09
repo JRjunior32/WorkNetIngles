@@ -38,14 +38,22 @@ class Notificaciones{
         
        switch ($Noti[$i]['Tipo']){
             case 1:
+
                 $noti.='<div class="alert alert-dismissible alert-info">
                           <button type="button" class="close" data-dismiss="alert">×</button>
                           The user <strong>'.$Noti[$i]['user_idCuenta'].'</strong>  is following you. <a href="./agregarAmigo.php?idCuenta='.$Noti[0]['cuenta_idCuenta'].'" class="alert-link">Follow back</a> <strong id="de">'.substr($Noti[0]['Fecha'],0,-9).'</strong>
                         </div>';
-           break;
+            break;
+            case 2:
+                $noti.='<div class="alert alert-dismissible alert-danger">
+                          <button type="button" class="close" data-dismiss="alert">×</button>
+                          The user <strong>'.$Noti[$i]['user_idCuenta'].'</strong>  created an event. <a href="../vistas/calendarioEmpresa.php" class="alert-link">See Event</a> <strong id="de">'.substr($Noti[0]['Fecha'],0,-9).'</strong>
+                        </div>';
+            break;
             }
-            return $noti;
         }
-        
+         return $noti;
+
     }
+    
 }
