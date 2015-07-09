@@ -23,15 +23,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Aviso!</h4>
+        <h4 class="modal-title" id="myModalLabel">Warning!</h4>
       </div>
       <div class="modal-body">
-        Esta seguro que quiere eliminar la publicacion seleccionada? 
-          <span class="help-block">La siguiente acción no se podra revertir</span>
+        Are you sure you want to delete the publication? 
+          <span class="help-block">The following action can't be revert.</span>
         </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-          <a href="./eliminarPub.php?idPub={{Id}}" class="btn btn-primary">Aceptar</a>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a href="./eliminarPub.php?idPub={{Id}}" class="btn btn-primary">Accept</a>
       </div>
     </div>
   </div>

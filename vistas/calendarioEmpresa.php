@@ -31,7 +31,7 @@
                 url: '../controladores/Evento_mostrar.php',
                 type: 'GET',
                 error: function() {
-                    alert('Error con la base de datos');
+                    alert('Data base error');
             }
         }
 		});
