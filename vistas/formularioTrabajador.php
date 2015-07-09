@@ -1,39 +1,39 @@
 <div class="panel panel-primary">
     <div class="panel-heading">        
-        <h3 class="panel-title"><p class="text-center">Register Worker</p></h3>        
+        <h3 class="panel-title"><p class="text-center">Registar trabajador</p></h3>        
     </div>
     <div class="panel-body">
         <form action="../controladores/guardartrabajador.php" method="POST">    
             <div class="form-group">
-                <label for="Usuario">User:</label>
-                <input type="text" class="form-control login-field" id="usuario" name="user" placeholder="User" required />
+                <label for="Usuario">Usuario:</label>
+                <input type="text" class="form-control login-field" id="usuario" name="user" placeholder="Usuario" required />
             </div>
             <div class="form-group">
-                <label for="CorreoElectronico">Email:</label>
-                <input type="email" class="form-control" name="email" placeholder="Email" required />
+                <label for="CorreoElectronico">E-mail:</label>
+                <input type="email" class="form-control" name="email" placeholder="E-mail" required />
             </div>
             <div class="form-group">
-                <label for="Contraseña">Password:</label>
-                <input type="password" minlength="5" class="form-control login-field" id="pass" name="pass" placeholder="Password" required />
-                <label for="RepitaContraseña">Confirm Password:</label>
-                <input type="password" class="form-control login-field" id="repass" name="repass" placeholder="Confirm Password" required />
+                <label for="Contraseña">Contraseña:</label>
+                <input type="password" minlength="5" class="form-control login-field" id="pass" name="pass" placeholder="Contraseña" required />
+                <label for="RepitaContraseña">Confirmar Contraseña:</label>
+                <input type="password" class="form-control login-field" id="repass" name="repass" placeholder="Confirmar Contraseña" required />
                 <div id="val"></div>
             </div>
             <div class="form-group">
-                <label for="Nombre">Name:</label>
-                <input type="text" class="form-control login-field" id="letras" onkeydown="return validarLetras(event)" name="name" placeholder="Name" required />
+                <label for="Nombre">Nombre:</label>
+                <input type="text" class="form-control login-field" id="letras" onkeypress="return numeros(event)" name="name" placeholder="Nombre" required />
             </div>
             <div class="form-group">
-                <label for="Apellido">Surname:</label>
-                <input type="text" class="form-control login-field" id="letras" onkeydown="return validarLetras(event)" name="ape" placeholder="Surname" required />
+                <label for="Apellido">Apellido:</label>
+                <input type="text" class="form-control login-field" id="letras" onkeypress="return numeros(event)" name="ape" placeholder="Apellido" required />
             </div>
             <div class="form-group">
-                <label for="FechaNacimiento">Date of Birth (month/day/year):</label>
+                <label for="FechaNacimiento">Fecha de nacimiento (mes/día/año):</label>
                 <input type="date" min="31/12/1996" class="form-control login-field" name="birth" placeholder="Fecha de nacimiento" required />
             </div>
             <div class="form-group">
                 <label for="DUI">DUI:</label>
-                <input type="text" maxlength="10" class="form-control login-field" id="num" onkeyup="mascara(this,'-',patron2,true)" onkeydown="return validarNumeros(event)" name="dui" placeholder="DUI" required />
+                <input type="text" maxlength="10" onkeyup="mascara(this,'-',patronDUI,true)" class="form-control login-field" id="num" onkeydown="return validarNumeros(event)" name="dui" placeholder="DUI" required />
             </div>
             <div class="form-group">
                 <p class="text-center">
@@ -84,9 +84,9 @@
 		return patron.test(te); // prueba
 	}
 </script>
+
 <script>
-    var patron3 = new Array(4,4);
-    var patron2 = new Array(8,1);
+    var patronDUI = new Array(8,1);
         function mascara(d,sep,pat,nums){
             if(d.valant != d.value){
                 val = d.value
@@ -122,5 +122,24 @@
                     d.value = val
                     d.valant = val
             }
+}
+</script>
+<script>
+    function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    especiales = [8,37,39,46];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
 }
 </script>

@@ -54,25 +54,53 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Change email</h4>
+        <h4 class="modal-title" id="myModalLabel">Cambiar Correo Electronico</h4>
       </div>
       <div class="modal-body">
-        <form action="./cambiarContraseña.php" method="POST">
+        <form action="./cambiarCorreo.php" method="POST">
           <div class="form-group">
-             <label class="control-label" for="disabledInput">Previous email</label>
+             <label class="control-label" for="disabledInput">Correo Anterior</label>
              <input class="form-control" id="disabledInput" value="{{Correo}}" type="text" placeholder="Disabled input here..." disabled="">
         </div>
           <div class="form-group">
-              <label class="control-label" for="focusedInput">New email</label>
+              <label class="control-label" for="focusedInput">Nuevo Correo</label>
               <input class="form-control" name="newEmail" id="focusedInput" type="email" required>
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <input type="submit" class="btn btn-primary" value="Save Changes">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <input type="submit" class="btn btn-primary" value="Guardar Cambios">
       </div>
     </div>
      </form>
   </div>
 </div>
+
+<div class="modal fade" id="ChangeWeb" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Cambiar Pagina Web</h4>
+      </div>
+      <div class="modal-body">
+        <form action="./cambiarWeb.php" method="POST">
+          <div class="form-group">
+             <label class="control-label" for="disabledInput">Pagina Web Anterior</label>
+             <input class="form-control" id="disabledInput" value="{{Web}}" type="text" placeholder="Disabled input here..." disabled="">
+        </div>
+          <div class="form-group">
+              <label class="control-label" for="focusedInput">Nueva Pagina Web</label>
+              <input class="form-control" name="newWeb" id="focusedInput" type="url" required>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <input type="submit" class="btn btn-primary" value="Guardar Cambios">
+      </div>
+    </div>
+     </form>
+  </div>
+</div>
+
 
