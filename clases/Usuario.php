@@ -82,7 +82,7 @@ class Usuario {
         $cuenta = $sesion->obtenerVariableSesion('idUsuario');
         $query = "SELECT idCuenta as id, Usuario, Nombre, Apellido FROM cuenta where Tipo = '3' AND cuenta_cuenta=$cuenta";
         $listaUsuarios = $mysql->consulta($query);
-        $encabezado = array('ID', 'Usuario', 'Nombre','Apellido');
+        $encabezado = array('ID', 'User', 'Name','Surname');
         $acciones = '<center><a data-toggle="modal" data-target="#deleteUser" class="btn btn-danger"><span class="fui-trash"></span></a>';
         $acciones .= ' <a data-toggle="modal" data-target="#recoverPass" class = "btn btn-info" ><span class="fui-new"></span></a><br><br>';
 
@@ -106,7 +106,7 @@ class Usuario {
 
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,if(Estado = 1,"Active","Inactive") as Estado from cuenta where Tipo!=1';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'Estado');
+        $encabezado = array('ID', 'User', 'Name', 'Surname', 'Estate');
 
         $acciones = '<center><a data-toggle="modal" data-target="#activarUser" class="btn btn-success" id="acciones"><span class="fui-check"></span></a>';
         $acciones .= ' <a  data-toggle="modal" data-target="#descativarUser" class = "btn btn-danger" id="acciones"><span class="fui-cross"></span></a>';
@@ -331,10 +331,10 @@ class Usuario {
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Correo from cuenta '
                 . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 4 AND idCuenta !='.$idUsuario.'';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'Usuario', 'Nombre', 'Apellido', 'E-mail');
+        $encabezado = array('ID', 'User', 'Name', 'Surname', 'E-mail');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilUsuarioAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
+        $acciones .= '<a href="./verPerfilUsuarioAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
 
 
 

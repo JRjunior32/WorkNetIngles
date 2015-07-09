@@ -41,8 +41,8 @@
         $query = 'SELECT idAplicacion, idUsuario as id,Usuario FROM aplicadores WHERE idOferta = '.$idOfertas.' AND idEmpresa ='.$idEmpresa;
         $resultado = $db->consulta($query);
         
-        $encabezado = array('ID aplicador','idUsuario','Usuario');
-        $acciones = '<a href="verPerfilUsuarioAmigo.php?idCuenta={{id}}"><i class="fa fa-eye"></i> Ver Perfil</a>';
+        $encabezado = array('ID interested','ID User','User');
+        $acciones = '<a href="verPerfilUsuarioAmigo.php?idCuenta={{id}}"><i class="fa fa-eye"></i> Profile</a>';
         
         $variables['listaInteresados']=$utilidades->convertirTabla($resultado,$encabezado,$acciones);
         $plantilla -> verPagina('listaInteresados',$variables);

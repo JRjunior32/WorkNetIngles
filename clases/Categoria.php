@@ -57,7 +57,7 @@ class Categoria {
 
         $acciones = '<center><a href="./eliminarCategoria.php?idCategorias={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';
 
-        $encabezado = ['ID' , 'Categoria'];
+        $encabezado = ['ID' , 'Category'];
 
         $variables['listaCategorias'] = $utilidades->convertirTabla($result, $encabezado, $acciones);
 
