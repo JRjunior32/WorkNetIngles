@@ -113,7 +113,7 @@ class Ofertas {
                             <br>
                             <p><b>Gender: </b>'.$genero.'</p>
                             <p><b>Salary: $</b>'.$Ofertas[$i]['Salario'].'
-                            <span class="help-block">Salario por hora</span></p>
+                            <span class="help-block">Salary per hour</span></p>
                             <p><b>Charge: </b>'.$Ofertas[$i]['Cargo'].'</p>
                             <p><b>Age: </b>'.$Ofertas[$i]['Edad'].'</p>
                             <p><b>Address: </b>'.$Ofertas[$i]['Direccion'].'</p>
