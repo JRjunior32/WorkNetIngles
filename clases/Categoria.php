@@ -4,30 +4,30 @@ require_once realpath(dirname(__FILE__) . '/./MySQL.php');
 require_once realpath(dirname(__FILE__) . '/./Plantilla.php');
 
 class Categoria {
-    
+
 
     public function mostrarFormulario(){
         $plantilla = new Plantilla();
         $plantilla->verPagina('FormularioCategoria');
     }
-    
 
-    public function guardarcategoria($datosCategoria) {        
+
+    public function guardarcategoria($datosCategoria) {
         $bd = new MySQL();
         $utilidades = new Utilidades();
         $plantilla = new Plantilla();
-        
+
         $tabla = 'categorias';
         $columnas = 'NombreCat,cuenta_idCuenta';
 
         $cat = trim($datosCategoria['cat']);
         $idCuenta = 1;
 
-        $valores = '"'.$cat.'","'.$idCuenta.'"'; 
-            
+        $valores = '"'.$cat.'","'.$idCuenta.'"';
+
          if($this->validarCategoriaUnica($cat)){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
-             $utilidades->mostrarMensaje('La se agrego correctamente categoria!');
+             $utilidades->mostrarMensaje('The category was successfully added!');
             $plantilla->verPagina('');
          }else{
             $utilidades->mostrarMensaje('Sorry! The category already exists. Please try again with another different.');
@@ -37,30 +37,30 @@ class Categoria {
 }
  private function validarCategoriaUnica($Categoria) {
         $db = new MySQL();
-         
+
         $consulta = 'select idCategorias from categorias where NombreCat = "'. $Categoria .'"';
         $resultado = $db->consulta($consulta);
         if(count($resultado) > 0)
             return false;
-        else           
+        else
             return true;
-         
+
     }
     public function verCategorias(){
         $db = new MySQL();
         $utilidades = new Utilidades();
         $sesion = new Sesion();
         $plantilla = new Plantilla();
-        
+
         $query = 'SELECT idCategorias as id, NombreCat FROM categorias';
         $result = $db->consulta($query);
-        
-        $acciones = '<center><a href="./eliminarCategoria.php?idCategorias={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';   
-        
+
+        $acciones = '<center><a href="./eliminarCategoria.php?idCategorias={{id}}" class="btn btn-danger"><span class="fui-trash"></span></a>';
+
         $encabezado = ['ID' , 'Categoria'];
-        
+
         $variables['listaCategorias'] = $utilidades->convertirTabla($result, $encabezado, $acciones);
-        
+
         $plantilla->verPagina('listaCategorias', $variables);
 
     }
@@ -68,12 +68,12 @@ class Categoria {
         $db = new MySQL();
         $plantilla = new Plantilla();
         $utilidades = new Utilidades();
-        
+
         $tabla = 'categorias';
         $where = 'idCategorias='.$id;
-        
+
         $result = $db->eliminarRegistro($tabla, $where);
-        
+
         if($result)
             $utilidades->mostrarMensaje('The category was successfully deleted.');
         $utilidades->Redireccionar('controladores/vercat.php');
