@@ -807,3 +807,9 @@ height: 35% !important;
     bottom: 20px !important;
     left: 90px !important;
 }
+
+#img-coment {
+    width: 45px !important;
+    height: 45px !important;
+    margin-left: -200px !important;
+}
