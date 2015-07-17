@@ -1,10 +1,11 @@
+
 #derecha{
     float: right!important;
     margin-top: -1% !important;
     margin-right: 3px !important;
 }
 #perfil {
-        
+
         height: 95% !important;
         width: 100% !important;
         margin-left: 0 !important;
@@ -95,11 +96,11 @@
     float: right!important;
 }
 .ec-stars-wrapper {
-	/* Espacio entre los inline-block (los hijos, los `a`) 
+	/* Espacio entre los inline-block (los hijos, los `a`)
 	   http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.html */
 	font-size: 0;
-	/* Podríamos quitarlo, 
-		pero de esta manera (siempre que no le demos padding), 
+	/* Podríamos quitarlo,
+		pero de esta manera (siempre que no le demos padding),
 		sólo aplicará la regla .ec-stars-wrapper:hover a cuando
 		también se esté haciendo hover a alguna estrella */
 	display: inline-block;
@@ -110,7 +111,7 @@
 	/* Volver a dar tamaño al texto */
 	font-size: 32px;
 	font-size: 2rem;
-	
+
 	color: #888;
 }
 
@@ -122,6 +123,9 @@
  */
 .ec-stars-wrapper > a:hover ~ a {
 	color: #888;
+}
+.activaStar {
+  color: rgb(241, 196, 15) !important;
 }
 
 #w {
@@ -147,15 +151,15 @@ height: 35% !important;
   white-space: nowrap;
   cursor: pointer;
   font-size: 10pt;
-    
+
 
 }
 
 #photot {
     width: 175px !important;
     height: 175px !important;
-    border-radius: 50% !important;  
-    
+    border-radius: 50% !important;
+
 }
 
 #den {
@@ -174,7 +178,7 @@ height: 35% !important;
 .fechapub {
     font-size: 15px !important;
     float: right !important;
-    
+
 }
 
 .fondi{
@@ -184,7 +188,7 @@ height: 35% !important;
 #btn btn-public {
     width: 35%;
     display: none;
-    
+
 }
 
 
@@ -203,7 +207,7 @@ height: 35% !important;
 }
 .imagenP {
     width: 178px !important;
-    height: 200px !important; 
+    height: 200px !important;
 }
 
 
@@ -222,7 +226,7 @@ height: 35% !important;
     background: #34495E;
     opacity: 0.8 !important;
 
-    
+
 }
 
 #imgDes {
@@ -230,7 +234,7 @@ height: 35% !important;
   -moz-filter: blur(5px) !important;
   -o-filter: blur(5px) !important;
   -ms-filter: blur(5px) !important;
-  filter: blur(5px) !important; 
+  filter: blur(5px) !important;
     width: 100%;
     height: 100%;
 }
@@ -273,7 +277,7 @@ height: 35% !important;
     position: absolute !important;
     margin-left: 18% !important;
     margin-top: 4% !important;
-    width: 195px !important;
+    width: 200px !important;
 }
 
 .zeti {
@@ -283,7 +287,7 @@ height: 35% !important;
     font-size: 11px !important;
     line-height: 0 !important;
     margin-bottom: 0px !important;
-    margin-left: 0px !important; 
+    margin-left: 0px !important;
     background-color: #344E78 !important;
     width: 20% !important;
 }
@@ -300,7 +304,7 @@ height: 35% !important;
     font-size: 11px !important;
     line-height: 0 !important;
     margin-bottom: 0px !important;
-    margin-left: 0px !important; 
+    margin-left: 0px !important;
     background-color: #344E78 !important;
 }
 .seccion{
@@ -308,7 +312,7 @@ height: 35% !important;
 
 }
 
-#de {
+#de{
     float: right!important;
     margin-bottom:inherit!important;
     border-radius: 5px !important;
@@ -330,7 +334,7 @@ height: 35% !important;
     border-left-color: #fff !important;
     border-right-color: #fff !important;
     border-bottom-color:#7f8c8d !important;
-    border-bottom-width: 3px !important; 
+    border-bottom-width: 3px !important;
     border-radius: 0px !important;
     margin-left: 20px !important;
     width: 30% !important;
@@ -342,7 +346,7 @@ height: 35% !important;
     border-left-color: #fff !important;
     border-right-color: #fff !important;
     border-bottom-color:#3498db !important;
-    border-bottom-width: 3px !important; 
+    border-bottom-width: 3px !important;
     border-radius: 0px !important;
     margin-left: 20px !important;
     width: 30% !important;
@@ -354,7 +358,7 @@ height: 35% !important;
     border-left-color: #fff !important;
     border-right-color: #fff !important;
     border-bottom-color:#29b865 !important;
-    border-bottom-width: 3px !important; 
+    border-bottom-width: 3px !important;
     border-radius: 0px !important;
     margin-left: 20px !important;
     width: 30% !important;
@@ -370,7 +374,7 @@ height: 35% !important;
     border-left-color: #fff !important;
     border-right-color: #fff !important;
     border-bottom-color:#2c3e50 !important;
-    border-bottom-width: 3px !important; 
+    border-bottom-width: 3px !important;
     border-radius: 0px !important;
     margin-left: 20px !important;
     width: 30% !important;
@@ -382,10 +386,10 @@ height: 35% !important;
     border-left-color: #fff !important;
     border-right-color: #fff !important;
     border-bottom-color:#c0392b !important;
-    border-bottom-width: 3px !important; 
+    border-bottom-width: 3px !important;
     border-radius: 0px !important;
     margin-left: 20px !important;
-    width: 30% !important;   
+    width: 30% !important;
 }
 /******* EXAMPLE A *******/
 .br-wrapper .br-widget {
@@ -812,4 +816,27 @@ height: 35% !important;
     width: 45px !important;
     height: 45px !important;
     margin-left: -200px !important;
+}
+
+#registro {
+    width: 60% !important;
+    float: none !important;
+    margin-left: 0 !important;
+    margin-left: 20% !important;
+}
+
+.div-blanco {
+    background-color: #fff;
+}
+
+
+
+#deU {
+    float: right!important;
+    border-radius: 5px !important;
+}
+
+#clanedary {
+    margin-top: -80% !important ;
+    margin-left: -15% !important;
 }

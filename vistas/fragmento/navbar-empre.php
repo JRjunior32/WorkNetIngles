@@ -17,20 +17,20 @@
                     <button type="submit" class="btn btn-default"><span class="fui-search"></span></button>
                 </form>
                 <li class="active"><a href="#"></a></li>
-                <li><a href="../controladores/publicar.php"><span class="fui-home"></span> Home</a></li>
-                <li><a href="./perfil_Mostrar.php"><span class="fui-user"></span> Profile</a></li>
-
-                <li> <a href="./verNotificaciones.php"><span class="fa fa-globe"></span> Notifications </a></li>
+                <li><a href="../controladores/publicar.php"><span class="fui-home"></span> Inicio</a></li>                
+                <li><a href="./perfil_Mostrar.php"><span class="fui-user"></span>Perfil</a></li>
+                    
+                <li> <a href="./verNotificaciones.php"><span class="fa fa-globe"></span> Notificaciones </a></li>
                 <li class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span> Account<b class="caret"></b></a>
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown"><span class="fui-gear"></span> Cuenta<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><span class="help-block" id="mover"><i class="fa fa-search"></i> Search Users</span></li>
+                        <li><span class="help-block" id="mover"><i class="fa fa-search"></i> Buscar amigos</span></li>
                         <li class="divider"></li>
-                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Enterprises</a></li>
-                        <li><a href="../controladores/buscarusuarios.php "><i class="fa fa-users"></i> Users</a></li>
+                        <li><a href="../controladores/buscarempresas.php"><i class="fa fa-building-o"></i> Empresas</a></li>
+                        <li><a href="../controladores/buscarusuarios.php "><i class="fa fa-users"></i> Usuarios</a></li>
                         <li class="divider"></li>
-                        <li><a href="../controladores/crearformCambiarcontra-Empre.php"><span class="fui-gear"></span> Change Password</a></li>
-                        <li><a href="logout.php"><span class="fui-power"></span> Log Out</a></li>
+                        <li><a href="../controladores/crearformCambiarcontra-Empre.php"><span class="fui-gear"></span> Cambiar Contraseña</a></li>
+                        <li><a href="logout.php"><span class="fui-power"></span> Cerrar sesión</a></li>
 
                     </ul>
                 </li>
@@ -67,3 +67,5 @@
       }
     }
 </script>
+  
+    

@@ -1,6 +1,6 @@
 <div class="panel panel-primary">    
     <div class="panel-heading">        
-        <h3 class="panel-title"><p class="text-center">Offers</p></h3>        
+        <h3 class="panel-title"><p class="text-center">Ofertas</p></h3>        
     </div>
     <div class="panel-body">
       {{listaOfertasUsuario}}
@@ -15,14 +15,14 @@
       </div>
     <form action="./guardarAplicador.php" method="POST">
       <div class="modal-body">
-        Are you sure you want to apply to this offer?
-          <span class="help-block">This action can't be reverted.</span>
+        Esta seguro de enviar una solicitud de aplicacion en la oferta seleccionada?
+          <span class="help-block">Esta acción no se podra revertir</span>
           <input type="hidden" value="{{idOferta}}" name="idOferta">
           <input type="hidden" value="{{idEmpresa}}" name="idEmpresa">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <input type="submit" class="btn btn-primary" value="OK">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <input type="submit" class="btn btn-primary" value="Aceptar">
       </div>
     </form>
     </div>

@@ -1,5 +1,5 @@
 <div class="login-form" id="perfil">
-    <div class="panel panel-info">
+    <div class="panel panel-primary">
           <div class="panel-heading">
             <div class="row"> 
                   <div class="col-xs-6 col-md-3">
@@ -20,18 +20,18 @@
           
     <div class="panel panel-default">
             <div class=" panel-heading">
-                Brief Information
+                Información General
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-            <b>User:</b> {{Usuario}}<br>
+            <b>Usuario:</b> {{Usuario}}<br>
             <b>DUI:</b> {{DUI}}<br>
-            <b>Name:</b> {{Nombre}}<br>
-            <b>Enterprise:</b> {{Empresa}}<br>
-            <b>Surname: </b> {{Apellido}}<br>
+            <b>Nombre:</b> {{Nombre}}<br>
+            <b>Empresa:</b> {{Empresa}}<br>
+            <b>Apellido: </b> {{Apellido}}<br>
             <b>Email:</b> {{Correo}}<br>
-            <b>Date of Birth:</b> {{Nac}}<br>
+            <b>Fecha Nacimiento:</b> {{Nac}}<br>
           </div>
     </div>
     

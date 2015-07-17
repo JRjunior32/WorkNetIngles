@@ -1,82 +1,82 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
-    <h3 class="panel-title">Create Resume</h3>
+    <h3 class="panel-title">Crear Curriculum</h3>
   </div>
  <form method="POST" action="../controladores/guardarCurriculum.php">
     <div class="panel-body">
-        <label>Full Name</label>
-        <input type="text" class="form-control" name="name" onkeypress="return numeros(event)" placeholder="Full Name" Required>
+        <label>Nombre Completo</label>
+        <input type="text" class="form-control" name="name" onkeypress="return numeros(event)" placeholder="Nombre" Required>
     </div>
     <div class="row">
         <div class="col-lg-6">
             <div class="panel-body">
-                <label>Phone Number</label>
-                <input type="tel" name="tel" onkeydown="mascara(this,'-',patronCel,true)" maxlength="9" class="form-control" placeholder="Phone Number">
+                <label>Numero de Telefono</label>
+                <input type="tel" name="tel" onkeydown="mascara(this,'-',patronCel,true)" maxlength="9" class="form-control" placeholder="Telefono">
             </div>
         </div>
         <div class="col-lg-6">
             <div class="panel-body">
-                <label>Cellphone Number</label>
-                <input type="tel" name="cel" maxlength="9"  onkeydown="mascara(this,'-',patronCel,true)" class="form-control" placeholder="Cellphone Number">
+                <label>Numero de Celular</label>
+                <input type="tel" name="cel" maxlength="9"  onkeydown="mascara(this,'-',patronCel,true)" class="form-control" placeholder="Celular">
             </div>
         </div>
     </div>
     <div class="panel-body">
-        <label>Address</label>
-        <input type="text" class="form-control" name="dic" placeholder="Address" required>
+        <label>Direccion</label>
+        <input type="text" class="form-control" name="dic" placeholder="Dirección" required>
     </div>
     <div class="panel-body">
-        <label>Academic Background</label>
-        <textarea class="form-control" id="fa" name="academica" placeholder="Academic Background" required></textarea>
+        <label>Formación Academica</label>
+        <textarea class="form-control" id="fa" name="academica" placeholder="Formacion Academica" required></textarea>
     </div>
     <div class="panel-body">
-        <label>Work Experience</label>
-        <textarea class="form-control" id="fa" name="ex" placeholder="Work Experience" required></textarea>
+        <label>Experiencia laborañl</label>
+        <textarea class="form-control" id="fa" name="ex" placeholder="Experiencia Laboral" required></textarea>
     </div>
     <div class="row">
         <div class="col-lg-6">
             <div class="panel-body">
-                <label>Reference</label>
-                <input type="tel" name="ref1"  onkeypress="return numeros(event)" class="form-control" placeholder="Reference">
+                <label>Referencia</label>
+                <input type="tel" name="ref1"  onkeypress="return numeros(event)" class="form-control" placeholder="Referencia">
             </div>
         </div>
         <div class="col-lg-6">
             <div class="panel-body">
-                <label>Phone Number</label>
-                <input type="tel" name="tel1" class="form-control"  onkeydown="mascara(this,'-',patronCel,true)" placeholder="Phone Number" maxlength="9">
+                <label>Numero de Telefono</label>
+                <input type="tel" name="tel1" class="form-control"  onkeydown="mascara(this,'-',patronCel,true)" placeholder="Numero de Telefono" maxlength="9">
             </div>
         </div>
     </div>     
     <div class="row">
         <div class="col-lg-6">
             <div class="panel-body">
-                <label>Reference</label>
-                <input type="tel" name="ref2" onkeypress="return numeros(event)" class="form-control" placeholder="Reference">
+                <label>Referencia</label>
+                <input type="tel" name="ref2" onkeypress="return numeros(event)" class="form-control" placeholder="Referencia">
             </div>
         </div>
         <div class="col-lg-6">
             <div class="panel-body">
-                <label>Phone Number</label>
-                <input type="tel" name="tel2" class="form-control"  onkeydown="mascara(this,'-',patronCel,true)" placeholder="Phone Number" maxlength="9">
+                <label>Numero de Telefono</label>
+                <input type="tel" name="tel2" class="form-control"  onkeydown="mascara(this,'-',patronCel,true)" placeholder="Numero de Telefono" maxlength="9">
             </div>
         </div>
     </div>
      <div class="row">
         <div class="col-lg-6">
             <div class="panel-body">
-                <label>Reference</label>
-                <input type="tel" name="ref3" onkeypress="return numeros(event)" class="form-control" placeholder="Reference" >
+                <label>Referencia</label>
+                <input type="tel" name="ref3" onkeypress="return numeros(event)" class="form-control" placeholder="Referencia" >
             </div>
         </div>
         <div class="col-lg-6">
             <div class="panel-body">
-                <label>Phone Number</label>
-                <input type="tel" name="tel3" class="form-control"  onkeydown="mascara(this,'-',patronCel,true)"  placeholder="Phone Number" maxlength="9">
+                <label>Numero de Telefono</label>
+                <input type="tel" name="tel3" class="form-control"  onkeydown="mascara(this,'-',patronCel,true)"  placeholder="Numero de Telefono" maxlength="9">
             </div>
         </div>
     </div>
         <center>
-        <a class="btn btn-default" href="../controladores/publicar.php"> Cancel</a>
+        <a class="btn btn-default" href="../controladores/publicar.php"> Cancelar</a>
         <input type="submit" class="btn btn-success">
         </center><br>
     </form>

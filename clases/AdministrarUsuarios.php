@@ -17,7 +17,7 @@ class AdministrarUsuarios {
     public function verificarUsuario($usuario, $password) {
         $db = new MySQL();
         $utilidades = new Utilidades();
-        $query = "SELECT * FROM cuenta WHERE Usuario= '" . $usuario . "' and Password ='" . $password . "'";
+        $query = "SELECT * FROM cuenta WHERE Usuario= '" . $usuario . "' and Password ='" . $password . "' and Estado =  1";
         $resultado = $db->consulta($query);
 
         if (count($resultado) > 0) {
@@ -47,7 +47,7 @@ class AdministrarUsuarios {
                 $this->idUsuario = $resultado[$i]['idCuenta'];
             }
         } else {
-            $utilidades->mostrarMensaje('Sorry! The User or the Password is incorrect. Please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos! El usuario o contraseña son incorrectos, Por favor intente de nuevo');
             $utilidades->redireccionar('index.php');
         }
 
@@ -103,7 +103,7 @@ class AdministrarUsuarios {
         for ($i = 0; $i < count($resultado); $i++)
             $id = $resultado[$i]['idCuenta'];
 
-        $salida = "<div class='list-group col-xs-3'><a href='perfilempre.php?id=$id' class='list-group-item active'>Profile<br></a>";
+        $salida = "<div class='list-group col-xs-3'><a href='perfilempre.php?id=$id' class='list-group-item active'>Perfil<br></a>";
                
         return $salida;
     }

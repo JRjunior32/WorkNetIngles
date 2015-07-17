@@ -2,16 +2,16 @@
 
 
 class Utilidades {
-var $carpetaSitio='/WorkNetIngles';
-
+var $carpetaSitio='/WorkNet';
+ 
     public function redireccionar($url = 'index.php') {
-        $respuesta = "<script type='text/javascript'> window.location='" . $this->retornarURLSitio() . '/' . $url . "'; </script>";
+        $respuesta = "<script type='text/javascript'> window.location='" . $this->retornarURLSitio() . '/' . $url . "'; </script>";        
         echo $respuesta;
     }
 
 
     function retornarURLSitio() {
-        $url = "http://" . $_SERVER['HTTP_HOST'] /*. ":" . $_SERVER['SERVER_PORT']*/.$this->carpetaSitio;
+        $url = "http://" . $_SERVER['HTTP_HOST'] /*. ":" . $_SERVER['SERVER_PORT']*/.$this->carpetaSitio;        
         return $url;
     }
 
@@ -25,7 +25,7 @@ var $carpetaSitio='/WorkNetIngles';
 
 
     public function convertirTabla($arreglo = array(), $encabezado = array(),$acciones='') {
-        $encabezado[]="Options";
+        $encabezado[]="Opciones";
         $tabla = '<table id="miTabla" class="display" cellspacing="0" width="100%">';
         $tabla .= '<thead><tr>';
 
@@ -35,32 +35,32 @@ var $carpetaSitio='/WorkNetIngles';
         $tabla .='</tr></thead>';
 
         $tabla .= '<tbody>';
-        for ($i = 0; $i < count($arreglo); $i++) {
-            $tabla .= '<tr>';
+        for ($i = 0; $i < count($arreglo); $i++) {            
+            $tabla .= '<tr>';                                    
             $arreglo[$i][]=$this->reemplazarVariables($acciones,'id', $arreglo[$i]['id']);
             foreach ($arreglo[$i] as $elemento => $valor) {
-
+                
                 $tabla .='<td>' . $valor . '</td>';
-            }
+            }            
             $tabla .='</tr>';
         }
         $tabla .='</tbody>';
 
         return $tabla;
     }
+    
 
-
-    private function reemplazarVariables($pagina,$variable,$valor) {
-            $pagina = str_replace('{{' . $variable . '}}', $valor, $pagina);
+    private function reemplazarVariables($pagina,$variable,$valor) {                        
+            $pagina = str_replace('{{' . $variable . '}}', $valor, $pagina);        
         return $pagina;
     }
+    
 
-
-    public function mostrarMensaje($datos = '') {
+    public function mostrarMensaje($datos = '') {        
         echo "<script type='text/javascript'> alert('" . $datos . "'); </script>";
         /*echo "<div class='notifications top-left'></div>"
         . "$('.top-left').notify({message: { text: '".$datos."' }}).show();";*/
-
+        
     }
 
 }

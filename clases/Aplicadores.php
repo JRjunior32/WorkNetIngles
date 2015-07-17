@@ -25,9 +25,9 @@
             $resultado = $db->insertarRegistro($tabla,$columnas,$valores);
             
             if($resultado)
-                $utilidades->mostrarMensaje('Your application was successfully sended.');
+                $utilidades->mostrarMensaje('Su solicitud se envio correctamente');
             else
-                $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+                $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, Por favor intente de nuevo');
             $utilidades->Redireccionar('controladores/verOfertasUsuario.php');
     }
         
@@ -41,8 +41,8 @@
         $query = 'SELECT idAplicacion, idUsuario as id,Usuario FROM aplicadores WHERE idOferta = '.$idOfertas.' AND idEmpresa ='.$idEmpresa;
         $resultado = $db->consulta($query);
         
-        $encabezado = array('ID interested','ID User','User');
-        $acciones = '<a href="verPerfilUsuarioAmigo.php?idCuenta={{id}}"><i class="fa fa-eye"></i> Profile</a>';
+        $encabezado = array('ID aplicador','idUsuario','Usuario');
+        $acciones = '<a href="verPerfilUsuarioAmigo.php?idCuenta={{id}}"><i class="fa fa-eye"></i> Ver Perfil</a>';
         
         $variables['listaInteresados']=$utilidades->convertirTabla($resultado,$encabezado,$acciones);
         $plantilla -> verPagina('listaInteresados',$variables);

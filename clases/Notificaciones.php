@@ -41,13 +41,13 @@ class Notificaciones{
 
                 $noti.='<div class="alert alert-dismissible alert-info">
                           <a href="./eliminarSoli.php?idSoli='.$Noti[$i]['id'].'" class="close" data-dismiss="alert">×</a>
-                          The user <strong>'.$Noti[$i]['user_idCuenta'].'</strong>  is now following you. <a href="./agregarAmigo.php?idCuenta='.$Noti[0]['cuenta_idCuenta'].'" class="alert-link">Follow?</a> <strong id="de">'.substr($Noti[0]['Fecha'],0,-9).'</strong>
+                          El usuario <strong>'.$Noti[$i]['user_idCuenta'].'</strong>  te sigue. <a href="./agregarAmigo.php?idCuenta='.$Noti[0]['cuenta_idCuenta'].'" class="alert-link">Seguir?</a> <strong id="de">'.substr($Noti[0]['Fecha'],0,-9).'</strong>
                         </div>';
             break;
             case 2:
                 $noti.='<div class="alert alert-dismissible alert-danger">
                           <a href="./eliminarSoli.php?idSoli='.$Noti[$i]['id'].'" class="close" data-dismiss="alert">×</a>
-                          Your worker <strong>'.$Noti[$i]['user_idCuenta'].'</strong>  created an event. <a href="../vistas/calendarioEmpresa.php" class="alert-link">See event</a> <strong id="de">'.substr($Noti[0]['Fecha'],0,-9).'</strong>
+                          Su trabajador <strong>'.$Noti[$i]['user_idCuenta'].'</strong>  Creo un evento. <a href="../vistas/calendarioEmpresa.php" class="alert-link">Ver Evento</a> <strong id="de">'.substr($Noti[0]['Fecha'],0,-9).'</strong>
                         </div>';
             break;
             }
@@ -83,3 +83,4 @@ class Notificaciones{
 
         }
 }
+    

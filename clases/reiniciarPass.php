@@ -7,19 +7,19 @@
 
 
     class reiniciarPass {
-
+        
         public function mostrarForm(){
         $plantilla = new Plantilla();
-
+         
         $plantilla->verPaginaSinPlantilla('olvido');
         }
-
+        
         function generarLinkTemporal($olvido){
            $db = new MySQL();
-
+           
             $cadena = rand(1,9999999).date('Y-m-d');
             $token = sha1($cadena);
-
+            
             $email = $olvido['email'];
             $tabla = 'cuenta';
             $cambio = 'token ="'.$token."'";
@@ -34,18 +34,18 @@
            else
               return FALSE;
         }
-
+    
     function enviarEmail( $email, $link ){
        $mensaje = '<html>
          <head>
-            <title>Respawn your password</title>
+            <title>Restablece tu contraseña</title>
          </head>
          <body>
-           <p>We have received a petition to recover your password.</p>
-           <p>If you made this petition, click the following link. If you did not made this petition, please ignore this e-mail.</p>
+           <p>Hemos recibido una petición para restablecer la contraseña de tu cuenta.</p>
+           <p>Si hiciste esta petición, haz clic en el siguiente enlace, si no hiciste esta petición puedes ignorar este correo.</p>
            <p>
-             <strong>Link to recover your password.</strong><br>
-             <a href="'.$link.'"> Recover your password</a>
+             <strong>Enlace para restablecer tu contraseña</strong><br>
+             <a href="'.$link.'"> Restablecer contraseña </a>
            </p>
          </body>
         </html>';

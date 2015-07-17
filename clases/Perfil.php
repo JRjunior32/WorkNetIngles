@@ -59,10 +59,10 @@ class Perfil {
 
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
 
-                $utilidades-> mostrarMensaje('The picture was successfully updated!');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -134,10 +134,10 @@ class Perfil {
 
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
 
-                $utilidades-> mostrarMensaje('The picture was successfully updated!');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -207,10 +207,10 @@ class Perfil {
 
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
 
-                $utilidades-> mostrarMensaje('The picture was successfully updated!');
+                $utilidades-> mostrarMensaje('La foto se actualizo correctamente');
 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
+                    $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un problema, por favor intente de nuevo.');
                     $plantilla->verPagina('perfilTrabajador');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -236,7 +236,7 @@ class Perfil {
         $resultado = $db->modificarRegistro($tabla,$cambio,$where);
 
         if($resultado)
-            $utilidades-> mostrarMensaje('The email was successfully updated!');
+            $utilidades-> mostrarMensaje('El correo se ha actualizado correctamente');
         $utilidades -> Redireccionar('controladores/perfil_Mostrar.php');
     }
 
@@ -254,7 +254,7 @@ class Perfil {
         $resultado = $db->modificarRegistro($tabla,$cambio,$where);
 
         if($resultado)
-            $utilidades-> mostrarMensaje('The email was successfully updated!');
+            $utilidades-> mostrarMensaje('El correo se ha actualizado correctamente');
         $utilidades -> Redireccionar('controladores/perfil_Mostrar.php');
     }
         public function editarCorreoUsuario($editor){
@@ -272,7 +272,7 @@ class Perfil {
         $resultado = $db->modificarRegistro($tabla,$cambio,$where);
 
         if($resultado)
-            $utilidades-> mostrarMensaje('The email was successfully updated!');
+            $utilidades-> mostrarMensaje('El correo se ha actualizado correctamente');
         $utilidades -> Redireccionar('controladores/verPerfilUsuario.php');
     }
 
@@ -290,9 +290,9 @@ class Perfil {
 
         $resultado = $bd->modificarRegistro($tabla,$cambio,$where);
         if($resultado)
-            $utilidades->mostrarMensaje('You have successfully changed your category!');
+            $utilidades->mostrarMensaje('Usted se ha cambiado de categoria correctamente');
         else
-            $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un proble por favor vuelva a intentar');
         $utilidades -> Redireccionar('controladores/perfil_Mostrar.php');
 
     }

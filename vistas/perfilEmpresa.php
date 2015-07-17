@@ -1,9 +1,9 @@
 <div class="login-form" id="perfil">
-    <div class="panel panel-info">
+    <div class="panel panel-primary">
           <div class="panel-heading">
-            <div class="row"> 
+            <div class="row">
                   <div class="col-xs-6 col-md-3">
-                    
+
                        <a href="" class="thumbnail" id="photot" data-toggle="modal" data-target="#myModal">
                           <img src="{{photo}}" alt="Usuario Avatar" class="img-circle" id="foto-perfil">
                         </a>
@@ -20,21 +20,21 @@
 
     <div class="panel panel-default">
             <div class=" panel-heading">
-                Brief Information
+                Información General
             </div>
     </div>
         <div class="panel panel-default" id="az">
           <div class="panel-body">
-            <b>User:</b> {{Usuario}} <br>
-            <b>Enterprise:</b> {{Empresa}}<br>
-            <b>Email:</b> {{Correo}} <small id="de"><a href =""  data-toggle="modal" data-target="#ChangeE-mail">Edit<i class="fa fa-pencil"> </i></a></small><br>
-            <b>Fundation Date:</b> {{Fun}}<br>
-            <b>Website:</b> {{Web}} <small id="de"><a href ="" data-toggle="modal" data-target="#ChangeWeb"> Edit<i class="fa fa-pencil"> </i></a></small><br>
+            <b>Empresa:</b> {{Empresa}}<br>
+            <b>Email:</b> {{Correo}} <small id="de"><a href =""  data-toggle="modal" data-target="#ChangeE-mail">Editar<i class="fa fa-pencil"> </i></a></small><br>
+            <b>Usuario:</b> {{Usuario}} <br>
+            <b>Sitio Web:</b> {{Web}} <small id="de"><a href =""  data-toggle="modal" data-target="#ChangeWeb">Editar<i class="fa fa-pencil"> </i></a></small><br>
+            <b>Fecha de fundación:</b> {{Fun}}<br>
             <b>Categoría:</b> {{Categoria}} <small id="de"><a href =""  data-toggle="modal" data-target="#ChangeCat">Editar<i class="fa fa-pencil"> </i></a></small>
-          
+
         </div>
     </div>
-    
+
         </div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -83,26 +83,52 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Change Web Page</h4>
+        <h4 class="modal-title" id="myModalLabel">Cambiar Pagina Web</h4>
       </div>
       <div class="modal-body">
         <form action="./cambiarWeb.php" method="POST">
           <div class="form-group">
-             <label class="control-label" for="disabledInput">Old Web Page</label>
+             <label class="control-label" for="disabledInput">Pagina Web Anterior</label>
              <input class="form-control" id="disabledInput" value="{{Web}}" type="text" placeholder="Disabled input here..." disabled="">
         </div>
           <div class="form-group">
-              <label class="control-label" for="focusedInput">New Web Page</label>
+              <label class="control-label" for="focusedInput">Nueva Pagina Web</label>
               <input class="form-control" name="newWeb" id="focusedInput" type="url" required>
             </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <input type="submit" class="btn btn-primary" value="Save">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <input type="submit" class="btn btn-primary" value="Guardar Cambios">
       </div>
     </div>
      </form>
   </div>
 </div>
-
-
+<div class="modal fade" id="ChangeCat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Cambiar de Categoria</h4>
+      </div>
+      <div class="modal-body">
+        <form action="./cambiarCat.php" method="POST">
+          <div class="form-group">
+             <label class="control-label" for="disabledInput">Categoria Anterior</label>
+             <input class="form-control" id="disabledInput" value="{{Categoria}}" type="text" placeholder="Disabled input here..." disabled="">
+        </div>
+          <div class="form-group">
+              <label class="control-label" for="focusedInput">Nueva Categoria</label>
+              <select class="form-control" name="categoria" required>
+                  {{categoria}}
+              </select>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <input type="submit" class="btn btn-primary" value="Guardar Cambios">
+      </div>
+    </div>
+     </form>
+  </div>
+</div>

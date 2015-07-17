@@ -4933,8 +4933,7 @@ a.thumbnail.active {
   color: inherit;
 }
 .alert .alert-link {
-  color: #fff;
-  text-decoration: underline;
+  font-weight: bold;
 }
 .alert > p,
 .alert > ul {
@@ -4966,15 +4965,15 @@ a.thumbnail.active {
   color: #2b542c;
 }
 .alert-info {
-  color: #ffffff;
-  background-color: #3498db;
-  border-color: #3498db;
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
 }
 .alert-info hr {
   border-top-color: #a6e1ec;
 }
 .alert-info .alert-link {
-  color: #e6e6e6;
+  color: #245269;
 }
 .alert-warning {
   color: #8a6d3b;

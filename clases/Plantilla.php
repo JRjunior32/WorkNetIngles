@@ -45,7 +45,7 @@ class Plantilla {
             $menuSuperior = $this->cargarArchivo('fragmento/navbar-empre');
             $menuLateral = $this->cargarArchivo('fragmento/NavbarL-Empre');
             if($contenido == '')
-                $contenido = $this->cargarArchivo('contenido-empre'); 
+                $contenido = $this->cargarArchivo('fragmento/contenido-trabador'); 
         }     
         if($sesion->obtenerVariableSesion('tipoUsuario') == 3){
             $menuSuperior = $this->cargarArchivo('fragmento/navbar-trabaja');
@@ -96,14 +96,14 @@ class Plantilla {
 
 
     
-    public function verPaginaSinPlantilla($contenido = 'index', $respuesta = '',$variables='') {
+    public function verPaginaSinPlantilla($contenido = 'index',$variables='') {
         $paginaWeb = $this->cargarArchivo($contenido);
 
         if($variables != ''){
             $this->agregarVariables($variables);
             $paginaWeb = $this->reemplazarVariables($paginaWeb);
             }
-            echo $paginaWeb . $respuesta;
+            echo $paginaWeb;
             }
 
 }

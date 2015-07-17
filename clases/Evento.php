@@ -44,16 +44,16 @@ class Evento {
         if($FechaIni <= $FechaFin){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         }else{
-            $utilidades->mostrarMensaje('Sorry! The event can not start before the end date.');
+            $utilidades->mostrarMensaje('Lo sentimos, el evento no puede empezar antes de que finalice');
         }
             }else{
-                    $utilidades->mostrarMensaje('Sorry! Please verify dates.');
+                    $utilidades->mostrarMensaje('Lo sentimos, Por favor verifique las fechas y horas ingresadas.');
             }
 
         if (isset($resultado))
-            $utilidades->mostrarMensaje('The event was successfully created.');
+            $utilidades->mostrarMensaje('El evento se creo correctamente.');
         else
-            $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo.');
 
         $utilidades->Redireccionar('controladores/formEventos.php');
      }
@@ -90,14 +90,14 @@ class Evento {
         if($FechaIni <= $FechaFin){
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         }else{
-            $utilidades->mostrarMensaje('Sorry! The event can not start before the end date.');
+            $utilidades->mostrarMensaje('Lo sentimos, el evento no puede empezar antes de que finalice');
         }
             }else{
-                    $utilidades->mostrarMensaje('Sorry! Please verify the dates.');
+                    $utilidades->mostrarMensaje('Lo sentimos, Por favor verifique las fechas y horas ingresadas.');
             }
 
         if (isset($resultado)){
-            $utilidades->mostrarMensaje('The event was successfully created.');
+            $utilidades->mostrarMensaje('El evento se creó correctamente.');
 
             $consulta1= 'SELECT cuenta_cuenta FROM cuenta WHERE idCuenta ='.$idCuenta;
             $producto = $bd->consulta($consulta1);
@@ -124,8 +124,37 @@ class Evento {
                             $consuLta= $bd ->insertarRegistro($tabla3,$columnas3,$valores3);
         }
         else
-            $utilidades->mostrarMensaje('Sorry! There was an error. Please try again.');
+            $utilidades->mostrarMensaje('Lo sentimos, ocurrio un problema, por favor intente de nuevo.');
 
         $utilidades->Redireccionar('controladores/formEventos.php');
      }
+    
+    public function mostrarListaEventos(){
+        $bd = new MySQL();
+        $utilidades = new Utilidades();
+        $plantilla = new Plantilla();
+        $sesion = new Sesion();
+        
+        $id = $sesion->obtenerVariableSesion('idUsuario');
+        $query =  'SELECT idEventos as id,FechaIni,HoraIni,FechaFin,HoraFin,Nombre,Descripcion FROM eventos WHERE idCuenta ='.$id;
+        $resultado = $bd->consulta($query);
+        
+        $encabezado = array('ID','Fecha de Incio','Hora de Inicio','Fecha Final','Hora Final','Titulo','Descripcion');
+        $acciones = '<center><a href="./eliminarEvento.php?idEventos={{id}}" class="btn btn-danger" title="Eliminar Evento" id="acciones"><i class="fa fa-trash"></i></a>';
+        $variables['listaEventos'] = $utilidades->convertirTabla($resultado,$encabezado,$acciones);
+        
+        $plantilla->verPagina('listaEventos', $variables);
+    }
+    
+    public function eliminarEvento($id){
+        $bd = new MySQL();
+        $utilidades = new Utilidades();
+        
+        $tabla ='eventos';
+        $where = 'idEventos='.$id;
+        
+        $resultado = $bd->eliminarRegistro($tabla,$where);
+        $utilidades->Redireccionar('controladores/verEventosLista.php');
+        $utilidades->mostrarMensaje('El evento se elimino correctamente');
+    }
 }

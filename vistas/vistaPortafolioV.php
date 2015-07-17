@@ -1,11 +1,11 @@
 
 <div class="panel panel-primary" id="portafoliod">
   <div class="panel-heading">
-    <h3 class="panel-title">Portfolio</h3>
+    <h3 class="panel-title">Portafolio</h3>
   </div>
   <div class="panel-body">
       {{listaArchivos}}
-      
+
   </div>
 </div>
  <script type="text/javascript" language="javascript" class="init">
@@ -17,7 +17,7 @@
 $(".rate").on("click",function(){
     var star = $(this).attr("data-value");
     $.ajax({
-        url: "../logica/getStates.php",
+        url: "../controladores/votar.php?idPortafolio = 7",
         type: "post",
         data: {numero:star},
         beforeSend:function(){
