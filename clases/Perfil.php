@@ -8,7 +8,7 @@ require_once realpath(dirname(__FILE__) . '/./Empresa.php');
 
 
 class Perfil {
-    var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\fotos\\';
+    var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\fotos\\';
 
     public function mostrarPerfil() {
         $plantilla = new Plantilla();

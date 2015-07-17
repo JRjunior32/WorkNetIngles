@@ -2,20 +2,20 @@
             
             <div class="list-group">
               <a class="list-group-item active">
-                Herramientas
+                Tools
               </a>
-              <a data-toggle="modal" data-target="#myModal" data-toggle="modal" data-target="#myModal" class="list-group-item"><span class="fui-user"></span> Usuarios
+              <a data-toggle="modal" data-target="#myModal" data-toggle="modal" data-target="#myModal" class="list-group-item"><span class="fui-user"></span> Users
               </a>
-              <a href="crearcat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Crear Categorías
+              <a href="crearcat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Create Categories
               </a>
-              <a href="vercat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Categorías
+              <a href="vercat.php" class="list-group-item"><span class="fui-list-thumbnailed"></span> Categories
 
               </a>
-                <a href="./verDenuncias.php" class="list-group-item"><span class="fui-cross"></span> Denuncias
+                <a href="./verDenuncias.php" class="list-group-item"><span class="fui-cross"></span> Denounces
               </a>
-              <a href="./tiposReporte.php" class="list-group-item"><span class="fui-document"></span> Reportes
+              <a href="./tiposReporte.php" class="list-group-item"><span class="fui-document"></span> Reports
               </a>
-              <a href="logout.php" class="list-group-item"><span class="fui-power"></span> Cerrar Sesión
+              <a href="logout.php" class="list-group-item"><span class="fui-power"></span> Log Out
               </a>
             </div>
         </div>
@@ -28,12 +28,12 @@
         <h4 class="modal-title" id="myModalLabel">WorkNet</h4>
       </div>
       <div class="modal-body">
-        Desea ver los usuarios:
+        Users:
       </div>
       <div class="modal-footer">
-        <a href="./usuarios_admin.php" class="btn btn-default">Todos</a>
-        <a href="./usuariosEmpresarios_admin.php" class="btn btn-primary">Empresas</a>
-        <a   href="./usuariosUsuarios_admin.php" class="btn btn-primary">Usuarios</a>
+        <a href="./usuarios_admin.php" class="btn btn-default">All</a>
+        <a href="./usuariosEmpresarios_admin.php" class="btn btn-primary">Enterpises</a>
+        <a   href="./usuariosUsuarios_admin.php" class="btn btn-primary">Users</a>
 
       </div>
     </div>
