@@ -9,7 +9,21 @@ class Empresa {
 
     public function mostrarFormulario() {
         $plantilla = new Plantilla();
-        $plantilla->verPaginaSinPlantilla('formularioEmpresa');
+        $bd = new MySQL();
+        $query = 'SELECT NombreCat FROM categorias WHERE cuenta_idCuenta=1';
+        $resultado = $bd->consulta($query);
+        $variables['opciones']=$this->convertirHTMLCategorias($resultado);
+        
+        $plantilla->verPaginaSinPlantilla('formularioEmpresa',$variables);
+    }
+    
+    public function convertirHTMLCategorias($Cat = array()){
+        
+        $cat = '';
+        for($i=0; $i<count($Cat) ;$i++){
+            $cat .='<option value="'.$Cat[$i]['NombreCat'].'">'.$Cat[$i]['NombreCat'].'</option>';
+        }
+        return $cat;
     }
 
 
@@ -21,7 +35,7 @@ class Empresa {
         $dateNow = $date->format('Y-m-d');
         
         $tabla = 'cuenta';
-        $columnas = 'Tipo,Usuario,Correo,Password,ImgCuenta,Empresa,Nombre,Apellido,FechaNac,DUI,Direc,Telefono,SitioWeb,Estado';
+        $columnas = 'Tipo,Usuario,Correo,Password,ImgCuenta,Empresa,Nombre,Apellido,FechaNac,DUI,Direc,Telefono,SitioWeb,Estado,Categoria';
 
         $tipo = '2';
         $empresa = $datosEmpresa['empresa'];
@@ -33,32 +47,32 @@ class Empresa {
         $dui = $datosEmpresa['dui'];
         $birth = $datosEmpresa['birth'];
         $email = $datosEmpresa['email'];
-        $remail = $datosEmpresa['remail'];
         $site = $datosEmpresa['site'];
         $adres = $datosEmpresa['adres'];
         $phone = $datosEmpresa['phone'];
+        $categoria = $datosEmpresa['categoria'];
         $estado = '1';
         $img = 'default.jpg';
         
-        $valores = '"'.$tipo . '","' . $user . '","' . $email . '","' . $password . '","' . $img . '","' . $empresa . '","' . $name . '","' . $ape . '","' . $birth . '","' . $dui . '","' . $adres . '","' . $phone . '","' . $site . '","' . $estado.'"';
+        $valores = '"'.$tipo . '","' . $user . '","' . $email . '","' . $password . '","' . $img . '","' . $empresa . '","' . $name . '","' . $ape . '","' . $birth . '","' . $dui . '","' . $adres . '","' . $phone . '","' . $site . '","' . $estado.'","'.$categoria.'"';
 
 if($dateNow > $birth)
-    if ($password == $repassword && $email == $remail)
+    if ($password == $repassword)
         if($this->validarNombreUnico($user))
             $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
         else{
-            $utilidades->mostrarMensaje('The User already exists. Please try again with another one.');
+            $utilidades->mostrarMensaje('El usuario existe actualmente, por favor intente de nuevo');
             $utilidades->Redireccionar('controladores/formNuevaEmpresa.php');
             return 0;
         }
     
       
         if ($resultado){
-            $utilidades->mostrarMensaje('Congrats! Now you are part of WorkNet!');
+            $utilidades->mostrarMensaje('Felicidades! usted es parte de WorkNet ahora!');
             $utilidades->Redireccionar('controladores/index.php');
         }
         else{
-            $utilidades->mostrarMensaje('Sorry! There was a mistake. Please try again.');                    
+            $utilidades->mostrarMensaje('Lo sentimos!, Ocurrio un error, por favor intente de nuevo');                    
          $utilidades->Redireccionar('controladores/formNuevaEmpresa.php');
         }
     }
@@ -85,10 +99,10 @@ if($dateNow > $birth)
         $consulta = 'select idCuenta as id,Usuario,Nombre,Apellido,Empresa from cuenta '
                 . ' where idCuenta not in( select idCuentaAmigo from Amigo where idCuenta =' . $idUsuario . ' ) AND Tipo = 2 AND idCuenta  !='.$idUsuario.' ';
         $listaUsuarios = $mysql->consulta($consulta);
-        $encabezado = array('ID', 'User', 'Name', 'Surname', 'Enterprise');
+        $encabezado = array('ID', 'User', 'Name', 'Surname', 'Enterprises');
 
         $acciones = '<a href="./agregarAmigo.php?idCuenta={{id}}"><i class="fa fa-user-plus"></i></a>';
-        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Profile</a>';
+        $acciones .= '<a href="./verPerfilAmigo.php?idCuenta={{id}}"> &nbsp Perfil</a>';
 
 
 

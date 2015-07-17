@@ -30,7 +30,9 @@
             <b>Email:</b> {{Correo}} <small id="de"><a href =""  data-toggle="modal" data-target="#ChangeE-mail">Edit<i class="fa fa-pencil"> </i></a></small><br>
             <b>Fundation Date:</b> {{Fun}}<br>
             <b>Website:</b> {{Web}} <small id="de"><a href ="" data-toggle="modal" data-target="#ChangeWeb"> Edit<i class="fa fa-pencil"> </i></a></small><br>
-          </div>
+            <b>Categoría:</b> {{Categoria}} <small id="de"><a href =""  data-toggle="modal" data-target="#ChangeCat">Editar<i class="fa fa-pencil"> </i></a></small>
+          
+        </div>
     </div>
     
         </div>

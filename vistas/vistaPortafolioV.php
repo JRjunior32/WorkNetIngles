@@ -13,3 +13,19 @@
         $('#miTabla').DataTable();
     });
 </script>
+<script type="text/javascript">
+$(".rate").on("click",function(){
+    var star = $(this).attr("data-value");
+    $.ajax({
+        url: "../logica/getStates.php",
+        type: "post",
+        data: {numero:star},
+        beforeSend:function(){
+            console.log("uno");
+        },
+        success:function(data){
+            console.log("dos"+data);
+        }
+    });
+});
+</script>

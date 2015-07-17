@@ -34,7 +34,9 @@
             <b>Email:</b> {{Correo}}<br>
             <b>Fundation D:</b> {{Fun}}<br>
             <b>Website:</b> {{Web}}<br>
-          </div>
+            <b>Categoria:</b> {{Categoria}}
+          
+        </div>
     </div>
     <input type="hidden" value="{{Id}}">
     

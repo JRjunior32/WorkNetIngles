@@ -35,11 +35,11 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
 
                 $resultado = $bd->insertarRegistro($tabla, $columnas, $valores);
 
-                $utilidades-> mostrarMensaje('El archivo se subio exitosamente!');
+                $utilidades-> mostrarMensaje('The file was successfully updated!');
                 $utilidades-> Redireccionar('controladores/crearPortafolio.php');
 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+                    $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
                 }else{
                     $this->crearDirectorio($carpeta);
                     //echo $this->rutaServidor.$carpeta."\\";
@@ -92,6 +92,10 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
         $query = "SELECT idPortafolio, NombreArchivo as id FROM portafolio WHERE cuenta_idCuenta = $id";
         $resultado = $db->consulta($query);
 
+        $estrellas = "SELECT calificacion FROM portafolio WHERE cuenta_idCuenta = $id";
+        $calcular = $db->consulta($estrellas);
+        $numeroStrella = $calcular[0]['calificacion'];
+        
         $encabezado = array('<i class="fa fa-info"></i> ID','<i class="fa fa-file-text-o"></i> File');
         $acciones = '<a href="../portafolio/'.$nombreUsuario[0]['Usuario'].'/{{id}}" ><center><i class="fa fa-download"></i></a>';
         $acciones .= '<center><div class="ec-stars-wrapper">
@@ -126,6 +130,14 @@ var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\portafolio\\';
             $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
 
         $utilidades->Redireccionar('controladores/crearPortafolio.php');
+    }
+    
+        public function votarEstrella($estrella){
+        $bd = new MySQL();
+        $tabla ='portafolio';
+        $cambio = 'calificacion ='.$estrella;
+
+        $resultado = $bd->modificarRegistro($tabla, $cambio);
     }
 
 }

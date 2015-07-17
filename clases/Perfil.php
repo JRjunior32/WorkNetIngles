@@ -4,20 +4,24 @@ require_once realpath(dirname(__FILE__) . '/./MySQL.php');
 require_once realpath(dirname(__FILE__) . '/./Plantilla.php');
 require_once realpath(dirname(__FILE__) . '/./Utilidades.php');
 require_once realpath(dirname(__FILE__) . '/./Sesion.php');
+require_once realpath(dirname(__FILE__) . '/./Empresa.php');
 
 
 class Perfil {
-    var $rutaServidor='C:\\xampp\\htdocs\\WorkNetIngles\\fotos\\';
+    var $rutaServidor='C:\\xampp\\htdocs\\WorkNet\\fotos\\';
 
     public function mostrarPerfil() {
         $plantilla = new Plantilla();
         $mysql = new MySQL();
         $sesion = new Sesion();
+        $empresa = new Empresa();
 
-        $consulta = ' select c.ImgCuenta, c.SitioWeb,c.Empresa, c.idCuenta,c.FechaNac, c.tipo, c.usuario, c.correo from cuenta c where c.idCuenta = ' . $sesion->obtenerVariableSesion('idUsuario');
-
+        $consulta = ' select c.ImgCuenta, c.SitioWeb,c.Empresa, c.idCuenta,c.FechaNac,c.Categoria, c.tipo, c.usuario, c.correo from cuenta c where c.idCuenta = ' . $sesion->obtenerVariableSesion('idUsuario');
         $resultado = $mysql->consulta($consulta);
 
+        $query='SELECT NombreCat FROM categorias';
+        $result= $mysql->consulta($query);
+        $variables['categoria'] = $empresa->convertirHTMLCategorias($result);
         //print_r($resultado);
         $variables['Id'] = $resultado[0]['idCuenta'];
         $variables['Tipo'] = $resultado[0]['tipo'];
@@ -26,6 +30,7 @@ class Perfil {
         $variables['Empresa'] = $resultado[0]['Empresa'];
         $variables['Web'] = $resultado[0]['SitioWeb'];
         $variables['Fun']=$resultado[0]['FechaNac'];
+        $variables['Categoria']=$resultado[0]['Categoria'];
         $variables['photo'] = '../fotos/'.$resultado[0]['usuario'].'\\'.$resultado[0]['ImgCuenta'];
 
 
@@ -54,10 +59,10 @@ class Perfil {
 
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
 
-                $utilidades-> mostrarMensaje('The picture was successfully updated.');
+                $utilidades-> mostrarMensaje('The picture was successfully updated!');
 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! There was a problem.  Please try again.');
+                    $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -72,7 +77,7 @@ class Perfil {
         $mysql = new MySQL();
         $sesion = new Sesion();
 
-        $consulta = ' select c.ImgCuenta,c.FechaNac, c.SitioWeb,c.Empresa, c.idCuenta, c.tipo, c.usuario, c.correo from cuenta c where c.idCuenta = ' . $id;
+        $consulta = ' select c.ImgCuenta,c.FechaNac, c.SitioWeb,c.Empresa, c.idCuenta, c.tipo,c.Categoria, c.usuario, c.correo from cuenta c where c.idCuenta = ' . $id;
 
         $resultado = $mysql->consulta($consulta);
 
@@ -84,6 +89,8 @@ class Perfil {
         $variables['Empresa'] = $resultado[0]['Empresa'];
         $variables['Web'] = $resultado[0]['SitioWeb'];
         $variables['Fun'] = $resultado[0]['FechaNac'];
+        $variables['Categoria'] = $resultado[0]['Categoria'];
+
         $variables['photo'] = '../fotos/'.$resultado[0]['usuario'].'\\'.$resultado[0]['ImgCuenta'];
 
 
@@ -127,10 +134,10 @@ class Perfil {
 
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
 
-                $utilidades-> mostrarMensaje('The picture was successfully updated.');
+                $utilidades-> mostrarMensaje('The picture was successfully updated!');
 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+                    $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
                     $plantilla->verPagina('perfil_Mostrar');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -200,10 +207,10 @@ class Perfil {
 
                 $resultado = $bd->modificarRegistro($tabla, $cambio, $where);
 
-                $utilidades-> mostrarMensaje('The picture was successfully updated.');
+                $utilidades-> mostrarMensaje('The picture was successfully updated!');
 
                 if ($archivo['file']['error']>0){
-                    $utilidades->mostrarMensaje('Sorry! There was a problem. Please try again.');
+                    $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
                     $plantilla->verPagina('perfilTrabajador');
                 }else{
                     $this->crearDirectorio($carpeta);
@@ -229,7 +236,7 @@ class Perfil {
         $resultado = $db->modificarRegistro($tabla,$cambio,$where);
 
         if($resultado)
-            $utilidades-> mostrarMensaje('The e-mail was successfully updated.');
+            $utilidades-> mostrarMensaje('The email was successfully updated!');
         $utilidades -> Redireccionar('controladores/perfil_Mostrar.php');
     }
 
@@ -247,7 +254,7 @@ class Perfil {
         $resultado = $db->modificarRegistro($tabla,$cambio,$where);
 
         if($resultado)
-            $utilidades-> mostrarMensaje('The e-mail was successfully updated.');
+            $utilidades-> mostrarMensaje('The email was successfully updated!');
         $utilidades -> Redireccionar('controladores/perfil_Mostrar.php');
     }
         public function editarCorreoUsuario($editor){
@@ -265,7 +272,28 @@ class Perfil {
         $resultado = $db->modificarRegistro($tabla,$cambio,$where);
 
         if($resultado)
-            $utilidades-> mostrarMensaje('The e-mail was successfuly updated.');
+            $utilidades-> mostrarMensaje('The email was successfully updated!');
         $utilidades -> Redireccionar('controladores/verPerfilUsuario.php');
+    }
+
+    public function editarCategoria($editor){
+        $bd = new MySQL();
+        $sesion = new Sesion();
+        $utilidades = new Utilidades();
+
+        $id= $sesion->obtenerVariableSesion('idUsuario');
+        $newCat = $editor['categoria'];
+
+        $tabla ='cuenta';
+        $cambio = 'Categoria="'.$newCat.'"';
+        $where = 'idCuenta='.$id;
+
+        $resultado = $bd->modificarRegistro($tabla,$cambio,$where);
+        if($resultado)
+            $utilidades->mostrarMensaje('You have successfully changed your category!');
+        else
+            $utilidades->mostrarMensaje('Sorry! Something went wrong. Please try again.');
+        $utilidades -> Redireccionar('controladores/perfil_Mostrar.php');
+
     }
 }

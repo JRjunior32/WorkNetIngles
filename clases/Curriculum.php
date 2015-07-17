@@ -147,4 +147,13 @@ class Curriculum {
         }
         return $c;
     }
+    private function verificarCurriculum(){
+    $sesion= new Sesion();
+    $db = new MySQL();
+    $utilidades = new Utilidades();
+
+    $id = $sesion->obtenerVariableSesion('idusuario');
+    $query = 'SELECT idCuenta_cuenta FROM curriculum WHERE idCuenta_cuenta='.$id;
+    $result = $db->consulta($query);
+    }
 }
