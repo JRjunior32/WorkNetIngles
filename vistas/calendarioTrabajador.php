@@ -49,7 +49,7 @@
         <div class="col-md-7" id="de">
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Calendario</h3>
+            <h3 class="panel-title">Events</h3>
           </div>
           <div class="panel-body">
             <div id='calendar'></div>

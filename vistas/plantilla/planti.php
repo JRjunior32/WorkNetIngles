@@ -19,16 +19,17 @@
                 <div class="col-md-4">
                     
                                 
-<a href='../controladores/perfil_Mostrar.php' class='list-group-item active'>Perfil<br>    </a>
-<a href="../controladores/mensajes.php" class="list-group-item"><span class="fui-chat"></span>Mensajes</a>
-<a href="../controladores/creartrabajador.php" class="list-group-item"><span class="fui-plus"></span>Crear trabajador</a>
-<a href="../controladores/usuarios_empre.php" class="list-group-item"><span class="fui-user"></span>Cuentas</a>
-<a href="../controladores/formEventos.php" class="list-group-item"><span class="fui-calendar-solid"></span>Crear evento</a>
-<a href="../vistas/calendarioEmpresa.php" class="list-group-item"><span class="fui-calendar-solid"></span>Calendario</a>
-<a href="../controladores/crearPortafolio.php" class="list-group-item"><span class="fui-clip"></span>Portafolio</a>
-<a href="../controladores/formOfertas.php" class="list-group-item"><span class="fui-document"></span>Ofertas de empleo</a>
-<a href="../controladores/ofertas_empre.php" class="list-group-item"><span class="fui-document"></span>Mostrar ofertas</a>
-<a href="../controladores/logout.php" class="list-group-item"><span class="fui-power"></span>Cerrar Sesión</a>                  
+<a href='../controladores/perfil_Mostrar.php' class='list-group-item active'> Profile<br>    </a>
+<a href="../controladores/mensajes.php" class="list-group-item"><span class="fui-chat"></span> Followers</a>
+<a href="../controladores/creartrabajador.php" class="list-group-item"><span class="fui-plus"></span> Create a Employee</a>
+<a href="../controladores/usuarios_empre.php" class="list-group-item"><span class="fui-user"></span> Accounts</a>
+<a href="../controladores/formEventos.php" class="list-group-item"><span class="fui-calendar-solid"></span> Create a Event</a>
+<a href="../vistas/calendarioEmpresa.php" class="list-group-item"><span class="fui-calendar-solid"></span> Events</a>
+<a href="../controladores/crearPortafolio.php" class="list-group-item"><span class="fui-clip"></span>Portfolio</a>
+<a href="../controladores/formOfertas.php" class="list-group-item"><span class="fui-document"></span>Create a Job Offers</a>
+<a href="../controladores/ofertas_empre.php" class="list-group-item"><span class="fui-document"></span> Job Offers</a>
+<a href="./tiposReporteEmpre.php" class="list-group-item"><i class="fa fa-file-pdf-o"></i> Reports</a>
+<a href="../controladores/logout.php" class="list-group-item"><span class="fui-power"></span> Log Out</a>                  
                 </div>
 
 </body>
